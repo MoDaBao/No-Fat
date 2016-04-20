@@ -29,10 +29,10 @@
     trainTableVC.tabBarItem = trainItem;
     UINavigationController *trainNaVC = [[UINavigationController alloc] initWithRootViewController:trainTableVC];
     
-    SelectionViewController *seletionVC = [[SelectionViewController alloc] init];
-    UITabBarItem *selectionItem = [[UITabBarItem alloc] initWithTitle:@"发现" image:[[UIImage imageNamed:@"findGary"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"findBlack"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    seletionVC.tabBarItem = selectionItem;
-    UINavigationController *selectionNaVC = [[UINavigationController alloc] initWithRootViewController:seletionVC];
+//    SelectionViewController *seletionVC = [[SelectionViewController alloc] init];
+//    UITabBarItem *selectionItem = [[UITabBarItem alloc] initWithTitle:@"发现" image:[[UIImage imageNamed:@"findGary"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"findBlack"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//    seletionVC.tabBarItem = selectionItem;
+//    UINavigationController *selectionNaVC = [[UINavigationController alloc] initWithRootViewController:seletionVC];
     
     NewsViewController *newsVC = [[NewsViewController alloc] init];
     UITabBarItem *newsItem = [[UITabBarItem alloc] initWithTitle:@"动态" image:[[UIImage imageNamed:@"newsGary"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"newsBlack"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
@@ -46,7 +46,7 @@
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     // 设置标签视图控制器需要管理的子视图控制器
-    tabBarController.viewControllers = @[trainNaVC, selectionNaVC, newsNaVC, personNaVC];
+    tabBarController.viewControllers = @[trainNaVC, newsNaVC, personNaVC];
     // 设定标签栏选中的标签下标
     tabBarController.selectedIndex = 0;
     tabBarController.tabBar.tintColor = [UIColor blackColor];
