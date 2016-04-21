@@ -10,8 +10,10 @@
 #define URLHeaderDefine_h
 
 #define LOGINURL @"http://api.fit-time.cn/ftuser/mobileLogin"// 登录
-#define VERIFYCODEURL @"http://api.fit-time.cn/ftuser/getVerifyCode"//获取验证码
-#define REGISTURL @"http://api.fit-time.cn/ftuser/mobileRegister"//注册
+#define VERIFYCODEURL @"http://api.fit-time.cn/ftuser/getVerifyCode"// 获取验证码
+#define REGISTURL @"http://api.fit-time.cn/ftuser/mobileRegister"// 注册
+
+#define GETFANSCOUNTURL @"http://api.fit-time.cn/ftsns/getUserStatByIds"// 获取用户的粉丝数量
 
 
 

@@ -8,6 +8,9 @@
 
 #import "BaseViewController.h"
 
+typedef void(^MyBlock)(NSString *mobile);
 @interface RegistViewController : BaseViewController
+
+@property (nonatomic, copy) MyBlock mobilBlock;
 
 @end

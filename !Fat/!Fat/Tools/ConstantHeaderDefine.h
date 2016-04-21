@@ -25,6 +25,13 @@
 #define kNavigationBarHeight 64
 
 
+#define kPink [UIColor colorWithRed:253 / 255.0 green:116 / 255.0 blue:121 / 255.0 alpha:1.0]
+#define kGray [UIColor colorWithRed:181 / 255.0 green:181 / 255.0 blue:181 / 255.0 alpha:1.0]
+#define kGreen [UIColor colorWithRed:183 / 255.0 green:228 / 255.0 blue:72 / 255.0 alpha:1.0]
+#define kBlue [UIColor colorWithRed:28 / 255.0 green:157 / 255.0 blue:214 / 255.0 alpha:1.0]
+
+#define DATABASENAME @"NoFat.sqlite"// 数据库名
+#define TIMERLISTITEMTABLE @"timeritemtable"// 表名
 
 
 

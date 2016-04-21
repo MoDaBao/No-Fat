@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
@@ -35,7 +36,7 @@
                         <constraint firstAttribute="width" constant="198" id="eLL-dG-FPl"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3aP-Ta-rwr">
@@ -49,7 +50,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUo-yQ-uQt">
-                    <rect key="frame" x="70" y="291" width="235" height="30"/>
+                    <rect key="frame" x="129" y="291" width="117.5" height="30"/>
                     <state key="normal" title="/        登录        /">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -73,17 +74,17 @@
                 <constraint firstItem="pDv-7p-I7u" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3W5-Kx-DHK"/>
                 <constraint firstItem="pDv-7p-I7u" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="5m5-op-Siv"/>
                 <constraint firstAttribute="trailing" secondItem="Wuh-3J-ESc" secondAttribute="trailing" constant="70" id="Edi-ZQ-ZEi"/>
+                <constraint firstItem="tUo-yQ-uQt" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Gkz-8n-5OU"/>
                 <constraint firstItem="3aP-Ta-rwr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="70" id="JS7-of-HYl"/>
                 <constraint firstItem="Wuh-3J-ESc" firstAttribute="top" secondItem="3aP-Ta-rwr" secondAttribute="bottom" constant="30" id="KEY-5s-G9k"/>
                 <constraint firstItem="Dw3-Lt-tvc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NCp-KU-uxC"/>
                 <constraint firstAttribute="trailing" secondItem="3aP-Ta-rwr" secondAttribute="trailing" constant="70" id="NXJ-tQ-Y6s"/>
                 <constraint firstItem="Wuh-3J-ESc" firstAttribute="top" secondItem="3aP-Ta-rwr" secondAttribute="bottom" constant="30" id="Vfi-mY-gyh"/>
                 <constraint firstAttribute="bottom" secondItem="Dw3-Lt-tvc" secondAttribute="bottom" constant="10" id="YSe-Ng-5V4"/>
-                <constraint firstItem="tUo-yQ-uQt" firstAttribute="leading" secondItem="Wuh-3J-ESc" secondAttribute="leading" id="baV-hu-7FI"/>
                 <constraint firstItem="Wuh-3J-ESc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="70" id="e7P-sv-D7i"/>
                 <constraint firstItem="H4a-dL-gRL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="m7v-ay-QSs"/>
                 <constraint firstItem="3aP-Ta-rwr" firstAttribute="top" secondItem="pDv-7p-I7u" secondAttribute="bottom" constant="30" id="n43-4R-n01"/>
-                <constraint firstItem="tUo-yQ-uQt" firstAttribute="width" secondItem="Wuh-3J-ESc" secondAttribute="width" id="p1Y-x4-wQ1"/>
+                <constraint firstItem="tUo-yQ-uQt" firstAttribute="width" secondItem="Wuh-3J-ESc" secondAttribute="width" multiplier="1:2" id="p1Y-x4-wQ1"/>
                 <constraint firstItem="tUo-yQ-uQt" firstAttribute="height" secondItem="Wuh-3J-ESc" secondAttribute="height" id="tVV-cc-7w3"/>
                 <constraint firstItem="tUo-yQ-uQt" firstAttribute="top" secondItem="Wuh-3J-ESc" secondAttribute="bottom" constant="30" id="wcP-PT-Qhq"/>
                 <constraint firstAttribute="trailing" secondItem="H4a-dL-gRL" secondAttribute="trailing" constant="20" id="yEC-ns-HAP"/>

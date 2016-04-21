@@ -76,7 +76,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GW8-WT-0Ie">
-                    <rect key="frame" x="70" y="351" width="235" height="30"/>
+                    <rect key="frame" x="129" y="351" width="117.5" height="30"/>
                     <state key="normal" title="/        注册        /">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -90,12 +90,10 @@
                 <constraint firstItem="UJD-m7-e6f" firstAttribute="height" secondItem="AcY-bi-Xtm" secondAttribute="height" id="40m-cC-TEf"/>
                 <constraint firstItem="vTc-CI-fgQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8ve-Ih-bHM"/>
                 <constraint firstItem="AcY-bi-Xtm" firstAttribute="leading" secondItem="nmT-WC-4b0" secondAttribute="leading" id="BgJ-DO-Ah4"/>
-                <constraint firstItem="GW8-WT-0Ie" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="70" id="EdQ-v7-w53"/>
                 <constraint firstItem="GW8-WT-0Ie" firstAttribute="top" secondItem="UJD-m7-e6f" secondAttribute="bottom" constant="30" id="FZ9-fD-CUm"/>
                 <constraint firstItem="UJD-m7-e6f" firstAttribute="top" secondItem="AcY-bi-Xtm" secondAttribute="bottom" constant="30" id="IWk-dJ-13b"/>
                 <constraint firstItem="5Jk-qz-NdX" firstAttribute="width" secondItem="nmT-WC-4b0" secondAttribute="width" multiplier="1:3" id="Ixw-NC-hvG"/>
                 <constraint firstItem="UJD-m7-e6f" firstAttribute="leading" secondItem="AcY-bi-Xtm" secondAttribute="leading" id="L9O-bd-chg"/>
-                <constraint firstAttribute="trailing" secondItem="GW8-WT-0Ie" secondAttribute="trailing" constant="70" id="NGE-Hp-zz2"/>
                 <constraint firstItem="AcY-bi-Xtm" firstAttribute="width" secondItem="nmT-WC-4b0" secondAttribute="width" multiplier="2:3" id="OOU-Bj-hIE"/>
                 <constraint firstItem="5Jk-qz-NdX" firstAttribute="leading" secondItem="AcY-bi-Xtm" secondAttribute="trailing" id="Pu3-Gt-rU1"/>
                 <constraint firstAttribute="trailing" secondItem="NGn-LB-wSD" secondAttribute="trailing" constant="20" id="Q8a-ZZ-RdN"/>
@@ -103,6 +101,7 @@
                 <constraint firstAttribute="bottom" secondItem="vTc-CI-fgQ" secondAttribute="bottom" constant="10" id="Uwt-VO-Dfj"/>
                 <constraint firstItem="nmT-WC-4b0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="70" id="XIa-fC-pJ8"/>
                 <constraint firstItem="5Jk-qz-NdX" firstAttribute="top" secondItem="nmT-WC-4b0" secondAttribute="bottom" constant="30" id="XJv-98-KiO"/>
+                <constraint firstItem="GW8-WT-0Ie" firstAttribute="height" secondItem="UJD-m7-e6f" secondAttribute="height" id="ZcE-Vo-acP"/>
                 <constraint firstItem="UJD-m7-e6f" firstAttribute="width" secondItem="nmT-WC-4b0" secondAttribute="width" id="a8g-FO-xL3"/>
                 <constraint firstItem="qnt-JR-rNs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bok-Dm-bnZ"/>
                 <constraint firstItem="nmT-WC-4b0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fZe-wG-v2F"/>
@@ -111,7 +110,9 @@
                 <constraint firstItem="nmT-WC-4b0" firstAttribute="top" secondItem="qnt-JR-rNs" secondAttribute="bottom" constant="30" id="paf-oA-XY0"/>
                 <constraint firstItem="AcY-bi-Xtm" firstAttribute="top" secondItem="nmT-WC-4b0" secondAttribute="bottom" constant="30" id="rXy-pf-dz2"/>
                 <constraint firstItem="5Jk-qz-NdX" firstAttribute="height" secondItem="nmT-WC-4b0" secondAttribute="height" id="ukv-jW-o5d"/>
+                <constraint firstItem="GW8-WT-0Ie" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="w9J-t6-z4T"/>
                 <constraint firstAttribute="trailing" secondItem="nmT-WC-4b0" secondAttribute="trailing" constant="70" id="wgh-jz-oXf"/>
+                <constraint firstItem="GW8-WT-0Ie" firstAttribute="width" secondItem="UJD-m7-e6f" secondAttribute="width" multiplier="1:2" id="zK1-kQ-Byr"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="78.5" y="227.5"/>

@@ -13,6 +13,7 @@
 #import "NewsViewController.h"
 #import "LoginViewController.h"
 
+
 @interface AppDelegate ()
 
 @end
@@ -56,6 +57,12 @@
     
     //    LoginViewController *loginVC = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     //    [trainTableVC presentViewController:loginVC animated:YES completion:nil];
+//    NSString *documentPatn = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+//    NSLog(@"%@",documentPatn);
+    
+    
+//    LoginAndRegistView *loginV = [[LoginAndRegistView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
     
     
     [self.window makeKeyAndVisible];

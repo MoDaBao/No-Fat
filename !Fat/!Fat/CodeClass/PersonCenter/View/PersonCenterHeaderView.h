@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserNameAndGenderView.h"
 
 @interface PersonCenterHeaderView : UIView
 
 @property (nonatomic, strong) UIImageView *headImageView;
-@property (nonatomic, strong) UILabel *usernameLabel;
 @property (nonatomic, strong) UILabel *fansCountLabel;
 @property (nonatomic, strong) UILabel *focusCountLabel;
 @property (nonatomic, strong) UIImageView *genderImageView;
+@property (nonatomic, strong) UILabel *usernameLabel;
+//@property (nonatomic, strong) UserNameAndGenderView *userNAGView;
 
 
 @end

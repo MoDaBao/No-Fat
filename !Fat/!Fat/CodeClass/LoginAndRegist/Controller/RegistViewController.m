@@ -82,6 +82,13 @@
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 NSLog(@"%@",responseObject);
+                NSNumber *result = responseObject[@"status"];
+                if (result.intValue) {// 注册成功
+                    self.mobilBlock(responseObject[@"user"][@"mobile"]);
+                    [self.navigationController popViewControllerAnimated:YES];
+                } else {// 注册失败
+                    NSLog(@"message = %@",responseObject[@"message"]);
+                }
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 NSLog(@"error %@",error);
             }];

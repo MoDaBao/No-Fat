@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		5C3CC9B04BFC3EC4DD82A3D7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F372205CB983B7FB3FD821A /* libPods.a */; };
+		E74A32861CC8F08200A5C851 /* MenuItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A32851CC8F08200A5C851 /* MenuItemCell.m */; };
+		E74A32891CC8F5C100A5C851 /* UILabel+LabelHeightAndWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A32881CC8F5C100A5C851 /* UILabel+LabelHeightAndWidth.m */; };
+		E74A328C1CC8F99600A5C851 /* PersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A328B1CC8F99600A5C851 /* PersonInfoViewController.m */; };
+		E74A328F1CC9075900A5C851 /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A328E1CC9075900A5C851 /* FMDBManager.m */; };
+		E74A329A1CC90BDC00A5C851 /* LoginAndRegistView.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A32991CC90BDC00A5C851 /* LoginAndRegistView.m */; };
+		E74A329D1CC917A500A5C851 /* UserNameAndGenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A329C1CC917A500A5C851 /* UserNameAndGenderView.m */; };
 		E772B19E1CC7BE7000C2BB5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E772B19D1CC7BE7000C2BB5F /* main.m */; };
 		E772B1A11CC7BE7000C2BB5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E772B1A01CC7BE7000C2BB5F /* AppDelegate.m */; };
 		E772B1A31CC7BE7000C2BB5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E772B1A21CC7BE7000C2BB5F /* Assets.xcassets */; };
@@ -30,6 +36,8 @@
 		E772B20F1CC7BF1D00C2BB5F /* PersonCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E772B1F21CC7BF1D00C2BB5F /* PersonCenterViewController.m */; };
 		E772B2101CC7BF1D00C2BB5F /* PersonCenterHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E772B1F61CC7BF1D00C2BB5F /* PersonCenterHeaderView.m */; };
 		E772B2111CC7BF1D00C2BB5F /* TrainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E772B1FA1CC7BF1D00C2BB5F /* TrainTableViewController.m */; };
+		E772DAA51CC7C9D5005B16CE /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E772DAA41CC7C9D5005B16CE /* UserModel.m */; };
+		E772DAA81CC7D0FE005B16CE /* UserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E772DAA71CC7D0FE005B16CE /* UserInfoManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +61,18 @@
 		06D75FF1B76F6BD11161A7A6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3F372205CB983B7FB3FD821A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		923F4DA709979618D7E94F7E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E74A32841CC8F08200A5C851 /* MenuItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItemCell.h; sourceTree = "<group>"; };
+		E74A32851CC8F08200A5C851 /* MenuItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItemCell.m; sourceTree = "<group>"; };
+		E74A32871CC8F5C100A5C851 /* UILabel+LabelHeightAndWidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHeightAndWidth.h"; sourceTree = "<group>"; };
+		E74A32881CC8F5C100A5C851 /* UILabel+LabelHeightAndWidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+LabelHeightAndWidth.m"; sourceTree = "<group>"; };
+		E74A328A1CC8F99600A5C851 /* PersonInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoViewController.h; sourceTree = "<group>"; };
+		E74A328B1CC8F99600A5C851 /* PersonInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoViewController.m; sourceTree = "<group>"; };
+		E74A328D1CC9075900A5C851 /* FMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBManager.h; sourceTree = "<group>"; };
+		E74A328E1CC9075900A5C851 /* FMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBManager.m; sourceTree = "<group>"; };
+		E74A32981CC90BDC00A5C851 /* LoginAndRegistView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAndRegistView.h; sourceTree = "<group>"; };
+		E74A32991CC90BDC00A5C851 /* LoginAndRegistView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegistView.m; sourceTree = "<group>"; };
+		E74A329B1CC917A500A5C851 /* UserNameAndGenderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserNameAndGenderView.h; sourceTree = "<group>"; };
+		E74A329C1CC917A500A5C851 /* UserNameAndGenderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserNameAndGenderView.m; sourceTree = "<group>"; };
 		E772B1991CC7BE7000C2BB5F /* !Fat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "!Fat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E772B19D1CC7BE7000C2BB5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E772B19F1CC7BE7000C2BB5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -99,6 +119,10 @@
 		E772B1FF1CC7BF1D00C2BB5F /* ConstantHeaderDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantHeaderDefine.h; sourceTree = "<group>"; };
 		E772B2001CC7BF1D00C2BB5F /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E772B2011CC7BF1D00C2BB5F /* URLHeaderDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLHeaderDefine.h; sourceTree = "<group>"; };
+		E772DAA31CC7C9D5005B16CE /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		E772DAA41CC7C9D5005B16CE /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		E772DAA61CC7D0FE005B16CE /* UserInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoManager.h; sourceTree = "<group>"; };
+		E772DAA71CC7D0FE005B16CE /* UserInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +250,8 @@
 				E772B1D51CC7BF1D00C2BB5F /* FactoryCollectionViewCell.m */,
 				E772B1D61CC7BF1D00C2BB5F /* FactoryTableViewCell.h */,
 				E772B1D71CC7BF1D00C2BB5F /* FactoryTableViewCell.m */,
+				E74A32981CC90BDC00A5C851 /* LoginAndRegistView.h */,
+				E74A32991CC90BDC00A5C851 /* LoginAndRegistView.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -301,6 +327,10 @@
 		E772B1E71CC7BF1D00C2BB5F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E772DAA31CC7C9D5005B16CE /* UserModel.h */,
+				E772DAA41CC7C9D5005B16CE /* UserModel.m */,
+				E772DAA61CC7D0FE005B16CE /* UserInfoManager.h */,
+				E772DAA71CC7D0FE005B16CE /* UserInfoManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -360,6 +390,8 @@
 			children = (
 				E772B1F11CC7BF1D00C2BB5F /* PersonCenterViewController.h */,
 				E772B1F21CC7BF1D00C2BB5F /* PersonCenterViewController.m */,
+				E74A328A1CC8F99600A5C851 /* PersonInfoViewController.h */,
+				E74A328B1CC8F99600A5C851 /* PersonInfoViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -376,6 +408,10 @@
 			children = (
 				E772B1F51CC7BF1D00C2BB5F /* PersonCenterHeaderView.h */,
 				E772B1F61CC7BF1D00C2BB5F /* PersonCenterHeaderView.m */,
+				E74A329B1CC917A500A5C851 /* UserNameAndGenderView.h */,
+				E74A329C1CC917A500A5C851 /* UserNameAndGenderView.m */,
+				E74A32841CC8F08200A5C851 /* MenuItemCell.h */,
+				E74A32851CC8F08200A5C851 /* MenuItemCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -426,6 +462,10 @@
 				E772B1FF1CC7BF1D00C2BB5F /* ConstantHeaderDefine.h */,
 				E772B2001CC7BF1D00C2BB5F /* PrefixHeader.pch */,
 				E772B2011CC7BF1D00C2BB5F /* URLHeaderDefine.h */,
+				E74A32871CC8F5C100A5C851 /* UILabel+LabelHeightAndWidth.h */,
+				E74A32881CC8F5C100A5C851 /* UILabel+LabelHeightAndWidth.m */,
+				E74A328D1CC9075900A5C851 /* FMDBManager.h */,
+				E74A328E1CC9075900A5C851 /* FMDBManager.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -616,18 +656,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				E772B2041CC7BF1D00C2BB5F /* BaseTableViewCell.m in Sources */,
+				E74A328C1CC8F99600A5C851 /* PersonInfoViewController.m in Sources */,
 				E772B1A11CC7BE7000C2BB5F /* AppDelegate.m in Sources */,
 				E772B20C1CC7BF1D00C2BB5F /* RegistViewController.m in Sources */,
 				E772B2021CC7BF1D00C2BB5F /* BaseCollectionViewCell.m in Sources */,
+				E74A329D1CC917A500A5C851 /* UserNameAndGenderView.m in Sources */,
+				E74A32861CC8F08200A5C851 /* MenuItemCell.m in Sources */,
+				E74A32891CC8F5C100A5C851 /* UILabel+LabelHeightAndWidth.m in Sources */,
 				E772B2031CC7BF1D00C2BB5F /* BaseModel.m in Sources */,
+				E74A328F1CC9075900A5C851 /* FMDBManager.m in Sources */,
+				E772DAA51CC7C9D5005B16CE /* UserModel.m in Sources */,
 				E772B2051CC7BF1D00C2BB5F /* BaseTableViewController.m in Sources */,
 				E772B20F1CC7BF1D00C2BB5F /* PersonCenterViewController.m in Sources */,
 				E772B20E1CC7BF1D00C2BB5F /* NewsViewController.m in Sources */,
 				E772B2091CC7BF1D00C2BB5F /* SelectionViewController.m in Sources */,
+				E772DAA81CC7D0FE005B16CE /* UserInfoManager.m in Sources */,
 				E772B2071CC7BF1D00C2BB5F /* FactoryCollectionViewCell.m in Sources */,
 				E772B2111CC7BF1D00C2BB5F /* TrainTableViewController.m in Sources */,
 				E772B2081CC7BF1D00C2BB5F /* FactoryTableViewCell.m in Sources */,
 				E772B2061CC7BF1D00C2BB5F /* BaseViewController.m in Sources */,
+				E74A329A1CC90BDC00A5C851 /* LoginAndRegistView.m in Sources */,
 				E772B2101CC7BF1D00C2BB5F /* PersonCenterHeaderView.m in Sources */,
 				E772B20A1CC7BF1D00C2BB5F /* LoginViewController.m in Sources */,
 				E772B19E1CC7BE7000C2BB5F /* main.m in Sources */,
@@ -764,10 +812,11 @@
 			baseConfigurationReference = 06D75FF1B76F6BD11161A7A6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "!Fat/Tools/PrefixHeader.pch";
 				INFOPLIST_FILE = "!Fat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou.-Fat";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou.Fat123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -777,10 +826,11 @@
 			baseConfigurationReference = 923F4DA709979618D7E94F7E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "!Fat/Tools/PrefixHeader.pch";
 				INFOPLIST_FILE = "!Fat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou.-Fat";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou.Fat123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

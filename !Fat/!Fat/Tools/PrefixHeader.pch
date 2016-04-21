@@ -29,5 +29,12 @@
 #import <AFNetworking/AFNetworking.h>
 #import <MJRefresh/MJRefresh.h>
 
+#import "UserInfoManager.h"
+
+#import "UILabel+LabelHeightAndWidth.h"
+
+#import <UIKit/UIKit.h>
+
+#import "FMDBManager.h"
 
 #endif /* PrefixHeader_pch */

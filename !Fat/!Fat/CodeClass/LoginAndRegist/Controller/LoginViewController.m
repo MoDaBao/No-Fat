@@ -8,6 +8,8 @@
 
 #import "LoginViewController.h"
 #import "RegistViewController.h"
+#import "UserModel.h"
+#import "UserInfoManager.h"
 //如果要使用MD5算法进行加密，需要引入此框架
 #import <CommonCrypto/CommonCrypto.h>
 
@@ -59,6 +61,24 @@
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@",responseObject);
+        // 获取返回状态
+        NSNumber *result = responseObject[@"status"];
+        // 根据返回状态判断是否登录成功
+        if (result.intValue) {// 如果成功
+            NSDictionary *userDic = responseObject[@"user"];
+//            UserModel *user = [[UserModel alloc] init];
+//            [user setValuesForKeysWithDictionary:responseObject[@"user"]];
+            [[UserInfoManager shareInstance] saveUserName:userDic[@"username"]];
+            [[UserInfoManager shareInstance] saveUserAvatar:userDic[@"avatar"]];
+            [[UserInfoManager shareInstance] saveUserID:userDic[@"id"]];
+            [[UserInfoManager shareInstance] saveUserGender:userDic[@"gender"]];
+            [[UserInfoManager shareInstance] saveUserMobile:userDic[@"mobile"]];
+            
+            
+        } else {// 如果登录失败
+            NSLog(@"message = %@",responseObject[@"message"]);
+        }
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error %@",error);
     }];
@@ -67,6 +87,9 @@
 //  注册
 - (IBAction)regist:(id)sender {
     RegistViewController *registVC = [[RegistViewController alloc] initWithNibName:@"RegistViewController" bundle:nil];
+    registVC.mobilBlock = ^(NSString *mobile) {
+        self.phoneNumberTF.text = mobile;
+    };
     [self.navigationController pushViewController:registVC animated:YES];
     
 }
