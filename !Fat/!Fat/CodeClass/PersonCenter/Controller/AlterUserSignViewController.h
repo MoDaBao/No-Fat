@@ -8,6 +8,10 @@
 
 #import "BaseViewController.h"
 
+typedef void(^PassValueBlock)(NSString *);
+
 @interface AlterUserSignViewController : BaseViewController
+
+@property (nonatomic, copy) NSString *oldSign;
 
 @end

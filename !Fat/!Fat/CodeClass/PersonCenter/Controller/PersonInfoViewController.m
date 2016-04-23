@@ -9,6 +9,7 @@
 #import "PersonInfoViewController.h"
 #import "MenuItemCell.h"
 #import "AlterUserNameViewController.h"
+#import "AlterUserSignViewController.h"
 
 @interface PersonInfoViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -200,7 +201,6 @@
 }
 //  单击单元格触发的方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // 测试
     if (!indexPath.section && !indexPath.row) {// 昵称
         [self selectUserNameCellWith:indexPath];
     } else if (!indexPath.section && indexPath.row == 1) {// 性别
@@ -273,7 +273,9 @@
 
 //  个人简介单元格方法
 - (void)selectUserSignCellWith:(NSIndexPath *)indexPath {
+    AlterUserSignViewController *alterSignVC = [[AlterUserSignViewController alloc] init];
     
+    [self.navigationController pushViewController:alterSignVC animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
