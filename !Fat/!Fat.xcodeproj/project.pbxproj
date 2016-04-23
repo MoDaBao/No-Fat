@@ -37,6 +37,9 @@
 		E772B2111CC7BF1D00C2BB5F /* TrainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E772B1FA1CC7BF1D00C2BB5F /* TrainTableViewController.m */; };
 		E772DAA51CC7C9D5005B16CE /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E772DAA41CC7C9D5005B16CE /* UserModel.m */; };
 		E772DAA81CC7D0FE005B16CE /* UserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E772DAA71CC7D0FE005B16CE /* UserInfoManager.m */; };
+		E7BBF3181CCB1102008F9A74 /* AlterUserNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3171CCB1102008F9A74 /* AlterUserNameViewController.m */; };
+		E7BBF31B1CCB1BF7008F9A74 /* AlterUserNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF31A1CCB1BF7008F9A74 /* AlterUserNameCell.m */; };
+		E7BBF31E1CCBBAC7008F9A74 /* AlterUserSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF31D1CCBBAC7008F9A74 /* AlterUserSignViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +123,12 @@
 		E772DAA41CC7C9D5005B16CE /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		E772DAA61CC7D0FE005B16CE /* UserInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoManager.h; sourceTree = "<group>"; };
 		E772DAA71CC7D0FE005B16CE /* UserInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoManager.m; sourceTree = "<group>"; };
+		E7BBF3161CCB1102008F9A74 /* AlterUserNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlterUserNameViewController.h; sourceTree = "<group>"; };
+		E7BBF3171CCB1102008F9A74 /* AlterUserNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlterUserNameViewController.m; sourceTree = "<group>"; };
+		E7BBF3191CCB1BF7008F9A74 /* AlterUserNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlterUserNameCell.h; sourceTree = "<group>"; };
+		E7BBF31A1CCB1BF7008F9A74 /* AlterUserNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlterUserNameCell.m; sourceTree = "<group>"; };
+		E7BBF31C1CCBBAC7008F9A74 /* AlterUserSignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlterUserSignViewController.h; sourceTree = "<group>"; };
+		E7BBF31D1CCBBAC7008F9A74 /* AlterUserSignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlterUserSignViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,6 +398,10 @@
 				E772B1F21CC7BF1D00C2BB5F /* PersonCenterViewController.m */,
 				E74A328A1CC8F99600A5C851 /* PersonInfoViewController.h */,
 				E74A328B1CC8F99600A5C851 /* PersonInfoViewController.m */,
+				E7BBF3161CCB1102008F9A74 /* AlterUserNameViewController.h */,
+				E7BBF3171CCB1102008F9A74 /* AlterUserNameViewController.m */,
+				E7BBF31C1CCBBAC7008F9A74 /* AlterUserSignViewController.h */,
+				E7BBF31D1CCBBAC7008F9A74 /* AlterUserSignViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -407,6 +420,8 @@
 				E772B1F61CC7BF1D00C2BB5F /* PersonCenterHeaderView.m */,
 				E74A32841CC8F08200A5C851 /* MenuItemCell.h */,
 				E74A32851CC8F08200A5C851 /* MenuItemCell.m */,
+				E7BBF3191CCB1BF7008F9A74 /* AlterUserNameCell.h */,
+				E7BBF31A1CCB1BF7008F9A74 /* AlterUserNameCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -657,7 +672,9 @@
 				E772B2021CC7BF1D00C2BB5F /* BaseCollectionViewCell.m in Sources */,
 				E74A32861CC8F08200A5C851 /* MenuItemCell.m in Sources */,
 				E74A32891CC8F5C100A5C851 /* UILabel+LabelHeightAndWidth.m in Sources */,
+				E7BBF3181CCB1102008F9A74 /* AlterUserNameViewController.m in Sources */,
 				E772B2031CC7BF1D00C2BB5F /* BaseModel.m in Sources */,
+				E7BBF31E1CCBBAC7008F9A74 /* AlterUserSignViewController.m in Sources */,
 				E74A328F1CC9075900A5C851 /* FMDBManager.m in Sources */,
 				E772DAA51CC7C9D5005B16CE /* UserModel.m in Sources */,
 				E772B2051CC7BF1D00C2BB5F /* BaseTableViewController.m in Sources */,
@@ -673,6 +690,7 @@
 				E772B2101CC7BF1D00C2BB5F /* PersonCenterHeaderView.m in Sources */,
 				E772B20A1CC7BF1D00C2BB5F /* LoginViewController.m in Sources */,
 				E772B19E1CC7BE7000C2BB5F /* main.m in Sources */,
+				E7BBF31B1CCB1BF7008F9A74 /* AlterUserNameCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

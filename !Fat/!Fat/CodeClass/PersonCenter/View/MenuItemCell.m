@@ -26,19 +26,19 @@
         CGFloat marginRX = 5;
         self.messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(marginLX, 0, kScreenWidth, kCellHeight)];
         self.messageLabel.textAlignment = NSTextAlignmentLeft;
-        [self addSubview: self.messageLabel];
+        [self.contentView addSubview: self.messageLabel];
         
         CGFloat imageWidth = 15;
         CGFloat imageHeight = 15;
         self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kScreenWidth - imageWidth - marginRX, kCellHeight * 0.5 - imageHeight * 0.5, imageWidth, imageHeight)];
         self.rightImageView.image = [UIImage imageNamed:@"right"];
-        [self addSubview:self.rightImageView];
+        [self.contentView addSubview:self.rightImageView];
         
         self.detailMessageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, kCellHeight)];
         self.detailMessageLabel.textAlignment = NSTextAlignmentRight;
         self.detailMessageLabel.textColor = [UIColor lightGrayColor];
         self.detailMessageLabel.font = [UIFont systemFontOfSize:14];
-        [self addSubview:self.detailMessageLabel];
+        [self.contentView addSubview:self.detailMessageLabel];
     }
     return self;
 }

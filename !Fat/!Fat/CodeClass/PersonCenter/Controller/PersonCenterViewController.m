@@ -26,6 +26,9 @@
 
 @implementation PersonCenterViewController
 
+
+#pragma mark -----LazyLoading-----
+
 - (NSMutableArray *)menuArray {
     if (!_menuArray) {
         self.menuArray = [NSMutableArray array];
@@ -66,7 +69,7 @@
     [alertController addAction:logoutAction];
     
     [self presentViewController:alertController animated:YES completion:nil];
-    
+//    UIPickerView
   
 }
 
@@ -80,6 +83,9 @@
     
     [self.view addSubview:self.tableView];
 }
+
+
+#pragma mark -----视图方法-----
 
 // 当视图即将出现
 - (void)viewWillAppear:(BOOL)animated {

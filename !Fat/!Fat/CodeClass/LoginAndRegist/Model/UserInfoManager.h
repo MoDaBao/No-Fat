@@ -79,6 +79,10 @@
 - (NSString *)getUserTrainFrequency;
 - (void)cancelUserTrainFrequency;
 
+//  用户token
+- (void)saveUserToken:(NSString *)token;
+- (NSString *)getUserToken;
+- (void)cancelUserToken;
 
 
 @end

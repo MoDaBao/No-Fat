@@ -225,6 +225,23 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+//  用户token
+- (void)saveUserToken:(NSString *)token {
+    [[NSUserDefaults standardUserDefaults] setObject:token forKey:@"UserToken"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+- (NSString *)getUserToken {
+    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserToken"];
+    if (!token) {
+        return @" ";
+    }
+    return token;
+}
+- (void)cancelUserToken {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"UserToken"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 //  移除所有用户信息
 - (void)removeAllUserInfo {
     [self cancelUserID];
@@ -239,6 +256,7 @@
     [self cancelUserTrainBase];
     [self cancelUserTrainGoal];
     [self cancelUserTrainFrequency];
+    [self cancelUserToken];
 }
 
 //  添加用户信息
@@ -255,6 +273,7 @@
     [self saveUserTrainFrequency:userDic[@"trainFrequency"]];
     [self saveUserWeight:userDic[@"weight"]];
     [self saveUserHeight:userDic[@"height"]];
+    [self saveUserToken:userDic[@"token"]];
 }
 
 @end
