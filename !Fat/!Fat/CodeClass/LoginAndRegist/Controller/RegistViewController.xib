@@ -31,7 +31,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's a new beginning." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnt-JR-rNs">
-                    <rect key="frame" x="88" y="100" width="198" height="41"/>
+                    <rect key="frame" x="88" y="70" width="198" height="41"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="198" id="2Gp-Jp-s6y"/>
                         <constraint firstAttribute="height" constant="41" id="epo-vg-M3K"/>
@@ -41,17 +41,17 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nmT-WC-4b0">
-                    <rect key="frame" x="70" y="171" width="235" height="30"/>
+                    <rect key="frame" x="70" y="141" width="235" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AcY-bi-Xtm">
-                    <rect key="frame" x="70" y="231" width="157" height="30"/>
+                    <rect key="frame" x="70" y="201" width="157" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码(六位以上)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UJD-m7-e6f">
-                    <rect key="frame" x="70" y="291" width="235" height="30"/>
+                    <rect key="frame" x="70" y="261" width="235" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -76,7 +76,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GW8-WT-0Ie">
-                    <rect key="frame" x="129" y="351" width="117.5" height="30"/>
+                    <rect key="frame" x="129" y="321" width="117.5" height="30"/>
                     <state key="normal" title="/        注册        /">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -97,7 +97,7 @@
                 <constraint firstItem="AcY-bi-Xtm" firstAttribute="width" secondItem="nmT-WC-4b0" secondAttribute="width" multiplier="2:3" id="OOU-Bj-hIE"/>
                 <constraint firstItem="5Jk-qz-NdX" firstAttribute="leading" secondItem="AcY-bi-Xtm" secondAttribute="trailing" id="Pu3-Gt-rU1"/>
                 <constraint firstAttribute="trailing" secondItem="NGn-LB-wSD" secondAttribute="trailing" constant="20" id="Q8a-ZZ-RdN"/>
-                <constraint firstItem="qnt-JR-rNs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="RPB-qi-qEi"/>
+                <constraint firstItem="qnt-JR-rNs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="RPB-qi-qEi"/>
                 <constraint firstAttribute="bottom" secondItem="vTc-CI-fgQ" secondAttribute="bottom" constant="10" id="Uwt-VO-Dfj"/>
                 <constraint firstItem="nmT-WC-4b0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="70" id="XIa-fC-pJ8"/>
                 <constraint firstItem="5Jk-qz-NdX" firstAttribute="top" secondItem="nmT-WC-4b0" secondAttribute="bottom" constant="30" id="XJv-98-KiO"/>

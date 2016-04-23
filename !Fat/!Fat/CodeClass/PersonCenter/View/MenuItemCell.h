@@ -11,7 +11,7 @@
 @interface MenuItemCell : BaseTableViewCell
 
 @property (nonatomic, strong) UILabel *messageLabel;
-@property (nonatomic, strong) UILabel *detailMessageLabeel;
+@property (nonatomic, strong) UILabel *detailMessageLabel;
 @property (nonatomic, strong) UIImageView *rightImageView;
 
 @end

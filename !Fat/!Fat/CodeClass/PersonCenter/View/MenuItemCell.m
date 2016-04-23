@@ -34,10 +34,11 @@
         self.rightImageView.image = [UIImage imageNamed:@"right"];
         [self addSubview:self.rightImageView];
         
-        self.detailMessageLabeel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, kCellHeight)];
-        self.detailMessageLabeel.textAlignment = NSTextAlignmentRight;
-        self.detailMessageLabeel.textColor = [UIColor lightGrayColor];
-        [self addSubview:self.detailMessageLabeel];
+        self.detailMessageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, kCellHeight)];
+        self.detailMessageLabel.textAlignment = NSTextAlignmentRight;
+        self.detailMessageLabel.textColor = [UIColor lightGrayColor];
+        self.detailMessageLabel.font = [UIFont systemFontOfSize:14];
+        [self addSubview:self.detailMessageLabel];
     }
     return self;
 }

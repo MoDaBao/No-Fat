@@ -66,14 +66,27 @@
         // 根据返回状态判断是否登录成功
         if (result.intValue) {// 如果成功
             NSDictionary *userDic = responseObject[@"user"];
+            NSLog(@"userDic %@", userDic);
 //            UserModel *user = [[UserModel alloc] init];
 //            [user setValuesForKeysWithDictionary:responseObject[@"user"]];
-            [[UserInfoManager shareInstance] saveUserName:userDic[@"username"]];
-            [[UserInfoManager shareInstance] saveUserAvatar:userDic[@"avatar"]];
-            [[UserInfoManager shareInstance] saveUserID:userDic[@"id"]];
-            [[UserInfoManager shareInstance] saveUserGender:userDic[@"gender"]];
-            [[UserInfoManager shareInstance] saveUserMobile:userDic[@"mobile"]];
             
+            [[UserInfoManager shareInstance] removeAllUserInfo];// 先移除原来存有的用户信息
+            [[UserInfoManager shareInstance] setUserInfoWithDic:userDic];// 添加已登录用户信息
+            
+//            [[UserInfoManager shareInstance] saveUserName:userDic[@"username"]];
+//            [[UserInfoManager shareInstance] saveUserAvatar:userDic[@"avatar"]];
+//            [[UserInfoManager shareInstance] saveUserID:userDic[@"id"]];
+//            [[UserInfoManager shareInstance] saveUserGender:userDic[@"gender"]];
+//            [[UserInfoManager shareInstance] saveUserMobile:userDic[@"mobile"]];
+//            [[UserInfoManager shareInstance] saveUserCreateTime:userDic[@"createTime"]];
+//            [[UserInfoManager shareInstance] saveUserSign:userDic[@"sign"]];
+//            [[UserInfoManager shareInstance] saveUserTrainBase:userDic[@"trainBase"]];
+//            [[UserInfoManager shareInstance] saveUserTrainGoal:userDic[@"trainGoal"]];
+//            [[UserInfoManager shareInstance] saveUserTrainFrequency:userDic[@"trainFrequency"]];
+//            [[UserInfoManager shareInstance] saveUserWeight:userDic[@"weight"]];
+//            [[UserInfoManager shareInstance] saveUserHeight:userDic[@"height"]];
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
             
         } else {// 如果登录失败
             NSLog(@"message = %@",responseObject[@"message"]);

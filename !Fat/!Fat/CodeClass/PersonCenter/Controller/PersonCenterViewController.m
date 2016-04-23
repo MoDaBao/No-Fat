@@ -41,6 +41,33 @@
 //  创建表视图上的头视图
 - (void)createHeaderView {
     _headerView = [[PersonCenterHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight / 2)];
+//    [self.logout addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
+    [_headerView.logout addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
+}
+
+//  退出登录
+- (void)click {
+//    NSLog(@"233333");
+    if ([[[UserInfoManager shareInstance] getUserID] isEqualToString:@" "]) {
+        
+    } 
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"确认退出么?" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//        [alertController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    UIAlertAction *logoutAction = [UIAlertAction actionWithTitle:@"退出登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[UserInfoManager shareInstance] removeAllUserInfo];// 清除用户的所有信息
+        LoginViewController *loginVC = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        UINavigationController *loginNaVC = [[UINavigationController alloc] initWithRootViewController:loginVC];
+        [self presentViewController:loginNaVC animated:YES completion:nil];
+        
+    }];
+    [alertController addAction:cancelAction];
+    [alertController addAction:logoutAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+  
 }
 
 //  创建表视图
@@ -57,37 +84,62 @@
 // 当视图即将出现
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
-    self.headerView.usernameLabel.text = [[UserInfoManager shareInstance] getUserName];
-    CGFloat width = [UILabel getWidthWithTitle:[[UserInfoManager shareInstance] getUserName] font:self.headerView.usernameLabel.font];
-    CGRect newFrame = self.headerView.usernameLabel.frame;
-    newFrame.size.width = width;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+//    self.navigationController.navigationBarHidden = YES;
+    
+    if ([[[UserInfoManager shareInstance] getUserName] isEqualToString:@"游客"] && ![[[UserInfoManager shareInstance] getUserID] isEqualToString:@" "]) {
+//        self.headerView.usernameLabel.text = @"请添加用户名";
+        self.headerView.usernameLabel.text = [NSString stringWithFormat:@"!Fat_%@",[[UserInfoManager shareInstance] getUserID]];
+    } else {
+        self.headerView.usernameLabel.text = [[UserInfoManager shareInstance] getUserName];
+    }
+    
+    if ([[[UserInfoManager shareInstance] getUserGender] isEqualToString:@"1"]) {
+        self.headerView.genderImageView.image = [UIImage imageNamed:@"male"];
+    } else if ([[[UserInfoManager shareInstance] getUserGender] isEqualToString:@"2"]) {
+        self.headerView.genderImageView.image = [UIImage imageNamed:@"female"];
+    } else {
+        self.headerView.genderImageView.image = [UIImage imageNamed:@"unkowngender"];
+    }
+    
+    // 根据usernameLabel的文字宽度改变genderImageView的frame
+    CGFloat width = [UILabel getWidthWithTitle:self.headerView.usernameLabel.text font:self.headerView.usernameLabel.font];
     CGRect newImageFrame = self.headerView.genderImageView.frame;
     newImageFrame.origin.x = kScreenWidth * 0.5 + width * 0.5;
     self.headerView.genderImageView.frame = newImageFrame;
-    
-    
     
 //    self.headerView.userNAGView.usernameLabel.text = [[UserInfoManager shareInstance] getUserName];
 //    CGFloat width = [UILabel getWidthWithTitle:[[UserInfoManager shareInstance] getUserName] font:self.headerView.userNAGView.usernameLabel.font];
 //    CGRect newFrame = self.headerView.userNAGView.frame;
 //    newFrame.size.width = width + 12;
 //    self.headerView.userNAGView.frame = newFrame;
-    NSArray *array = [[[UserInfoManager shareInstance] gettUserAvatar] componentsSeparatedByString:@"/"];
-    [self.headerView.headImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://%@.fit-time.cn/%@@!640", array[0], array[1]]]];
     
-    // 如果登录
-    if (![[[UserInfoManager shareInstance] getUserID] isEqualToString:@" "]) {
+    NSArray *array = [[[UserInfoManager shareInstance] gettUserAvatar] componentsSeparatedByString:@"/"];
+    if (![array[0] isEqualToString:@" "]) {// 如果有头像则加载
+        [self.headerView.headImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://%@.fit-time.cn/%@@!640", array[0], array[1]]]];
+    } else {
+        self.headerView.headImageView.image = [UIImage imageNamed:@"head"];
+    }
+    
+    // 如果登录则显示个人资料并且menuArray数组中
+    if (![[[UserInfoManager shareInstance] getUserID] isEqualToString:@" "] && ![self.menuArray[0] isEqualToString:@"个人资料"]) {
         [self.menuArray insertObject:@"个人资料" atIndex:0];
+        [self.tableView reloadData];
+    } else if ([[[UserInfoManager shareInstance] getUserID] isEqualToString:@" "] && [self.menuArray[0] isEqualToString:@"个人资料"]) {
+        [self.menuArray removeObjectAtIndex:0];
+        [self.tableView reloadData];
     }
 
+    // 获取粉丝数量
+    [self getFansCount];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor lightGrayColor];
-//    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0.0];
     
     
     // 测试
@@ -98,7 +150,7 @@
     
     [self createTableView];// 创建表视图
     
-    [self getFansCount];
+    
 }
 
 //  获取粉丝数量

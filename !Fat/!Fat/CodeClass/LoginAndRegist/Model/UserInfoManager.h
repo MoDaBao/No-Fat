@@ -12,6 +12,11 @@
 
 + (UserInfoManager *)shareInstance;
 
+//  添加用户信息
+- (void)setUserInfoWithDic:(NSDictionary *)dic;
+//  移除所有用户信息
+- (void)removeAllUserInfo;
+
 //  保存用户的id
 - (void)saveUserID:(NSNumber *)userID;
 //  获取用户的id
@@ -19,54 +24,61 @@
 //  取消用户的ID
 - (void)cancelUserID;
 
-//  保存用户avatar
+//  保存用户avatar头像
 - (void)saveUserAvatar:(NSString *)avatar;
-//  获取用户的avatar
 - (NSString *)gettUserAvatar;
-//  取消用户的avatar
 - (void)cancelUserAvatar;
 
 //  保存用户的gender
 - (void)saveUserGender:(NSNumber *)gender;
-//  获取用户的gender
 - (NSString *)getUserGender;
-//  取消用户的gender
 - (void)cancelUserGender;
 
 //  保存用户的mobile
 - (void)saveUserMobile:(NSString *)mobile;
-//  获取用户的mobile
 - (NSString *)getUserMobile;
-//  取消用户mobile
 - (void)canceelUserMobile;
 
 //  保存用户的username
 - (void)saveUserName:(NSString *)name;
-//  获取用户的username
 - (NSString *)getUserName;
-//  取消用户username
 - (void)canceelUserName;
 
 //  保存用户的height
-- (void)saveUserHeight:(NSNumber *)height;
-//  获取用户的height
-- (void)getUserHeight;
-//  取消用户的height
+- (void)saveUserHeight:(NSString *)height;
+- (NSString *)getUserHeight;
 - (void)cancelUserHeight;
 
 //  保存用户的weight
-- (void)saveUserWeight:(NSNumber *)weight;
-//  获取用户的height
-- (void)getUserWeight;
-//  取消用户的height
+- (void)saveUserWeight:(NSString *)weight;
+- (NSString *)getUserWeight;
 - (void)cancelUserWeight;
 
 //  保存用户的sign个人简介
 - (void)saveUserSign:(NSString *)sign;
-//  获取用户的sign个人简介
-- (void)getUserSign;
-//  取消用户的sign个人简介
+- (NSString *)getUserSign;
+- (void)cancelUserSign;
 
-//  
+//  保存用户的createTime
+- (void)saveUserCreateTime:(NSNumber *)createTime;
+- (NSString *)getUserCreateTime;
+- (void)cancelUserCreateTime;
+
+//  保存用户的trainGoal训练目的
+- (void)saveUserTrainGoal:(NSString *)trainGoal;
+- (NSString *)getUserTrainGoal;
+- (void)cancelUserTrainGoal;
+
+//  训练基础
+- (void)saveUserTrainBase:(NSString *)trainBase;
+- (NSString *)getUserTrainBase;
+- (void)cancelUserTrainBase;
+
+//  训练频率
+- (void)saveUserTrainFrequency:(NSString *)trainFrequency;
+- (NSString *)getUserTrainFrequency;
+- (void)cancelUserTrainFrequency;
+
+
 
 @end

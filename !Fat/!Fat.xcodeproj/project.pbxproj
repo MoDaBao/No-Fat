@@ -13,7 +13,6 @@
 		E74A328C1CC8F99600A5C851 /* PersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A328B1CC8F99600A5C851 /* PersonInfoViewController.m */; };
 		E74A328F1CC9075900A5C851 /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A328E1CC9075900A5C851 /* FMDBManager.m */; };
 		E74A329A1CC90BDC00A5C851 /* LoginAndRegistView.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A32991CC90BDC00A5C851 /* LoginAndRegistView.m */; };
-		E74A329D1CC917A500A5C851 /* UserNameAndGenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A329C1CC917A500A5C851 /* UserNameAndGenderView.m */; };
 		E772B19E1CC7BE7000C2BB5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E772B19D1CC7BE7000C2BB5F /* main.m */; };
 		E772B1A11CC7BE7000C2BB5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E772B1A01CC7BE7000C2BB5F /* AppDelegate.m */; };
 		E772B1A31CC7BE7000C2BB5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E772B1A21CC7BE7000C2BB5F /* Assets.xcassets */; };
@@ -71,8 +70,6 @@
 		E74A328E1CC9075900A5C851 /* FMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBManager.m; sourceTree = "<group>"; };
 		E74A32981CC90BDC00A5C851 /* LoginAndRegistView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAndRegistView.h; sourceTree = "<group>"; };
 		E74A32991CC90BDC00A5C851 /* LoginAndRegistView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegistView.m; sourceTree = "<group>"; };
-		E74A329B1CC917A500A5C851 /* UserNameAndGenderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserNameAndGenderView.h; sourceTree = "<group>"; };
-		E74A329C1CC917A500A5C851 /* UserNameAndGenderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserNameAndGenderView.m; sourceTree = "<group>"; };
 		E772B1991CC7BE7000C2BB5F /* !Fat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "!Fat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E772B19D1CC7BE7000C2BB5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E772B19F1CC7BE7000C2BB5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -408,8 +405,6 @@
 			children = (
 				E772B1F51CC7BF1D00C2BB5F /* PersonCenterHeaderView.h */,
 				E772B1F61CC7BF1D00C2BB5F /* PersonCenterHeaderView.m */,
-				E74A329B1CC917A500A5C851 /* UserNameAndGenderView.h */,
-				E74A329C1CC917A500A5C851 /* UserNameAndGenderView.m */,
 				E74A32841CC8F08200A5C851 /* MenuItemCell.h */,
 				E74A32851CC8F08200A5C851 /* MenuItemCell.m */,
 			);
@@ -660,7 +655,6 @@
 				E772B1A11CC7BE7000C2BB5F /* AppDelegate.m in Sources */,
 				E772B20C1CC7BF1D00C2BB5F /* RegistViewController.m in Sources */,
 				E772B2021CC7BF1D00C2BB5F /* BaseCollectionViewCell.m in Sources */,
-				E74A329D1CC917A500A5C851 /* UserNameAndGenderView.m in Sources */,
 				E74A32861CC8F08200A5C851 /* MenuItemCell.m in Sources */,
 				E74A32891CC8F5C100A5C851 /* UILabel+LabelHeightAndWidth.m in Sources */,
 				E772B2031CC7BF1D00C2BB5F /* BaseModel.m in Sources */,
