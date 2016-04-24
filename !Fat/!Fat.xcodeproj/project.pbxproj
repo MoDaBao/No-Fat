@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5C3CC9B04BFC3EC4DD82A3D7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F372205CB983B7FB3FD821A /* libPods.a */; };
+		E7244A2A1CCCAD7900EE72F5 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7244A291CCCAD7900EE72F5 /* LoginView.m */; };
+		E7244A2D1CCCAD9B00EE72F5 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7244A2C1CCCAD9B00EE72F5 /* NewsModel.m */; };
+		E7244A301CCCADB000EE72F5 /* NewsView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7244A2F1CCCADB000EE72F5 /* NewsView.m */; };
+		E7244A331CCCADC900EE72F5 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7244A321CCCADC900EE72F5 /* UserModel.m */; };
+		E7244A361CCCADD500EE72F5 /* TrainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7244A351CCCADD500EE72F5 /* TrainModel.m */; };
+		E7244A391CCCADE400EE72F5 /* TrainView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7244A381CCCADE400EE72F5 /* TrainView.m */; };
+		E7244A3B1CCCAE1C00EE72F5 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = E7244A3A1CCCAE1C00EE72F5 /* cancel.png */; };
 		E772B19E1CC7BE7000C2BB5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E772B19D1CC7BE7000C2BB5F /* main.m */; };
 		E772B1A11CC7BE7000C2BB5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E772B1A01CC7BE7000C2BB5F /* AppDelegate.m */; };
 		E772B1A31CC7BE7000C2BB5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E772B1A21CC7BE7000C2BB5F /* Assets.xcassets */; };
@@ -65,6 +72,19 @@
 		06D75FF1B76F6BD11161A7A6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3F372205CB983B7FB3FD821A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		923F4DA709979618D7E94F7E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E7244A281CCCAD7900EE72F5 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		E7244A291CCCAD7900EE72F5 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		E7244A2B1CCCAD9B00EE72F5 /* NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
+		E7244A2C1CCCAD9B00EE72F5 /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
+		E7244A2E1CCCADB000EE72F5 /* NewsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsView.h; sourceTree = "<group>"; };
+		E7244A2F1CCCADB000EE72F5 /* NewsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsView.m; sourceTree = "<group>"; };
+		E7244A311CCCADC900EE72F5 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		E7244A321CCCADC900EE72F5 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		E7244A341CCCADD500EE72F5 /* TrainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainModel.h; sourceTree = "<group>"; };
+		E7244A351CCCADD500EE72F5 /* TrainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainModel.m; sourceTree = "<group>"; };
+		E7244A371CCCADE400EE72F5 /* TrainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainView.h; sourceTree = "<group>"; };
+		E7244A381CCCADE400EE72F5 /* TrainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainView.m; sourceTree = "<group>"; };
+		E7244A3A1CCCAE1C00EE72F5 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		E772B1991CC7BE7000C2BB5F /* !Fat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "!Fat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E772B19D1CC7BE7000C2BB5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E772B19F1CC7BE7000C2BB5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -350,6 +370,8 @@
 		E7BBF3831CCBCE88008F9A74 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E7244A281CCCAD7900EE72F5 /* LoginView.h */,
+				E7244A291CCCAD7900EE72F5 /* LoginView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -376,6 +398,8 @@
 		E7BBF3881CCBCE88008F9A74 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E7244A2B1CCCAD9B00EE72F5 /* NewsModel.h */,
+				E7244A2C1CCCAD9B00EE72F5 /* NewsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -383,6 +407,8 @@
 		E7BBF3891CCBCE88008F9A74 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E7244A2E1CCCADB000EE72F5 /* NewsView.h */,
+				E7244A2F1CCCADB000EE72F5 /* NewsView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -417,6 +443,8 @@
 		E7BBF3961CCBCE88008F9A74 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E7244A311CCCADC900EE72F5 /* UserModel.h */,
+				E7244A321CCCADC900EE72F5 /* UserModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -458,6 +486,8 @@
 		E7BBF3A41CCBCE88008F9A74 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E7244A341CCCADD500EE72F5 /* TrainModel.h */,
+				E7244A351CCCADD500EE72F5 /* TrainModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -465,6 +495,8 @@
 		E7BBF3A51CCBCE88008F9A74 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E7244A371CCCADE400EE72F5 /* TrainView.h */,
+				E7244A381CCCADE400EE72F5 /* TrainView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -472,6 +504,7 @@
 		E7BBF3A61CCBCE88008F9A74 /* Documents */ = {
 			isa = PBXGroup;
 			children = (
+				E7244A3A1CCCAE1C00EE72F5 /* cancel.png */,
 			);
 			path = Documents;
 			sourceTree = "<group>";
@@ -602,6 +635,7 @@
 				E772B1A31CC7BE7000C2BB5F /* Assets.xcassets in Resources */,
 				E772B1A61CC7BE7000C2BB5F /* LaunchScreen.storyboard in Resources */,
 				E7BBF3BB1CCBCE88008F9A74 /* RegistViewController.xib in Resources */,
+				E7244A3B1CCCAE1C00EE72F5 /* cancel.png in Resources */,
 				E7BBF3B91CCBCE88008F9A74 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,22 +719,28 @@
 				E7BBF3BF1CCBCE88008F9A74 /* AlterUserNameViewController.m in Sources */,
 				E7BBF3B11CCBCE88008F9A74 /* BaseTableViewCell.m in Sources */,
 				E772B1A11CC7BE7000C2BB5F /* AppDelegate.m in Sources */,
+				E7244A2D1CCCAD9B00EE72F5 /* NewsModel.m in Sources */,
 				E7BBF3BC1CCBCE88008F9A74 /* UserInfoManager.m in Sources */,
 				E7BBF3AF1CCBCE88008F9A74 /* BaseCollectionViewCell.m in Sources */,
 				E7BBF3B01CCBCE88008F9A74 /* BaseModel.m in Sources */,
 				E7BBF3B21CCBCE88008F9A74 /* BaseTableViewController.m in Sources */,
 				E7BBF3B41CCBCE88008F9A74 /* FactoryCollectionViewCell.m in Sources */,
 				E7BBF3B51CCBCE88008F9A74 /* FactoryTableViewCell.m in Sources */,
+				E7244A301CCCADB000EE72F5 /* NewsView.m in Sources */,
 				E7BBF3B81CCBCE88008F9A74 /* LoginViewController.m in Sources */,
 				E7BBF3C41CCBCE88008F9A74 /* AlterUserNameCell.m in Sources */,
 				E7BBF3C81CCBCE88008F9A74 /* TrainTableViewController.m in Sources */,
 				E7BBF3C51CCBCE88008F9A74 /* AlterUserSignCell.m in Sources */,
+				E7244A331CCCADC900EE72F5 /* UserModel.m in Sources */,
+				E7244A2A1CCCAD7900EE72F5 /* LoginView.m in Sources */,
 				E7BBF3BE1CCBCE88008F9A74 /* NewsViewController.m in Sources */,
 				E7BBF3BD1CCBCE88008F9A74 /* UserModel.m in Sources */,
 				E7BBF3B31CCBCE88008F9A74 /* BaseViewController.m in Sources */,
 				E7BBF3C91CCBCE88008F9A74 /* FMDBManager.m in Sources */,
+				E7244A361CCCADD500EE72F5 /* TrainModel.m in Sources */,
 				E7BBF3C71CCBCE88008F9A74 /* PersonCenterHeaderView.m in Sources */,
 				E7BBF3CA1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.m in Sources */,
+				E7244A391CCCADE400EE72F5 /* TrainView.m in Sources */,
 				E7BBF3B61CCBCE88008F9A74 /* LoginAndRegistView.m in Sources */,
 				E772B19E1CC7BE7000C2BB5F /* main.m in Sources */,
 			);
