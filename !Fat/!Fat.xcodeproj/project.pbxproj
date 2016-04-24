@@ -35,7 +35,6 @@
 		E7BBF3BA1CCBCE88008F9A74 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF37C1CCBCE88008F9A74 /* RegistViewController.m */; };
 		E7BBF3BB1CCBCE88008F9A74 /* RegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7BBF37D1CCBCE88008F9A74 /* RegistViewController.xib */; };
 		E7BBF3BC1CCBCE88008F9A74 /* UserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3801CCBCE88008F9A74 /* UserInfoManager.m */; };
-		E7BBF3BD1CCBCE88008F9A74 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3821CCBCE88008F9A74 /* UserModel.m */; };
 		E7BBF3BE1CCBCE88008F9A74 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3871CCBCE88008F9A74 /* NewsViewController.m */; };
 		E7BBF3BF1CCBCE88008F9A74 /* AlterUserNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF38D1CCBCE88008F9A74 /* AlterUserNameViewController.m */; };
 		E7BBF3C01CCBCE88008F9A74 /* AlterUserSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF38F1CCBCE88008F9A74 /* AlterUserSignViewController.m */; };
@@ -124,8 +123,6 @@
 		E7BBF37D1CCBCE88008F9A74 /* RegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistViewController.xib; sourceTree = "<group>"; };
 		E7BBF37F1CCBCE88008F9A74 /* UserInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoManager.h; sourceTree = "<group>"; };
 		E7BBF3801CCBCE88008F9A74 /* UserInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoManager.m; sourceTree = "<group>"; };
-		E7BBF3811CCBCE88008F9A74 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
-		E7BBF3821CCBCE88008F9A74 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		E7BBF3861CCBCE88008F9A74 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		E7BBF3871CCBCE88008F9A74 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		E7BBF38C1CCBCE88008F9A74 /* AlterUserNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlterUserNameViewController.h; sourceTree = "<group>"; };
@@ -361,8 +358,6 @@
 			children = (
 				E7BBF37F1CCBCE88008F9A74 /* UserInfoManager.h */,
 				E7BBF3801CCBCE88008F9A74 /* UserInfoManager.m */,
-				E7BBF3811CCBCE88008F9A74 /* UserModel.h */,
-				E7BBF3821CCBCE88008F9A74 /* UserModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -734,7 +729,6 @@
 				E7244A331CCCADC900EE72F5 /* UserModel.m in Sources */,
 				E7244A2A1CCCAD7900EE72F5 /* LoginView.m in Sources */,
 				E7BBF3BE1CCBCE88008F9A74 /* NewsViewController.m in Sources */,
-				E7BBF3BD1CCBCE88008F9A74 /* UserModel.m in Sources */,
 				E7BBF3B31CCBCE88008F9A74 /* BaseViewController.m in Sources */,
 				E7BBF3C91CCBCE88008F9A74 /* FMDBManager.m in Sources */,
 				E7244A361CCCADD500EE72F5 /* TrainModel.m in Sources */,

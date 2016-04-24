@@ -149,9 +149,12 @@
     
     
     // 测试
-    LoginViewController *loginVC = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    UINavigationController *loginNaVC = [[UINavigationController alloc] initWithRootViewController:loginVC];
-    [self presentViewController:loginNaVC animated:YES completion:nil];
+    if ([[[UserInfoManager shareInstance] getUserID] isEqualToString:@" "]) {
+        LoginViewController *loginVC = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        UINavigationController *loginNaVC = [[UINavigationController alloc] initWithRootViewController:loginVC];
+        [self presentViewController:loginNaVC animated:YES completion:nil];
+    }
+    
     
     
     [self createTableView];// 创建表视图

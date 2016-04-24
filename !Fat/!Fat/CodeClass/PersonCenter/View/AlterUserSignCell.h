@@ -8,9 +8,10 @@
 
 #import "BaseTableViewCell.h"
 
-@interface AlterUserSignCell : BaseTableViewCell
+@interface AlterUserSignCell : BaseTableViewCell<UITextViewDelegate>
 
 @property (nonatomic, strong) UITextView *textView;
-
+@property (nonatomic, strong) UILabel *wordCount;
+@property (nonatomic, assign) NSInteger count;
 
 @end
