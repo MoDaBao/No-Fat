@@ -274,7 +274,10 @@
 //  个人简介单元格方法
 - (void)selectUserSignCellWith:(NSIndexPath *)indexPath {
     AlterUserSignViewController *alterSignVC = [[AlterUserSignViewController alloc] init];
-    
+    alterSignVC.passValue = ^(NSString *sign) {
+        self.baseInfoArray[indexPath.row] = @{@"个人简介":sign};
+        [self.tableView reloadData];
+    };
     [self.navigationController pushViewController:alterSignVC animated:YES];
 }
 - (void)didReceiveMemoryWarning {

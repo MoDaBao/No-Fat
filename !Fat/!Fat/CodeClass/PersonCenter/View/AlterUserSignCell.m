@@ -52,6 +52,16 @@
 //    NSLog(@"%ld",count);
 }
 
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    // 把textView的文本内容传回视图控制器
+    self.passValue(self.textView.text);
+    if ([text isEqualToString:@"\n"]) {
+        // 改变个人简介
+        
+    }
+    return YES;
+}
+
 
 
 

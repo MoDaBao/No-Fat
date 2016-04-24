@@ -13,5 +13,6 @@ typedef void(^PassValueBlock)(NSString *);
 @interface AlterUserSignViewController : BaseViewController
 
 @property (nonatomic, copy) NSString *oldSign;
+@property (nonatomic, copy) PassValueBlock passValue;
 
 @end
