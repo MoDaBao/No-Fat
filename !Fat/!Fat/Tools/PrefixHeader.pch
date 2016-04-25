@@ -37,4 +37,6 @@
 
 #import "FMDBManager.h"
 
+#import "NSString+GetToken.h"
+
 #endif /* PrefixHeader_pch */

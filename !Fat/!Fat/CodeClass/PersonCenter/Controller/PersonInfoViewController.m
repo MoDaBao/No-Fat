@@ -10,6 +10,8 @@
 #import "MenuItemCell.h"
 #import "AlterUserNameViewController.h"
 #import "AlterUserSignViewController.h"
+#import "CustomPickerView.h"
+#import "AppDelegate.h"
 
 @interface PersonInfoViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -37,7 +39,7 @@
 //}
 
 - (NSMutableArray *)baseInfoArray {
-    if (!_baseInfoArray) {
+    if (!_baseInfoArray) {// 将用户的信息保存在数组中方便读取展示
         self.baseInfoArray = [NSMutableArray array];
         [_baseInfoArray addObject:@{@"昵称":[[UserInfoManager shareInstance] getUserName]}];
         [_baseInfoArray addObject:@{@"性别":[[UserInfoManager shareInstance] getUserGender]}];
@@ -202,16 +204,26 @@
 //  单击单元格触发的方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (!indexPath.section && !indexPath.row) {// 昵称
-        [self selectUserNameCellWith:indexPath];
+        [self selectUserNameCellWithindexPath:indexPath];
     } else if (!indexPath.section && indexPath.row == 1) {// 性别
-        [self selectUserGenderCellWith:indexPath];
+        [self selectUserGenderCellWithindexPath:indexPath];
     } else if (!indexPath.section && indexPath.row == 2) {// 个人简介
-        [self selectUserSignCellWith:indexPath];
+        [self selectUserSignCellWithindexPath:indexPath];
+    } else if (indexPath.section == 1 && indexPath.row == 0) {// 身高
+        [self selectUserHeightCellWithindexPath:indexPath];
+    } else if (indexPath.section == 1 && indexPath.row == 1) {// 体重
+        [self selectUserWeightCellWithindexPath:indexPath];
+    } else if (indexPath.section == 1 && indexPath.row == 3) {// 训练目的
+        [self selectUserTrainGoalWithindexPath:indexPath];
+    } else if (indexPath.section == 1 && indexPath.row == 4) {// 训练基础
+        [self selectUserTrainBaseWithindexPath:indexPath];
+    } else if (indexPath.section == 1 && indexPath.row == 5) {// 训练频率
+        [self selectUserTrainFrequencyWithindexPath:indexPath];
     }
 }
 
 //  昵称单元格方法
-- (void)selectUserNameCellWith:(NSIndexPath *)indexPath {
+- (void)selectUserNameCellWithindexPath:(NSIndexPath *)indexPath {
     AlterUserNameViewController *alterVC = [[AlterUserNameViewController alloc] init];
     alterVC.oldUserName = self.baseInfoArray[indexPath.row][@"昵称"];
     alterVC.passValue = ^(NSString *username) {
@@ -222,7 +234,7 @@
 }
 
 //  性别单元格方法
-- (void)selectUserGenderCellWith:(NSIndexPath *)indexPath {
+- (void)selectUserGenderCellWithindexPath:(NSIndexPath *)indexPath {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *male = [UIAlertAction actionWithTitle:@"男" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
 //        self.baseInfoArray[1] = @{@"性别":@"1"};
@@ -249,9 +261,10 @@
 
 //  修改性别
 - (void)alterUserGender:(NSNumber *)gender {
-    NSString * token = [[[UserInfoManager shareInstance] getUserToken] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet letterCharacterSet]];
-    //    NSString *token = [[UserInfoManager shareInstance] getUserToken];
-    NSString *urlString = [ALTERUSERINFOURL stringByAppendingString:[NSString stringWithFormat:@"?token=%@",token]];
+//    NSString * token = [[[UserInfoManager shareInstance] getUserToken] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet letterCharacterSet]];
+//    //    NSString *token = [[UserInfoManager shareInstance] getUserToken];
+//    NSString *urlString = [ALTERUSERINFOURL stringByAppendingString:[NSString stringWithFormat:@"?token=%@",token]];
+    NSString *urlString = [NSString GetURLEncodeWithUserToken];
     AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
     [session POST:urlString parameters:@{@"gender":[gender stringValue]} progress:^(NSProgress * _Nonnull uploadProgress) {
         
@@ -272,14 +285,202 @@
 }
 
 //  个人简介单元格方法
-- (void)selectUserSignCellWith:(NSIndexPath *)indexPath {
+- (void)selectUserSignCellWithindexPath:(NSIndexPath *)indexPath {
     AlterUserSignViewController *alterSignVC = [[AlterUserSignViewController alloc] init];
+    alterSignVC.oldSign = self.baseInfoArray[indexPath.row][@"个人简介"];
     alterSignVC.passValue = ^(NSString *sign) {
         self.baseInfoArray[indexPath.row] = @{@"个人简介":sign};
         [self.tableView reloadData];
     };
     [self.navigationController pushViewController:alterSignVC animated:YES];
 }
+
+//  身高单元格方法
+- (void)selectUserHeightCellWithindexPath:(NSIndexPath *)indexPath {
+    NSMutableArray *array = [NSMutableArray array];
+    for (int i = 110; i <= 230; i ++) {
+        [array addObject:[NSString stringWithFormat:@"%d",i]];
+    }
+    CustomPickerView *pickerView = [CustomPickerView cretaCustomPickerViewWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) title:@"选择身高(cm)" dataArray:array];
+    pickerView.click = ^(NSString *height) {
+        // 修改身高
+        [self alterUserHeight:height];
+    };
+//    [self.view addSubview:pickerView];
+//    [self.view bringSubviewToFront:pickerView];
+    
+    AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appdelegate.window addSubview:pickerView];
+    
+    
+}
+
+//  修改身高
+- (void)alterUserHeight:(NSString *)height {
+    NSString *urlString = [NSString GetURLEncodeWithUserToken];
+    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    [session POST:urlString parameters:@{@"height":height} progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSNumber *result = responseObject[@"status"];
+        if (result.intValue) {
+            [[UserInfoManager shareInstance] saveUserHeight:height];
+            self.healthInfoArray[0] = @{@"身高":height};
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"message = %@",responseObject[@"message"]);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error is %@",error);
+    }];
+}
+
+//  体重单元格方法
+- (void)selectUserWeightCellWithindexPath:(NSIndexPath *)indexPath {
+    NSMutableArray *array = [NSMutableArray array];
+    for (int i = 35; i <= 150; i ++) {
+        [array addObject:[NSString stringWithFormat:@"%d",i]];
+    }
+    CustomPickerView *pickerView = [CustomPickerView cretaCustomPickerViewWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) title:@"选择体重(kg)" dataArray:array];
+    pickerView.click = ^(NSString *weight) {
+        // 修改体重
+        [self alterUserWeight:weight];
+    };
+    //    [self.view addSubview:pickerView];
+    //    [self.view bringSubviewToFront:pickerView];
+    
+    AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appdelegate.window addSubview:pickerView];
+}
+
+//  修改体重
+- (void)alterUserWeight:(NSString *)weight {
+    NSString *urlString = [NSString GetURLEncodeWithUserToken];
+    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    [session POST:urlString parameters:@{@"weight":weight} progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSNumber *result = responseObject[@"status"];
+        if (result.intValue) {
+            [[UserInfoManager shareInstance] saveUserWeight:weight];
+            self.healthInfoArray[1] = @{@"体重":weight};
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"message = %@",responseObject[@"message"]);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error is %@",error);
+    }];
+}
+
+//  训练目的单元格
+- (void)selectUserTrainGoalWithindexPath:(NSIndexPath *)indexPath {
+    NSMutableArray *array = [NSMutableArray array];
+    [array addObject:@"减脂"];
+    [array addObject:@"增肌"];
+    [array addObject:@"塑形"];
+    CustomPickerView *pickerView = [CustomPickerView cretaCustomPickerViewWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) title:@"训练目的" dataArray:array];
+    pickerView.click = ^(NSString *goal) {
+        // 修改训练目的
+        [self alterUserTrainGoal:goal];
+    };
+    
+    AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appdelegate.window addSubview:pickerView];
+}
+//  修改训练目的
+- (void)alterUserTrainGoal:(NSString *)goal {
+    NSString *urlString = [NSString GetURLEncodeWithUserToken];
+    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    [session POST:urlString parameters:@{@"train_goal":goal} progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSNumber *result = responseObject[@"status"];
+        if (result.intValue) {
+            [[UserInfoManager shareInstance] saveUserTrainGoal:goal];
+            self.healthInfoArray[3] = @{@"训练目的":goal};
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"message = %@",responseObject[@"message"]);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error is %@",error);
+    }];
+}
+
+//  训练基础单元格
+- (void)selectUserTrainBaseWithindexPath:(NSIndexPath *)indexPath {
+    NSMutableArray *array = [NSMutableArray array];
+    [array addObject:@"小白，从未训练"];
+    [array addObject:@"初学者"];
+    [array addObject:@"进级者"];
+    [array addObject:@"运动达人"];
+    CustomPickerView *pickerView = [CustomPickerView cretaCustomPickerViewWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) title:@"训练基础" dataArray:array];
+    pickerView.click = ^(NSString *base) {
+        // 修改训练基础
+        [self alterUserTrainBase:base];
+    };
+    
+    AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appdelegate.window addSubview:pickerView];
+}
+//  修改训练基础
+- (void)alterUserTrainBase:(NSString *)base {
+    NSString *urlString = [NSString GetURLEncodeWithUserToken];
+    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    [session POST:urlString parameters:@{@"train_base":base} progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSNumber *result = responseObject[@"status"];
+        if (result.intValue) {
+            [[UserInfoManager shareInstance] saveUserTrainBase:base];
+            self.healthInfoArray[4] = @{@"训练基础":base};
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"message = %@",responseObject[@"message"]);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error is %@",error);
+    }];
+}
+
+//  训练频率单元格
+- (void)selectUserTrainFrequencyWithindexPath:(NSIndexPath *)indexPath {
+    NSMutableArray *array = [NSMutableArray array];
+    [array addObject:@"很少锻炼"];
+    [array addObject:@"每周1-2次"];
+    [array addObject:@"每周3-4次"];
+    [array addObject:@"每周5-7次"];
+    [array addObject:@"非常活跃和高强度"];
+    CustomPickerView *pickerView = [CustomPickerView cretaCustomPickerViewWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) title:@"训练频率" dataArray:array];
+    pickerView.click = ^(NSString *frequency) {
+        // 修改训练基础
+        [self alterUserTrainFrequency:frequency];
+    };
+    
+    AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appdelegate.window addSubview:pickerView];
+}
+//  修改训练频率
+- (void)alterUserTrainFrequency:(NSString *)frequency {
+    NSString *urlString = [NSString GetURLEncodeWithUserToken];
+    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    [session POST:urlString parameters:@{@"train_frequency":frequency} progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSNumber *result = responseObject[@"status"];
+        if (result.intValue) {
+            [[UserInfoManager shareInstance] saveUserTrainFrequency:frequency];
+            self.healthInfoArray[5] = @{@"训练频率":frequency};
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"message = %@",responseObject[@"message"]);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error is %@",error);
+    }];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

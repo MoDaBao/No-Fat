@@ -48,6 +48,8 @@
 		E7BBF3C81CCBCE88008F9A74 /* TrainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3A31CCBCE88008F9A74 /* TrainTableViewController.m */; };
 		E7BBF3C91CCBCE88008F9A74 /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3AA1CCBCE88008F9A74 /* FMDBManager.m */; };
 		E7BBF3CA1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3AD1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.m */; };
+		E7F13AEA1CCDF86F00B0312D /* CustomPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F13AE91CCDF86F00B0312D /* CustomPickerView.m */; };
+		E7F13AED1CCDFB7400B0312D /* NSString+GetToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F13AEC1CCDFB7400B0312D /* NSString+GetToken.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +154,10 @@
 		E7BBF3AC1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHeightAndWidth.h"; sourceTree = "<group>"; };
 		E7BBF3AD1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+LabelHeightAndWidth.m"; sourceTree = "<group>"; };
 		E7BBF3AE1CCBCE88008F9A74 /* URLHeaderDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLHeaderDefine.h; sourceTree = "<group>"; };
+		E7F13AE81CCDF86F00B0312D /* CustomPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPickerView.h; sourceTree = "<group>"; };
+		E7F13AE91CCDF86F00B0312D /* CustomPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPickerView.m; sourceTree = "<group>"; };
+		E7F13AEB1CCDFB7400B0312D /* NSString+GetToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GetToken.h"; sourceTree = "<group>"; };
+		E7F13AEC1CCDFB7400B0312D /* NSString+GetToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GetToken.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -421,16 +427,16 @@
 		E7BBF38B1CCBCE88008F9A74 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E7BBF3921CCBCE88008F9A74 /* PersonCenterViewController.h */,
+				E7BBF3931CCBCE88008F9A74 /* PersonCenterViewController.m */,
+				E7BBF3941CCBCE88008F9A74 /* PersonInfoViewController.h */,
+				E7BBF3951CCBCE88008F9A74 /* PersonInfoViewController.m */,
 				E7BBF38C1CCBCE88008F9A74 /* AlterUserNameViewController.h */,
 				E7BBF38D1CCBCE88008F9A74 /* AlterUserNameViewController.m */,
 				E7BBF38E1CCBCE88008F9A74 /* AlterUserSignViewController.h */,
 				E7BBF38F1CCBCE88008F9A74 /* AlterUserSignViewController.m */,
 				E7BBF3901CCBCE88008F9A74 /* MyNewsViewController.h */,
 				E7BBF3911CCBCE88008F9A74 /* MyNewsViewController.m */,
-				E7BBF3921CCBCE88008F9A74 /* PersonCenterViewController.h */,
-				E7BBF3931CCBCE88008F9A74 /* PersonCenterViewController.m */,
-				E7BBF3941CCBCE88008F9A74 /* PersonInfoViewController.h */,
-				E7BBF3951CCBCE88008F9A74 /* PersonInfoViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -455,6 +461,8 @@
 				E7BBF39D1CCBCE88008F9A74 /* MenuItemCell.m */,
 				E7BBF39E1CCBCE88008F9A74 /* PersonCenterHeaderView.h */,
 				E7BBF39F1CCBCE88008F9A74 /* PersonCenterHeaderView.m */,
+				E7F13AE81CCDF86F00B0312D /* CustomPickerView.h */,
+				E7F13AE91CCDF86F00B0312D /* CustomPickerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -513,6 +521,8 @@
 				E7BBF3AB1CCBCE88008F9A74 /* PrefixHeader.pch */,
 				E7BBF3AC1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.h */,
 				E7BBF3AD1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.m */,
+				E7F13AEB1CCDFB7400B0312D /* NSString+GetToken.h */,
+				E7F13AEC1CCDFB7400B0312D /* NSString+GetToken.m */,
 				E7BBF3AE1CCBCE88008F9A74 /* URLHeaderDefine.h */,
 			);
 			path = Tools;
@@ -715,6 +725,7 @@
 				E7BBF3B11CCBCE88008F9A74 /* BaseTableViewCell.m in Sources */,
 				E772B1A11CC7BE7000C2BB5F /* AppDelegate.m in Sources */,
 				E7244A2D1CCCAD9B00EE72F5 /* NewsModel.m in Sources */,
+				E7F13AEA1CCDF86F00B0312D /* CustomPickerView.m in Sources */,
 				E7BBF3BC1CCBCE88008F9A74 /* UserInfoManager.m in Sources */,
 				E7BBF3AF1CCBCE88008F9A74 /* BaseCollectionViewCell.m in Sources */,
 				E7BBF3B01CCBCE88008F9A74 /* BaseModel.m in Sources */,
@@ -731,6 +742,7 @@
 				E7BBF3BE1CCBCE88008F9A74 /* NewsViewController.m in Sources */,
 				E7BBF3B31CCBCE88008F9A74 /* BaseViewController.m in Sources */,
 				E7BBF3C91CCBCE88008F9A74 /* FMDBManager.m in Sources */,
+				E7F13AED1CCDFB7400B0312D /* NSString+GetToken.m in Sources */,
 				E7244A361CCCADD500EE72F5 /* TrainModel.m in Sources */,
 				E7BBF3C71CCBCE88008F9A74 /* PersonCenterHeaderView.m in Sources */,
 				E7BBF3CA1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.m in Sources */,

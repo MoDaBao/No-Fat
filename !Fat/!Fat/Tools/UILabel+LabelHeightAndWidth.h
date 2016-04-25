@@ -16,5 +16,7 @@
 //  根据高度获取宽度
 + (CGFloat)getWidthWithTitle:(NSString *)title font:(UIFont *)font;
 
+//  获取文字个数
++ (NSInteger)getWordCountWithTitle:(NSString *)title font:(UIFont *)font;
 
 @end

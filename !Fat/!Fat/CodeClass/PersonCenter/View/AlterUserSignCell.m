@@ -39,28 +39,45 @@
         self.textView.returnKeyType = UIReturnKeyDone;
         [self.contentView addSubview:self.textView];
         
+//        self.textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 300, 20)];
+//        self.textField.backgroundColor = [UIColor redColor];
+//        self.textField.delegate = self;
+//        [self addSubview:self.textField];
+        
         
     }
     return self;
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
-    NSInteger singleWidth = [UILabel getWidthWithTitle:@"卧" font:textView.font];
-    NSInteger textWidht = [UILabel getWidthWithTitle:textView.text font:textView.font];
-    NSInteger count = textWidht / singleWidth;
+//    NSInteger singleWidth = [UILabel getWidthWithTitle:@"卧" font:textView.font];
+//    NSInteger textWidht = [UILabel getWidthWithTitle:textView.text font:textView.font];
+//    __block NSInteger count = textWidht / singleWidth;
+    __block NSInteger count = [UILabel getWordCountWithTitle:textView.text font:textView.font];
     self.wordCount.text = [NSString stringWithFormat:@"%ld",_count - count];
+    // 把textView的文本内容传回视图控制器
+    self.passValue(self.textView.text, count);
+    
+    
 //    NSLog(@"%ld",count);
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
-    // 把textView的文本内容传回视图控制器
-    self.passValue(self.textView.text);
+    
+//    self.passValue(self.textView.text);
     if ([text isEqualToString:@"\n"]) {
-        // 改变个人简介
+        // 回收键盘
+        [self.textView resignFirstResponder];
         
     }
     return YES;
 }
+
+//- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+////    self.passValue(self.textField.text);
+//    return YES;
+//}
+
 
 
 

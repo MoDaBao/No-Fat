@@ -57,10 +57,11 @@
 }
 //  确定按钮方法
 - (void)confirm {
-    NSLog(@"233333");
-    NSString * token = [[[UserInfoManager shareInstance] getUserToken] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet letterCharacterSet]];
-    //    NSString *token = [[UserInfoManager shareInstance] getUserToken];
-    NSString *urlString = [ALTERUSERINFOURL stringByAppendingString:[NSString stringWithFormat:@"?token=%@",token]];
+//    NSLog(@"233333");
+//    NSString * token = [[[UserInfoManager shareInstance] getUserToken] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet letterCharacterSet]];
+//    //    NSString *token = [[UserInfoManager shareInstance] getUserToken];
+//    NSString *urlString = [ALTERUSERINFOURL stringByAppendingString:[NSString stringWithFormat:@"?token=%@",token]];
+    NSString *urlString = [NSString GetURLEncodeWithUserToken];
     AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
     [session POST:urlString parameters:@{@"sign":self.sign} progress:^(NSProgress * _Nonnull uploadProgress) {
         
@@ -69,6 +70,7 @@
         if (result.intValue) {
             [[UserInfoManager shareInstance] saveUserSign:self.sign];
             self.passValue(self.sign);
+            [self.navigationController popViewControllerAnimated:YES];
         } else {
             NSLog(@"message = %@",responseObject[@"message"]);
         }
@@ -109,13 +111,20 @@
     AlterUserSignCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     if (!cell) {
         cell = [[AlterUserSignCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
-        cell.passValue = ^(NSString *sign) {
+        cell.passValue = ^(NSString *sign, NSInteger count) {
 //            [self confirm:sign];
             self.sign = sign;
-            
+            if (count) {
+                [self.confirmBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            } else {
+                [self.confirmBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+            }
 //            self.passValue(sign);
         };
+        
     }
+    cell.textView.text = self.oldSign;
+    cell.wordCount.text = [NSString stringWithFormat:@"%ld",cell.count - [UILabel getWordCountWithTitle:self.oldSign font:cell.textView.font]];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }

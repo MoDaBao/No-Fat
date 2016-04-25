@@ -7,12 +7,13 @@
 //
 
 #import "BaseTableViewCell.h"
-typedef void(^PassValueBlock)(NSString *);
-@interface AlterUserSignCell : BaseTableViewCell<UITextViewDelegate>
+typedef void(^PassValue)(NSString *, NSInteger);
+@interface AlterUserSignCell : BaseTableViewCell<UITextViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, strong) UILabel *wordCount;
 @property (nonatomic, assign) NSInteger count;
-@property (nonatomic, copy) PassValueBlock passValue;
+//@property (nonatomic, strong) UITextField *textField;
+@property (nonatomic, copy) PassValue passValue;
 
 @end

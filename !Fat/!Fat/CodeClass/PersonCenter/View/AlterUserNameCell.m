@@ -35,9 +35,10 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 //    NSLog(@"23333");
-    NSString * token = [[[UserInfoManager shareInstance] getUserToken] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet letterCharacterSet]];
-//    NSString *token = [[UserInfoManager shareInstance] getUserToken];
-    NSString *urlString = [ALTERUSERINFOURL stringByAppendingString:[NSString stringWithFormat:@"?token=%@",token]];
+//    NSString * token = [[[UserInfoManager shareInstance] getUserToken] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet letterCharacterSet]];
+////    NSString *token = [[UserInfoManager shareInstance] getUserToken];
+//    NSString *urlString = [ALTERUSERINFOURL stringByAppendingString:[NSString stringWithFormat:@"?token=%@",token]];
+    NSString *urlString = [NSString GetURLEncodeWithUserToken];
     AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
     [session POST:urlString parameters:@{@"username":self.textField.text} progress:^(NSProgress * _Nonnull uploadProgress) {
         

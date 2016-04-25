@@ -11,6 +11,7 @@
 #import "PersonCenterHeaderView.h"
 #import "PersonInfoViewController.h"
 #import "MenuItemCell.h"
+#import "MyNewsViewController.h"
 
 #define UserViewBGColor [UIColor colorWithRed:58 / 255.0 green:60 / 255.0 blue:71 / 255.0 alpha:1.0]
 
@@ -221,7 +222,8 @@
         PersonInfoViewController *personInfoVC = [[PersonInfoViewController alloc] init];
         [self.navigationController pushViewController:personInfoVC animated:YES];
     } else if ([self.menuArray[indexPath.row] isEqualToString:@"我的动态"]) {
-        
+        MyNewsViewController *newsVC = [[MyNewsViewController alloc] init];
+        [self.navigationController pushViewController:newsVC animated:YES];
     } else if ([self.menuArray[indexPath.row] isEqualToString:@"我的计时器"]) {
         
     } else if ([self.menuArray[indexPath.row] isEqualToString:@"邀请朋友"]) {

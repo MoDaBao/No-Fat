@@ -29,4 +29,15 @@
     return label.frame.size.width;
 }
 
+//  获取文字个数
++ (NSInteger)getWordCountWithTitle:(NSString *)title font:(UIFont *)font {
+    NSInteger singleWidth = [UILabel getWidthWithTitle:@"卧" font:font];
+    NSInteger textWidht = [UILabel getWidthWithTitle:title font:font];
+    NSInteger count = textWidht / singleWidth;
+//    self.wordCount.text = [NSString stringWithFormat:@"%ld",_count - count];
+//    // 把textView的文本内容传回视图控制器
+//    self.passValue(self.textView.text, count);
+    return count;
+}
+
 @end
