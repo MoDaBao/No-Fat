@@ -210,7 +210,6 @@
     }
     
     
-    
     // 使detailMessageLabel自适应宽度
     CGFloat width = [UILabel getWidthWithTitle:cell.detailMessageLabel.text font:cell.detailMessageLabel.font];
     width = width > (2 / 3.0 * kScreenWidth) ? (2 / 3.0 * kScreenWidth) : width;

@@ -28,7 +28,6 @@
 		E7BBF3B31CCBCE88008F9A74 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3681CCBCE88008F9A74 /* BaseViewController.m */; };
 		E7BBF3B41CCBCE88008F9A74 /* FactoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF36A1CCBCE88008F9A74 /* FactoryCollectionViewCell.m */; };
 		E7BBF3B51CCBCE88008F9A74 /* FactoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF36C1CCBCE88008F9A74 /* FactoryTableViewCell.m */; };
-		E7BBF3B61CCBCE88008F9A74 /* LoginAndRegistView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF36E1CCBCE88008F9A74 /* LoginAndRegistView.m */; };
 		E7BBF3B71CCBCE88008F9A74 /* SelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3731CCBCE88008F9A74 /* SelectionViewController.m */; };
 		E7BBF3B81CCBCE88008F9A74 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3791CCBCE88008F9A74 /* LoginViewController.m */; };
 		E7BBF3B91CCBCE88008F9A74 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7BBF37A1CCBCE88008F9A74 /* LoginViewController.xib */; };
@@ -115,8 +114,6 @@
 		E7BBF36A1CCBCE88008F9A74 /* FactoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FactoryCollectionViewCell.m; sourceTree = "<group>"; };
 		E7BBF36B1CCBCE88008F9A74 /* FactoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FactoryTableViewCell.h; sourceTree = "<group>"; };
 		E7BBF36C1CCBCE88008F9A74 /* FactoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FactoryTableViewCell.m; sourceTree = "<group>"; };
-		E7BBF36D1CCBCE88008F9A74 /* LoginAndRegistView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAndRegistView.h; sourceTree = "<group>"; };
-		E7BBF36E1CCBCE88008F9A74 /* LoginAndRegistView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegistView.m; sourceTree = "<group>"; };
 		E7BBF3721CCBCE88008F9A74 /* SelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionViewController.h; sourceTree = "<group>"; };
 		E7BBF3731CCBCE88008F9A74 /* SelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionViewController.m; sourceTree = "<group>"; };
 		E7BBF3781CCBCE88008F9A74 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -291,8 +288,6 @@
 				E7BBF36A1CCBCE88008F9A74 /* FactoryCollectionViewCell.m */,
 				E7BBF36B1CCBCE88008F9A74 /* FactoryTableViewCell.h */,
 				E7BBF36C1CCBCE88008F9A74 /* FactoryTableViewCell.m */,
-				E7BBF36D1CCBCE88008F9A74 /* LoginAndRegistView.h */,
-				E7BBF36E1CCBCE88008F9A74 /* LoginAndRegistView.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -759,7 +754,6 @@
 				E7BBF3CA1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.m in Sources */,
 				E7244A391CCCADE400EE72F5 /* TrainView.m in Sources */,
 				E7F13AFB1CCE509E00B0312D /* MyNewsModel.m in Sources */,
-				E7BBF3B61CCBCE88008F9A74 /* LoginAndRegistView.m in Sources */,
 				E772B19E1CC7BE7000C2BB5F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
