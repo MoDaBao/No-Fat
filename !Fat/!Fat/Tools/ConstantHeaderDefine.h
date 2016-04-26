@@ -24,6 +24,11 @@
  */
 #define kNavigationBarHeight 64
 
+/**
+ *  标签栏高度
+ */
+#define kTabBarHeight 49
+
 
 #define kPink [UIColor colorWithRed:253 / 255.0 green:116 / 255.0 blue:121 / 255.0 alpha:1.0]
 #define kGray [UIColor colorWithRed:181 / 255.0 green:181 / 255.0 blue:181 / 255.0 alpha:1.0]

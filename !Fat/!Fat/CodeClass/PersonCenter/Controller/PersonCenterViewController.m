@@ -136,9 +136,35 @@
         [self.menuArray removeObjectAtIndex:0];
         [self.tableView reloadData];
     }
+    
+    UIButton *loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    loginBtn.frame = CGRectMake(0, 0, 20, 20);
+    [loginBtn setBackgroundImage:[UIImage imageNamed:@"login"] forState:UIControlStateNormal];
+    [loginBtn addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *loginItem = [[UIBarButtonItem alloc] initWithCustomView:loginBtn];
+    self.navigationItem.leftBarButtonItem = loginItem;
+    
+    // 如果未登录显示登录按钮,不显示退出按钮
+    if ([[[UserInfoManager shareInstance] getUserID] isEqualToString:@" "]) {
+        loginBtn.hidden = NO;
+        self.headerView.logout.hidden = YES;
+    } else {
+        loginBtn.hidden = YES;
+        self.headerView.logout.hidden = NO;
+    }
+    
+    
 
     // 获取粉丝数量
     [self getFansCount];
+}
+
+//  弹出登录页面
+- (void)login {
+    LoginViewController *loginVC = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    UINavigationController *loginNaVC = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    [self presentViewController:loginNaVC animated:YES completion:nil];
 }
 
 - (void)viewDidLoad {
@@ -149,7 +175,7 @@
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0.0];
     
     
-    // 测试
+    // 测试 登录
     if ([[[UserInfoManager shareInstance] getUserID] isEqualToString:@" "]) {
         LoginViewController *loginVC = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
         UINavigationController *loginNaVC = [[UINavigationController alloc] initWithRootViewController:loginVC];
@@ -222,12 +248,31 @@
         PersonInfoViewController *personInfoVC = [[PersonInfoViewController alloc] init];
         [self.navigationController pushViewController:personInfoVC animated:YES];
     } else if ([self.menuArray[indexPath.row] isEqualToString:@"我的动态"]) {
-        MyNewsViewController *newsVC = [[MyNewsViewController alloc] init];
-        [self.navigationController pushViewController:newsVC animated:YES];
+        if (![[[UserInfoManager shareInstance] getUserID] isEqualToString:@" "]) {
+            MyNewsViewController *newsVC = [[MyNewsViewController alloc] init];
+            [self.navigationController pushViewController:newsVC animated:YES];
+        } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"请先登录" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [alert dismissViewControllerAnimated:YES completion:nil];
+            }];
+            [alert addAction:action];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+        
     } else if ([self.menuArray[indexPath.row] isEqualToString:@"我的计时器"]) {
         
     } else if ([self.menuArray[indexPath.row] isEqualToString:@"邀请朋友"]) {
-        
+        if (![[[UserInfoManager shareInstance] getUserID] isEqualToString:@" "]) {
+            
+        } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"请先登录" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [alert dismissViewControllerAnimated:YES completion:nil];
+            }];
+            [alert addAction:action];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
     }
 }
 

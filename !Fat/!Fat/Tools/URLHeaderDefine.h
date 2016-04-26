@@ -17,6 +17,7 @@
 //#define ALTERUSERSIGNURL @"http://api.fit-time.cn/ftuser/update"// 修改个人简介POST 同下
 #define ALTERUSERINFOURL @"http://api.fit-time.cn/ftuser/update"// 修改用户信息POST,此URL需要token作为参数传入并且需要对token参数进行encode
 
+#define GETUSERNEWSURL @"http://api.fit-time.cn/ftsns/refreshUserFeed?page_size=20"// 获取个人动态GET
 
 
 #endif /* URLHeaderDefine_h */

@@ -50,6 +50,8 @@
 		E7BBF3CA1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3AD1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.m */; };
 		E7F13AEA1CCDF86F00B0312D /* CustomPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F13AE91CCDF86F00B0312D /* CustomPickerView.m */; };
 		E7F13AED1CCDFB7400B0312D /* NSString+GetToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F13AEC1CCDFB7400B0312D /* NSString+GetToken.m */; };
+		E7F13AF01CCE1F5E00B0312D /* MyNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F13AEF1CCE1F5E00B0312D /* MyNewsCell.m */; };
+		E7F13AFB1CCE509E00B0312D /* MyNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F13AFA1CCE509E00B0312D /* MyNewsModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +160,10 @@
 		E7F13AE91CCDF86F00B0312D /* CustomPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPickerView.m; sourceTree = "<group>"; };
 		E7F13AEB1CCDFB7400B0312D /* NSString+GetToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GetToken.h"; sourceTree = "<group>"; };
 		E7F13AEC1CCDFB7400B0312D /* NSString+GetToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GetToken.m"; sourceTree = "<group>"; };
+		E7F13AEE1CCE1F5E00B0312D /* MyNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNewsCell.h; sourceTree = "<group>"; };
+		E7F13AEF1CCE1F5E00B0312D /* MyNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNewsCell.m; sourceTree = "<group>"; };
+		E7F13AF91CCE509E00B0312D /* MyNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNewsModel.h; sourceTree = "<group>"; };
+		E7F13AFA1CCE509E00B0312D /* MyNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNewsModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -446,6 +452,8 @@
 			children = (
 				E7244A311CCCADC900EE72F5 /* UserModel.h */,
 				E7244A321CCCADC900EE72F5 /* UserModel.m */,
+				E7F13AF91CCE509E00B0312D /* MyNewsModel.h */,
+				E7F13AFA1CCE509E00B0312D /* MyNewsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -463,6 +471,8 @@
 				E7BBF39F1CCBCE88008F9A74 /* PersonCenterHeaderView.m */,
 				E7F13AE81CCDF86F00B0312D /* CustomPickerView.h */,
 				E7F13AE91CCDF86F00B0312D /* CustomPickerView.m */,
+				E7F13AEE1CCE1F5E00B0312D /* MyNewsCell.h */,
+				E7F13AEF1CCE1F5E00B0312D /* MyNewsCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -736,6 +746,7 @@
 				E7BBF3B81CCBCE88008F9A74 /* LoginViewController.m in Sources */,
 				E7BBF3C41CCBCE88008F9A74 /* AlterUserNameCell.m in Sources */,
 				E7BBF3C81CCBCE88008F9A74 /* TrainTableViewController.m in Sources */,
+				E7F13AF01CCE1F5E00B0312D /* MyNewsCell.m in Sources */,
 				E7BBF3C51CCBCE88008F9A74 /* AlterUserSignCell.m in Sources */,
 				E7244A331CCCADC900EE72F5 /* UserModel.m in Sources */,
 				E7244A2A1CCCAD7900EE72F5 /* LoginView.m in Sources */,
@@ -747,6 +758,7 @@
 				E7BBF3C71CCBCE88008F9A74 /* PersonCenterHeaderView.m in Sources */,
 				E7BBF3CA1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.m in Sources */,
 				E7244A391CCCADE400EE72F5 /* TrainView.m in Sources */,
+				E7F13AFB1CCE509E00B0312D /* MyNewsModel.m in Sources */,
 				E7BBF3B61CCBCE88008F9A74 /* LoginAndRegistView.m in Sources */,
 				E772B19E1CC7BE7000C2BB5F /* main.m in Sources */,
 			);

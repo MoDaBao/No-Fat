@@ -57,7 +57,7 @@
         self.headImageView.layer.cornerRadius = kHeadImageWidth * 0.5;
         self.headImageView.layer.masksToBounds = YES;// 切割、显示为圆形
         // 截取图片使图片保持原始比例并填充
-        self.headImageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+//        self.headImageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         self.headImageView.clipsToBounds = YES;
         self.headImageView.contentMode = UIViewContentModeScaleAspectFill;
         [userView addSubview:self.headImageView];
@@ -72,7 +72,7 @@
         [userView addSubview:self.usernameLabel];
         
         // 创建性别视图
-        self.genderImageView = [[UIImageView alloc] initWithFrame:CGRectMake(usernameX + UserNameWidth, headY + kHeadImageHeight + 10, 20, 20)];
+        self.genderImageView = [[UIImageView alloc] initWithFrame:CGRectMake(usernameX + UserNameWidth, headY + kHeadImageHeight + 10, 17, 17)];
         [userView addSubview:self.genderImageView];
         
         
@@ -121,7 +121,7 @@
         
         CGFloat logoutWidth = 40;
         CGFloat logoutHeight = logoutWidth;
-        CGFloat logoutX = kScreenWidth - 15 - logoutWidth;
+        CGFloat logoutX = kScreenWidth - 30 - logoutWidth;
         CGFloat logoutY = userView.frame.size.height - logoutHeight * 0.5;
 //        self.logout = [[UIButton alloc] initWithFrame:CGRectMake(logoutX, logoutY, logoutWidth, logoutHeight)];
         self.logout = [UIButton buttonWithType:UIButtonTypeCustom];

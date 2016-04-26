@@ -41,10 +41,15 @@
 - (NSMutableArray *)baseInfoArray {
     if (!_baseInfoArray) {// 将用户的信息保存在数组中方便读取展示
         self.baseInfoArray = [NSMutableArray array];
-        [_baseInfoArray addObject:@{@"昵称":[[UserInfoManager shareInstance] getUserName]}];
+        if ([[[UserInfoManager shareInstance] getUserName] isEqualToString:@"游客"]) {
+            [_baseInfoArray addObject:@{@"昵称":[NSString stringWithFormat:@"!Fat_%@",[[UserInfoManager shareInstance] getUserID]]}];
+        } else {
+            [_baseInfoArray addObject:@{@"昵称":[[UserInfoManager shareInstance] getUserName]}];
+        }
+        
         [_baseInfoArray addObject:@{@"性别":[[UserInfoManager shareInstance] getUserGender]}];
         [_baseInfoArray addObject:@{@"个人简介":[[UserInfoManager shareInstance] getUserSign]}];
-//        [_baseInfoArray addObject:@{@"注册时间":[[UserInfoManager shareInstance] getUserCreateTime]}];
+        [_baseInfoArray addObject:@{@"注册时间":[[UserInfoManager shareInstance] getUserCreateTime]}];
         [_baseInfoArray addObject:@{@"用户ID":[[UserInfoManager shareInstance] getUserID]}];
     }
     return _baseInfoArray;
@@ -65,15 +70,34 @@
 //    return _healthInfoDic;
 //}
 
+//  判断能否计算BMI值
+- (void)alterBMI {
+    if ([[[UserInfoManager shareInstance] getUserHeight] isEqualToString:@" "] || [[[UserInfoManager shareInstance] getUserWeight] isEqualToString:@" "]) {
+        [_healthInfoArray addObject:@{@"BMI(正常:18.5-24.99)":@" "}];
+    } else {
+        CGFloat height = [[[UserInfoManager shareInstance] getUserHeight] floatValue] * 0.01;
+        CGFloat weight = [[[UserInfoManager shareInstance] getUserWeight] floatValue];
+        CGFloat BMI = weight / height / height;
+        [_healthInfoArray addObject:@{@"BMI(正常:18.5-24.99)":[NSString stringWithFormat:@"%.2lf",BMI]}];
+    }
+}
+
 - (NSMutableArray *)healthInfoArray {
     if (!_healthInfoArray) {// 将用户的信息保存在数组中方便读取展示
         self.healthInfoArray = [NSMutableArray array];
         [_healthInfoArray addObject:@{@"身高":[[UserInfoManager shareInstance] getUserHeight]}];
         [_healthInfoArray addObject:@{@"体重":[[UserInfoManager shareInstance] getUserWeight]}];
-        CGFloat height = [[[UserInfoManager shareInstance] getUserHeight] floatValue] * 0.01;
-        CGFloat weight = [[[UserInfoManager shareInstance] getUserWeight] floatValue];
-        CGFloat BMI = weight / height / height;
-        [_healthInfoArray addObject:@{@"BMI(正常:18.5-24.99)":[NSString stringWithFormat:@"%.2lf",BMI]}];
+        
+//        if ([[[UserInfoManager shareInstance] getUserHeight] isEqualToString:@" "] || [[[UserInfoManager shareInstance] getUserWeight] isEqualToString:@" "]) {
+//            [_healthInfoArray addObject:@{@"BMI(正常:18.5-24.99)":@" "}];
+//        } else {
+//            CGFloat height = [[[UserInfoManager shareInstance] getUserHeight] floatValue] * 0.01;
+//            CGFloat weight = [[[UserInfoManager shareInstance] getUserWeight] floatValue];
+//            CGFloat BMI = weight / height / height;
+//            [_healthInfoArray addObject:@{@"BMI(正常:18.5-24.99)":[NSString stringWithFormat:@"%.2lf",BMI]}];
+//        }
+        [self alterBMI];
+        
         [_healthInfoArray addObject:@{@"训练目的":[[UserInfoManager shareInstance] getUserTrainGoal]}];
         [_healthInfoArray addObject:@{@"训练基础":[[UserInfoManager shareInstance] getUserTrainBase]}];
         [_healthInfoArray addObject:@{@"训练频率":[[UserInfoManager shareInstance] getUserTrainFrequency]}];
@@ -92,9 +116,10 @@
 
 //  创建表视图
 - (void)createTableView {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavigationBarHeight, kScreenWidth, kScreenHeight - kNavigationBarHeight) style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavigationBarHeight, kScreenWidth, kScreenHeight - kNavigationBarHeight - kTabBarHeight) style:UITableViewStyleGrouped];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:self.tableView];
     
 }
@@ -169,21 +194,21 @@
         } else {
             cell.detailMessageLabel.text = @"女";
         }
+    } else if ([cell.messageLabel.text isEqualToString:@"注册时间"]) {
+        double time = [[dic.allValues firstObject] doubleValue] / 1000;
+        //        CGFloat year = time /
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:time];
+        //将一个日期对象转化为字符串对象
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        //设置日期与字符串互转的格式
+        [formatter setDateFormat:@"yyyy-MM-dd"];
+        //将日期转化为字符串
+        NSString *dateStr = [formatter stringFromDate:date];
+        cell.detailMessageLabel.text = dateStr;
     } else {
         cell.detailMessageLabel.text = [dic.allValues firstObject];
     }
-//    else if ([cell.messageLabel.text isEqualToString:@"注册时间"]) {
-//        double time = [[dic.allValues firstObject] doubleValue] / 24.0;
-////        CGFloat year = time /
-//        NSDate *date = [NSDate dateWithTimeIntervalSince1970:time];
-//        //将一个日期对象转化为字符串对象
-//        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//        //设置日期与字符串互转的格式
-//        [formatter setDateFormat:@"yyyy-MM-dd"];
-//        //将日期转化为字符串
-//        NSString *dateStr = [formatter stringFromDate:date];
-//        cell.detailMessageLabel.text = dateStr;
-//    }
+    
     
     
     // 使detailMessageLabel自适应宽度
@@ -326,6 +351,7 @@
         if (result.intValue) {
             [[UserInfoManager shareInstance] saveUserHeight:height];
             self.healthInfoArray[0] = @{@"身高":height};
+                // 判断要不要修改BMI值
             [self.tableView reloadData];
         } else {
             NSLog(@"message = %@",responseObject[@"message"]);
