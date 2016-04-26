@@ -11,7 +11,6 @@
 		E7244A2A1CCCAD7900EE72F5 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7244A291CCCAD7900EE72F5 /* LoginView.m */; };
 		E7244A2D1CCCAD9B00EE72F5 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7244A2C1CCCAD9B00EE72F5 /* NewsModel.m */; };
 		E7244A301CCCADB000EE72F5 /* NewsView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7244A2F1CCCADB000EE72F5 /* NewsView.m */; };
-		E7244A331CCCADC900EE72F5 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7244A321CCCADC900EE72F5 /* UserModel.m */; };
 		E7244A361CCCADD500EE72F5 /* TrainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7244A351CCCADD500EE72F5 /* TrainModel.m */; };
 		E7244A391CCCADE400EE72F5 /* TrainView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7244A381CCCADE400EE72F5 /* TrainView.m */; };
 		E7244A3B1CCCAE1C00EE72F5 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = E7244A3A1CCCAE1C00EE72F5 /* cancel.png */; };
@@ -80,8 +79,6 @@
 		E7244A2C1CCCAD9B00EE72F5 /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
 		E7244A2E1CCCADB000EE72F5 /* NewsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsView.h; sourceTree = "<group>"; };
 		E7244A2F1CCCADB000EE72F5 /* NewsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsView.m; sourceTree = "<group>"; };
-		E7244A311CCCADC900EE72F5 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
-		E7244A321CCCADC900EE72F5 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		E7244A341CCCADD500EE72F5 /* TrainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainModel.h; sourceTree = "<group>"; };
 		E7244A351CCCADD500EE72F5 /* TrainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainModel.m; sourceTree = "<group>"; };
 		E7244A371CCCADE400EE72F5 /* TrainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainView.h; sourceTree = "<group>"; };
@@ -445,8 +442,6 @@
 		E7BBF3961CCBCE88008F9A74 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E7244A311CCCADC900EE72F5 /* UserModel.h */,
-				E7244A321CCCADC900EE72F5 /* UserModel.m */,
 				E7F13AF91CCE509E00B0312D /* MyNewsModel.h */,
 				E7F13AFA1CCE509E00B0312D /* MyNewsModel.m */,
 			);
@@ -743,7 +738,6 @@
 				E7BBF3C81CCBCE88008F9A74 /* TrainTableViewController.m in Sources */,
 				E7F13AF01CCE1F5E00B0312D /* MyNewsCell.m in Sources */,
 				E7BBF3C51CCBCE88008F9A74 /* AlterUserSignCell.m in Sources */,
-				E7244A331CCCADC900EE72F5 /* UserModel.m in Sources */,
 				E7244A2A1CCCAD7900EE72F5 /* LoginView.m in Sources */,
 				E7BBF3BE1CCBCE88008F9A74 /* NewsViewController.m in Sources */,
 				E7BBF3B31CCBCE88008F9A74 /* BaseViewController.m in Sources */,

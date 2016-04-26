@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "RegistViewController.h"
-#import "UserModel.h"
+//#import "UserModel.h"
 #import "UserInfoManager.h"
 //如果要使用MD5算法进行加密，需要引入此框架
 #import <CommonCrypto/CommonCrypto.h>
