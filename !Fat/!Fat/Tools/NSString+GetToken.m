@@ -16,4 +16,8 @@
     return urlString;
 }
 
++ (NSString *)GetEncodeWithToken {
+    return [[[UserInfoManager shareInstance] getUserToken] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet letterCharacterSet]];
+}
+
 @end

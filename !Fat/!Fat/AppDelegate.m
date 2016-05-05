@@ -27,7 +27,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     TrainTableViewController *trainTableVC = [[TrainTableViewController alloc] init];
-    UITabBarItem *trainItem = [[UITabBarItem alloc] initWithTitle:@"训练" image:[[UIImage imageNamed:@"trainGary"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"trainBlack"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    UITabBarItem *trainItem = [[UITabBarItem alloc] initWithTitle:@"训练" image:[[UIImage imageNamed:@"trainGray"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"trainBlack"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     trainTableVC.tabBarItem = trainItem;
     UINavigationController *trainNaVC = [[UINavigationController alloc] initWithRootViewController:trainTableVC];
     
@@ -37,12 +37,12 @@
     //    UINavigationController *selectionNaVC = [[UINavigationController alloc] initWithRootViewController:seletionVC];
     
     NewsViewController *newsVC = [[NewsViewController alloc] init];
-    UITabBarItem *newsItem = [[UITabBarItem alloc] initWithTitle:@"动态" image:[[UIImage imageNamed:@"newsGary"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"newsBlack"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    UITabBarItem *newsItem = [[UITabBarItem alloc] initWithTitle:@"动态" image:[[UIImage imageNamed:@"newsGray"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"newsBlack"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     newsVC.tabBarItem = newsItem;
     UINavigationController *newsNaVC = [[UINavigationController alloc] initWithRootViewController:newsVC];
     
     PersonCenterViewController *personVC = [[PersonCenterViewController alloc] init];
-    UITabBarItem *personItem = [[UITabBarItem alloc] initWithTitle:@"我" image:[[UIImage imageNamed:@"personCenterGary"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"personCenterBlack"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    UITabBarItem *personItem = [[UITabBarItem alloc] initWithTitle:@"我" image:[[UIImage imageNamed:@"personCenterGray"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"personCenterBlack"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     personVC.tabBarItem = personItem;
     UINavigationController *personNaVC = [[UINavigationController alloc] initWithRootViewController:personVC];
     

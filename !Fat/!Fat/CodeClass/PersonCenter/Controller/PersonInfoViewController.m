@@ -227,6 +227,7 @@
 }
 //  单击单元格触发的方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (!indexPath.section && !indexPath.row) {// 昵称
         [self selectUserNameCellWithindexPath:indexPath];
     } else if (!indexPath.section && indexPath.row == 1) {// 性别

@@ -12,4 +12,6 @@
 
 + (NSString *)GetURLEncodeWithUserToken;
 
++ (NSString *)GetEncodeWithToken;
+
 @end
