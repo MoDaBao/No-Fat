@@ -9,5 +9,8 @@
 #import "BaseCollectionViewCell.h"
 
 @implementation BaseCollectionViewCell
-
+- (void)setDataWithModel:(BaseModel *)model {
+    
+    
+}
 @end

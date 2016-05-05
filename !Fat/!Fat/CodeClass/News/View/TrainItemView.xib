@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TrainItemView">
+            <rect key="frame" x="0.0" y="0.0" width="383" height="303"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="跑步、瑜伽、拳击，任何运动可打卡..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7c-U4-6SY">
+                    <rect key="frame" x="82" y="247" width="220" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="训练打卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpT-f4-aLF">
+                    <rect key="frame" x="157" y="216" width="68" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97z-dt-6Ya">
+                    <rect key="frame" x="156" y="126" width="70" height="70"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29X-Ve-KyL">
+                            <rect key="frame" x="10" y="10" width="50" height="50"/>
+                            <state key="normal" backgroundImage="train.png"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.92941176470588238" green="0.73333333333333328" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="29X-Ve-KyL" secondAttribute="trailing" constant="10" id="0kA-MP-juC"/>
+                        <constraint firstAttribute="height" constant="70" id="6jN-fG-nXC"/>
+                        <constraint firstAttribute="bottom" secondItem="29X-Ve-KyL" secondAttribute="bottom" constant="10" id="8MF-SY-DaI"/>
+                        <constraint firstAttribute="width" constant="70" id="lPY-dR-EjJ"/>
+                        <constraint firstItem="29X-Ve-KyL" firstAttribute="top" secondItem="97z-dt-6Ya" secondAttribute="top" constant="10" id="tBS-iD-dD9"/>
+                        <constraint firstItem="29X-Ve-KyL" firstAttribute="leading" secondItem="97z-dt-6Ya" secondAttribute="leading" constant="10" id="ueP-uY-8ki"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="IpT-f4-aLF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3Zc-XI-gAN"/>
+                <constraint firstItem="IpT-f4-aLF" firstAttribute="top" secondItem="97z-dt-6Ya" secondAttribute="bottom" constant="20" id="Ia5-UJ-pHQ"/>
+                <constraint firstItem="c7c-U4-6SY" firstAttribute="top" secondItem="IpT-f4-aLF" secondAttribute="bottom" constant="10" id="VLw-3x-1vz"/>
+                <constraint firstItem="97z-dt-6Ya" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cY7-18-ezo"/>
+                <constraint firstAttribute="bottom" secondItem="c7c-U4-6SY" secondAttribute="bottom" constant="40" id="oLj-En-fj5"/>
+                <constraint firstItem="c7c-U4-6SY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qVe-8f-rb2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="btnBGView" destination="97z-dt-6Ya" id="8hy-kK-MrA"/>
+                <outlet property="trainBtn" destination="29X-Ve-KyL" id="qWE-TW-LXM"/>
+            </connections>
+            <point key="canvasLocation" x="340.5" y="91.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="train.png" width="200" height="200"/>
+    </resources>
+</document>

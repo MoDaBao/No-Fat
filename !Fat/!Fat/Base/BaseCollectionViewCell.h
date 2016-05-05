@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseCollectionViewCell : UICollectionViewCell
-
+- (void)setDataWithModel:(BaseModel *)model;
 @end

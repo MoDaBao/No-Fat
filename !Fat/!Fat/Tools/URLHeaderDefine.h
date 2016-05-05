@@ -21,4 +21,14 @@
 #define DELETEMYNEWSURL @"http://api.fit-time.cn/ftsns/delFeed"// 删除个人动态POST
 
 
+
+#define TUIJIANLIST_URL @"http://api.fit-time.cn/ftsns/refreshUserFeed?&elite=1"//推荐 get
+#define TUIJIANLISTMORE_URL @"http://api.fit-time.cn/ftsns/loadMoreUserFeed?lon=121.288373&page_size=20&ver=2.5.2.1&lat=31.128097&client=android&last_id=3448178&adcode=310117&device_id=868698026359747&elite=1"//推荐下拉更多
+#define USERMESSAGE_URL @"http://api.fit-time.cn/ftuser/loadUserProfile?";//用户信息 参数 user_id
+#define GUANZHULIST_URL @"http://api.fit-time.cn/ftsns/refreshFollowFeed" //关注 get
+#define ZUIXINLIST_URL @"http://api.fit-time.cn/ftsns/refreshUserFeed?" //最新页面
+#define ZUIXINLISTMORE_URL @"http://api.fit-time.cn/ftsns/loadMoreUserFeed?lon=121.288366&lat=31.128092&page_size=20&ver=2.5.2.1&client=android&adcode=310117&last_id=3548487&device_id=868698026359747"//最新刷新
+#define TIAJIAGUANZHU @"http://api.fit-time.cn/ftuser/loadRecommendUsers?"//添加关注数据
+
+
 #endif /* URLHeaderDefine_h */

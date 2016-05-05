@@ -38,6 +38,10 @@
 #define DATABASENAME @"NoFat.sqlite"// 数据库名
 #define TIMERLISTITEMTABLE @"timeritemtable"// 表名
 
+#define RECOMMENDLISTTABLE @"praisetable"//点赞表名
+
+#define ScreenWidth  [UIScreen mainScreen].bounds.size.width //屏幕宽
+#define ScreenHeight  [UIScreen mainScreen].bounds.size.height //屏幕高
 
 
 

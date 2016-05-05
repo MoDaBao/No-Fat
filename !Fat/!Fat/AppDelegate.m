@@ -10,7 +10,7 @@
 #import "SelectionViewController.h"
 #import "TrainTableViewController.h"
 #import "PersonCenterViewController.h"
-#import "NewsViewController.h"
+#import "NewViewController.h"
 #import "LoginViewController.h"
 
 
@@ -36,7 +36,7 @@
     //    seletionVC.tabBarItem = selectionItem;
     //    UINavigationController *selectionNaVC = [[UINavigationController alloc] initWithRootViewController:seletionVC];
     
-    NewsViewController *newsVC = [[NewsViewController alloc] init];
+    NewViewController *newsVC = [[NewViewController alloc] init];
     UITabBarItem *newsItem = [[UITabBarItem alloc] initWithTitle:@"动态" image:[[UIImage imageNamed:@"newsGray"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"newsBlack"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     newsVC.tabBarItem = newsItem;
     UINavigationController *newsNaVC = [[UINavigationController alloc] initWithRootViewController:newsVC];
