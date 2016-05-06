@@ -12,6 +12,7 @@
 #import "PersonInfoViewController.h"
 #import "MenuItemCell.h"
 #import "MyNewsViewController.h"
+#import "TimerViewController.h"
 
 #define UserViewBGColor [UIColor colorWithRed:58 / 255.0 green:60 / 255.0 blue:71 / 255.0 alpha:1.0]
 
@@ -261,7 +262,8 @@
         }
         
     } else if ([self.menuArray[indexPath.row] isEqualToString:@"我的计时器"]) {
-        
+        TimerViewController *timerVC = [[TimerViewController alloc] init];
+        [self.navigationController pushViewController:timerVC animated:YES];
     } else if ([self.menuArray[indexPath.row] isEqualToString:@"邀请朋友"]) {
         if (![[[UserInfoManager shareInstance] getUserID] isEqualToString:@" "]) {
             

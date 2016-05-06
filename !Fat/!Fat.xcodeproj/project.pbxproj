@@ -105,6 +105,31 @@
 		E772B1A61CC7BE7000C2BB5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E772B1A41CC7BE7000C2BB5F /* LaunchScreen.storyboard */; };
 		E772B1B11CC7BE7000C2BB5F /* _FatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E772B1B01CC7BE7000C2BB5F /* _FatTests.m */; };
 		E772B1BC1CC7BE7000C2BB5F /* _FatUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E772B1BB1CC7BE7000C2BB5F /* _FatUITests.m */; };
+		E782A2151CDCE1B100E2F537 /* ChangeColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A20F1CDCE1B100E2F537 /* ChangeColorManager.m */; };
+		E782A2161CDCE1B100E2F537 /* MOCustomDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A2111CDCE1B100E2F537 /* MOCustomDatePickerView.m */; };
+		E782A2171CDCE1B100E2F537 /* UIView+ChangeFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A2131CDCE1B100E2F537 /* UIView+ChangeFrame.m */; };
+		E782A22E1CDCE36700E2F537 /* ColorItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A21B1CDCE36700E2F537 /* ColorItemCell.m */; };
+		E782A22F1CDCE36700E2F537 /* ColorItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E782A21C1CDCE36700E2F537 /* ColorItemCell.xib */; };
+		E782A2301CDCE36700E2F537 /* ManagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A21E1CDCE36700E2F537 /* ManagerView.m */; };
+		E782A2311CDCE36700E2F537 /* ManagerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E782A21F1CDCE36700E2F537 /* ManagerView.xib */; };
+		E782A2331CDCE36700E2F537 /* StartView.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A2231CDCE36700E2F537 /* StartView.m */; };
+		E782A2341CDCE36700E2F537 /* StartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E782A2241CDCE36700E2F537 /* StartView.xib */; };
+		E782A2351CDCE36700E2F537 /* TimerDetailItemOtherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A2261CDCE36700E2F537 /* TimerDetailItemOtherCell.m */; };
+		E782A2361CDCE36700E2F537 /* TimerDetailItemOtherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E782A2271CDCE36700E2F537 /* TimerDetailItemOtherCell.xib */; };
+		E782A2371CDCE36700E2F537 /* TimerDetailItemStepCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A2291CDCE36700E2F537 /* TimerDetailItemStepCell.m */; };
+		E782A2381CDCE36700E2F537 /* TimerDetailItemStepCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E782A22A1CDCE36700E2F537 /* TimerDetailItemStepCell.xib */; };
+		E782A2391CDCE36700E2F537 /* TimerListItemModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A22C1CDCE36700E2F537 /* TimerListItemModelCell.m */; };
+		E782A23A1CDCE36700E2F537 /* TimerListItemModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E782A22D1CDCE36700E2F537 /* TimerListItemModelCell.xib */; };
+		E782A2441CDCE37600E2F537 /* TimerDetailItemDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A23D1CDCE37600E2F537 /* TimerDetailItemDB.m */; };
+		E782A2451CDCE37600E2F537 /* TimerDetailItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A23F1CDCE37600E2F537 /* TimerDetailItemModel.m */; };
+		E782A2461CDCE37600E2F537 /* TimerListItemDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A2411CDCE37600E2F537 /* TimerListItemDB.m */; };
+		E782A2471CDCE37600E2F537 /* TimerListItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A2431CDCE37600E2F537 /* TimerListItemModel.m */; };
+		E782A2551CDCE38200E2F537 /* AlterTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A24A1CDCE38200E2F537 /* AlterTitleViewController.m */; };
+		E782A2561CDCE38200E2F537 /* SelectColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A24C1CDCE38200E2F537 /* SelectColorViewController.m */; };
+		E782A2571CDCE38200E2F537 /* StepDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A24E1CDCE38200E2F537 /* StepDetailViewController.m */; };
+		E782A2581CDCE38200E2F537 /* StepNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A2501CDCE38200E2F537 /* StepNameViewController.m */; };
+		E782A2591CDCE38200E2F537 /* TimerItemManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A2521CDCE38200E2F537 /* TimerItemManagerViewController.m */; };
+		E782A25A1CDCE38200E2F537 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A2541CDCE38200E2F537 /* TimerViewController.m */; };
 		E7BBF3AF1CCBCE88008F9A74 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3601CCBCE88008F9A74 /* BaseCollectionViewCell.m */; };
 		E7BBF3B01CCBCE88008F9A74 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3621CCBCE88008F9A74 /* BaseModel.m */; };
 		E7BBF3B11CCBCE88008F9A74 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3641CCBCE88008F9A74 /* BaseTableViewCell.m */; };
@@ -327,6 +352,51 @@
 		E772B1B71CC7BE7000C2BB5F /* !FatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "!FatUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E772B1BB1CC7BE7000C2BB5F /* _FatUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _FatUITests.m; sourceTree = "<group>"; };
 		E772B1BD1CC7BE7000C2BB5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E782A20E1CDCE1B100E2F537 /* ChangeColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeColorManager.h; sourceTree = "<group>"; };
+		E782A20F1CDCE1B100E2F537 /* ChangeColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeColorManager.m; sourceTree = "<group>"; };
+		E782A2101CDCE1B100E2F537 /* MOCustomDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOCustomDatePickerView.h; sourceTree = "<group>"; };
+		E782A2111CDCE1B100E2F537 /* MOCustomDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOCustomDatePickerView.m; sourceTree = "<group>"; };
+		E782A2121CDCE1B100E2F537 /* UIView+ChangeFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ChangeFrame.h"; sourceTree = "<group>"; };
+		E782A2131CDCE1B100E2F537 /* UIView+ChangeFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ChangeFrame.m"; sourceTree = "<group>"; };
+		E782A2181CDCE1E000E2F537 /* ConstantHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantHeader.h; sourceTree = "<group>"; };
+		E782A21A1CDCE36700E2F537 /* ColorItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorItemCell.h; sourceTree = "<group>"; };
+		E782A21B1CDCE36700E2F537 /* ColorItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorItemCell.m; sourceTree = "<group>"; };
+		E782A21C1CDCE36700E2F537 /* ColorItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorItemCell.xib; sourceTree = "<group>"; };
+		E782A21D1CDCE36700E2F537 /* ManagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerView.h; sourceTree = "<group>"; };
+		E782A21E1CDCE36700E2F537 /* ManagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerView.m; sourceTree = "<group>"; };
+		E782A21F1CDCE36700E2F537 /* ManagerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManagerView.xib; sourceTree = "<group>"; };
+		E782A2221CDCE36700E2F537 /* StartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartView.h; sourceTree = "<group>"; };
+		E782A2231CDCE36700E2F537 /* StartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartView.m; sourceTree = "<group>"; };
+		E782A2241CDCE36700E2F537 /* StartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartView.xib; sourceTree = "<group>"; };
+		E782A2251CDCE36700E2F537 /* TimerDetailItemOtherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerDetailItemOtherCell.h; sourceTree = "<group>"; };
+		E782A2261CDCE36700E2F537 /* TimerDetailItemOtherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerDetailItemOtherCell.m; sourceTree = "<group>"; };
+		E782A2271CDCE36700E2F537 /* TimerDetailItemOtherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimerDetailItemOtherCell.xib; sourceTree = "<group>"; };
+		E782A2281CDCE36700E2F537 /* TimerDetailItemStepCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerDetailItemStepCell.h; sourceTree = "<group>"; };
+		E782A2291CDCE36700E2F537 /* TimerDetailItemStepCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerDetailItemStepCell.m; sourceTree = "<group>"; };
+		E782A22A1CDCE36700E2F537 /* TimerDetailItemStepCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimerDetailItemStepCell.xib; sourceTree = "<group>"; };
+		E782A22B1CDCE36700E2F537 /* TimerListItemModelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerListItemModelCell.h; sourceTree = "<group>"; };
+		E782A22C1CDCE36700E2F537 /* TimerListItemModelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerListItemModelCell.m; sourceTree = "<group>"; };
+		E782A22D1CDCE36700E2F537 /* TimerListItemModelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimerListItemModelCell.xib; sourceTree = "<group>"; };
+		E782A23C1CDCE37600E2F537 /* TimerDetailItemDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerDetailItemDB.h; sourceTree = "<group>"; };
+		E782A23D1CDCE37600E2F537 /* TimerDetailItemDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerDetailItemDB.m; sourceTree = "<group>"; };
+		E782A23E1CDCE37600E2F537 /* TimerDetailItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerDetailItemModel.h; sourceTree = "<group>"; };
+		E782A23F1CDCE37600E2F537 /* TimerDetailItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerDetailItemModel.m; sourceTree = "<group>"; };
+		E782A2401CDCE37600E2F537 /* TimerListItemDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerListItemDB.h; sourceTree = "<group>"; };
+		E782A2411CDCE37600E2F537 /* TimerListItemDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerListItemDB.m; sourceTree = "<group>"; };
+		E782A2421CDCE37600E2F537 /* TimerListItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerListItemModel.h; sourceTree = "<group>"; };
+		E782A2431CDCE37600E2F537 /* TimerListItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerListItemModel.m; sourceTree = "<group>"; };
+		E782A2491CDCE38200E2F537 /* AlterTitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlterTitleViewController.h; sourceTree = "<group>"; };
+		E782A24A1CDCE38200E2F537 /* AlterTitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlterTitleViewController.m; sourceTree = "<group>"; };
+		E782A24B1CDCE38200E2F537 /* SelectColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectColorViewController.h; sourceTree = "<group>"; };
+		E782A24C1CDCE38200E2F537 /* SelectColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectColorViewController.m; sourceTree = "<group>"; };
+		E782A24D1CDCE38200E2F537 /* StepDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepDetailViewController.h; sourceTree = "<group>"; };
+		E782A24E1CDCE38200E2F537 /* StepDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepDetailViewController.m; sourceTree = "<group>"; };
+		E782A24F1CDCE38200E2F537 /* StepNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepNameViewController.h; sourceTree = "<group>"; };
+		E782A2501CDCE38200E2F537 /* StepNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepNameViewController.m; sourceTree = "<group>"; };
+		E782A2511CDCE38200E2F537 /* TimerItemManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerItemManagerViewController.h; sourceTree = "<group>"; };
+		E782A2521CDCE38200E2F537 /* TimerItemManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerItemManagerViewController.m; sourceTree = "<group>"; };
+		E782A2531CDCE38200E2F537 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
+		E782A2541CDCE38200E2F537 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		E7BBF35F1CCBCE88008F9A74 /* BaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewCell.h; sourceTree = "<group>"; };
 		E7BBF3601CCBCE88008F9A74 /* BaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewCell.m; sourceTree = "<group>"; };
 		E7BBF3611CCBCE88008F9A74 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
@@ -496,6 +566,65 @@
 				E772B1BD1CC7BE7000C2BB5F /* Info.plist */,
 			);
 			path = "!FatUITests";
+			sourceTree = "<group>";
+		};
+		E782A2191CDCE36700E2F537 /* TimerView */ = {
+			isa = PBXGroup;
+			children = (
+				E782A21A1CDCE36700E2F537 /* ColorItemCell.h */,
+				E782A21B1CDCE36700E2F537 /* ColorItemCell.m */,
+				E782A21C1CDCE36700E2F537 /* ColorItemCell.xib */,
+				E782A21D1CDCE36700E2F537 /* ManagerView.h */,
+				E782A21E1CDCE36700E2F537 /* ManagerView.m */,
+				E782A21F1CDCE36700E2F537 /* ManagerView.xib */,
+				E782A2221CDCE36700E2F537 /* StartView.h */,
+				E782A2231CDCE36700E2F537 /* StartView.m */,
+				E782A2241CDCE36700E2F537 /* StartView.xib */,
+				E782A2251CDCE36700E2F537 /* TimerDetailItemOtherCell.h */,
+				E782A2261CDCE36700E2F537 /* TimerDetailItemOtherCell.m */,
+				E782A2271CDCE36700E2F537 /* TimerDetailItemOtherCell.xib */,
+				E782A2281CDCE36700E2F537 /* TimerDetailItemStepCell.h */,
+				E782A2291CDCE36700E2F537 /* TimerDetailItemStepCell.m */,
+				E782A22A1CDCE36700E2F537 /* TimerDetailItemStepCell.xib */,
+				E782A22B1CDCE36700E2F537 /* TimerListItemModelCell.h */,
+				E782A22C1CDCE36700E2F537 /* TimerListItemModelCell.m */,
+				E782A22D1CDCE36700E2F537 /* TimerListItemModelCell.xib */,
+			);
+			path = TimerView;
+			sourceTree = "<group>";
+		};
+		E782A23B1CDCE37600E2F537 /* TimerModel */ = {
+			isa = PBXGroup;
+			children = (
+				E782A23C1CDCE37600E2F537 /* TimerDetailItemDB.h */,
+				E782A23D1CDCE37600E2F537 /* TimerDetailItemDB.m */,
+				E782A23E1CDCE37600E2F537 /* TimerDetailItemModel.h */,
+				E782A23F1CDCE37600E2F537 /* TimerDetailItemModel.m */,
+				E782A2401CDCE37600E2F537 /* TimerListItemDB.h */,
+				E782A2411CDCE37600E2F537 /* TimerListItemDB.m */,
+				E782A2421CDCE37600E2F537 /* TimerListItemModel.h */,
+				E782A2431CDCE37600E2F537 /* TimerListItemModel.m */,
+			);
+			path = TimerModel;
+			sourceTree = "<group>";
+		};
+		E782A2481CDCE38200E2F537 /* TimerVC */ = {
+			isa = PBXGroup;
+			children = (
+				E782A2491CDCE38200E2F537 /* AlterTitleViewController.h */,
+				E782A24A1CDCE38200E2F537 /* AlterTitleViewController.m */,
+				E782A24B1CDCE38200E2F537 /* SelectColorViewController.h */,
+				E782A24C1CDCE38200E2F537 /* SelectColorViewController.m */,
+				E782A24D1CDCE38200E2F537 /* StepDetailViewController.h */,
+				E782A24E1CDCE38200E2F537 /* StepDetailViewController.m */,
+				E782A24F1CDCE38200E2F537 /* StepNameViewController.h */,
+				E782A2501CDCE38200E2F537 /* StepNameViewController.m */,
+				E782A2511CDCE38200E2F537 /* TimerItemManagerViewController.h */,
+				E782A2521CDCE38200E2F537 /* TimerItemManagerViewController.m */,
+				E782A2531CDCE38200E2F537 /* TimerViewController.h */,
+				E782A2541CDCE38200E2F537 /* TimerViewController.m */,
+			);
+			path = TimerVC;
 			sourceTree = "<group>";
 		};
 		E7BBF35E1CCBCE88008F9A74 /* Base */ = {
@@ -800,6 +929,7 @@
 				E7BBF38F1CCBCE88008F9A74 /* AlterUserSignViewController.m */,
 				E7BBF3901CCBCE88008F9A74 /* MyNewsViewController.h */,
 				E7BBF3911CCBCE88008F9A74 /* MyNewsViewController.m */,
+				E782A2481CDCE38200E2F537 /* TimerVC */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -809,6 +939,7 @@
 			children = (
 				E7F13AF91CCE509E00B0312D /* MyNewsModel.h */,
 				E7F13AFA1CCE509E00B0312D /* MyNewsModel.m */,
+				E782A23B1CDCE37600E2F537 /* TimerModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -828,6 +959,7 @@
 				E7F13AE91CCDF86F00B0312D /* CustomPickerView.m */,
 				E7F13AEE1CCE1F5E00B0312D /* MyNewsCell.h */,
 				E7F13AEF1CCE1F5E00B0312D /* MyNewsCell.m */,
+				E782A2191CDCE36700E2F537 /* TimerView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -894,11 +1026,18 @@
 				E7BBF3A91CCBCE88008F9A74 /* FMDBManager.h */,
 				E7BBF3AA1CCBCE88008F9A74 /* FMDBManager.m */,
 				E7BBF3AB1CCBCE88008F9A74 /* PrefixHeader.pch */,
+				E782A2181CDCE1E000E2F537 /* ConstantHeader.h */,
 				E7BBF3AC1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.h */,
 				E7BBF3AD1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.m */,
 				E7F13AEB1CCDFB7400B0312D /* NSString+GetToken.h */,
 				E7F13AEC1CCDFB7400B0312D /* NSString+GetToken.m */,
 				E7BBF3AE1CCBCE88008F9A74 /* URLHeaderDefine.h */,
+				E782A20E1CDCE1B100E2F537 /* ChangeColorManager.h */,
+				E782A20F1CDCE1B100E2F537 /* ChangeColorManager.m */,
+				E782A2101CDCE1B100E2F537 /* MOCustomDatePickerView.h */,
+				E782A2111CDCE1B100E2F537 /* MOCustomDatePickerView.m */,
+				E782A2121CDCE1B100E2F537 /* UIView+ChangeFrame.h */,
+				E782A2131CDCE1B100E2F537 /* UIView+ChangeFrame.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1020,9 +1159,11 @@
 				1A36B7001CDB9CCC00047948 /* TrainItemView.xib in Resources */,
 				1A36B6E31CDB9CCC00047948 /* AttentionListHeaderView.xib in Resources */,
 				1A36B7071CDB9CCC00047948 /* WriteCommentView.xib in Resources */,
+				E782A2361CDCE36700E2F537 /* TimerDetailItemOtherCell.xib in Resources */,
 				E772B1A61CC7BE7000C2BB5F /* LaunchScreen.storyboard in Resources */,
 				1A36B6ED1CDB9CCC00047948 /* FirstTopicHeaderView.xib in Resources */,
 				1A36B6F61CDB9CCC00047948 /* RecommendDetailHeadView.xib in Resources */,
+				E782A2341CDCE36700E2F537 /* StartView.xib in Resources */,
 				1A36B7541CDB9CF700047948 /* NewViewController.xib in Resources */,
 				1A36B6DA1CDB9CCC00047948 /* AddPersonModelCell.xib in Resources */,
 				1A36B7031CDB9CCC00047948 /* UserDynamicModelCell.xib in Resources */,
@@ -1031,16 +1172,20 @@
 				1A36B74B1CDB9CF700047948 /* AddPersonViewController.xib in Resources */,
 				1A36B7571CDB9CF700047948 /* SearchViewController.xib in Resources */,
 				1A36B6FD1CDB9CCC00047948 /* SearchButtonView.xib in Resources */,
+				E782A22F1CDCE36700E2F537 /* ColorItemCell.xib in Resources */,
 				1A36B6EF1CDB9CCC00047948 /* LifeItemView.xib in Resources */,
 				1A36B6EA1CDB9CCC00047948 /* CommentView.xib in Resources */,
+				E782A2311CDCE36700E2F537 /* ManagerView.xib in Resources */,
 				E7BBF3BB1CCBCE88008F9A74 /* RegistViewController.xib in Resources */,
 				1A36B7051CDB9CCC00047948 /* UserMessageHeaderView.xib in Resources */,
 				1A36B6FA1CDB9CCC00047948 /* RecommendListModelCell.xib in Resources */,
+				E782A23A1CDCE36700E2F537 /* TimerListItemModelCell.xib in Resources */,
 				1A36B6E01CDB9CCC00047948 /* AddTimeNoImageModelCell.xib in Resources */,
 				E7244A3B1CCCAE1C00EE72F5 /* cancel.png in Resources */,
 				1A36B6F81CDB9CCC00047948 /* RecommendDetailModelCell.xib in Resources */,
 				1A36B6DE1CDB9CCC00047948 /* AddTimeListModelCell.xib in Resources */,
 				E7BBF3B91CCBCE88008F9A74 /* LoginViewController.xib in Resources */,
+				E782A2381CDCE36700E2F537 /* TimerDetailItemStepCell.xib in Resources */,
 				1A36B75B1CDB9CF700047948 /* UserMessageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1117,6 +1262,7 @@
 				1A36B6D81CDB9CCC00047948 /* AddNewsView.m in Sources */,
 				E7BBF3BA1CCBCE88008F9A74 /* RegistViewController.m in Sources */,
 				1A36B6F51CDB9CCC00047948 /* RecommendDetailHeadView.m in Sources */,
+				E782A2451CDCE37600E2F537 /* TimerDetailItemModel.m in Sources */,
 				1A36B6D91CDB9CCC00047948 /* AddPersonModelCell.m in Sources */,
 				E7BBF3C31CCBCE88008F9A74 /* PersonInfoViewController.m in Sources */,
 				1A36B6E61CDB9CCC00047948 /* AttentionView.m in Sources */,
@@ -1137,16 +1283,21 @@
 				1A36B72A1CDB9CE600047948 /* UserMessageModel.m in Sources */,
 				1A36B6DD1CDB9CCC00047948 /* AddTimeListModelCell.m in Sources */,
 				1A36B6EE1CDB9CCC00047948 /* LifeItemView.m in Sources */,
+				E782A2591CDCE38200E2F537 /* TimerItemManagerViewController.m in Sources */,
+				E782A2471CDCE37600E2F537 /* TimerListItemModel.m in Sources */,
 				1A36B7561CDB9CF700047948 /* SearchViewController.m in Sources */,
+				E782A25A1CDCE38200E2F537 /* TimerViewController.m in Sources */,
 				E7BBF3BF1CCBCE88008F9A74 /* AlterUserNameViewController.m in Sources */,
 				1A36B6DB1CDB9CCC00047948 /* AddtimeDetailHeaderView.m in Sources */,
 				E7BBF3B11CCBCE88008F9A74 /* BaseTableViewCell.m in Sources */,
 				1A36B6861CDB9C9B00047948 /* NSString+ChangeColor.m in Sources */,
+				E782A2171CDCE1B100E2F537 /* UIView+ChangeFrame.m in Sources */,
 				E772B1A11CC7BE7000C2BB5F /* AppDelegate.m in Sources */,
 				E7244A2D1CCCAD9B00EE72F5 /* NewsModel.m in Sources */,
 				E7F13AEA1CCDF86F00B0312D /* CustomPickerView.m in Sources */,
 				1A36B6F21CDB9CCC00047948 /* PlaceHolderTextView.m in Sources */,
 				E7BBF3BC1CCBCE88008F9A74 /* UserInfoManager.m in Sources */,
+				E782A2161CDCE1B100E2F537 /* MOCustomDatePickerView.m in Sources */,
 				1A36B6891CDB9C9B00047948 /* UIControlFlagView.m in Sources */,
 				1A36B7021CDB9CCC00047948 /* UserDynamicModelCell.m in Sources */,
 				1A36B6E91CDB9CCC00047948 /* CommentView.m in Sources */,
@@ -1163,11 +1314,15 @@
 				1A36B7521CDB9CF700047948 /* FirstTopicViewController.m in Sources */,
 				E7BBF3B41CCBCE88008F9A74 /* FactoryCollectionViewCell.m in Sources */,
 				1A36B6E71CDB9CCC00047948 /* ButtonView.m in Sources */,
+				E782A2371CDCE36700E2F537 /* TimerDetailItemStepCell.m in Sources */,
 				1A36B7261CDB9CE600047948 /* TodayDoneDB.m in Sources */,
+				E782A2461CDCE37600E2F537 /* TimerListItemDB.m in Sources */,
 				1A36B6EB1CDB9CCC00047948 /* FirstTopicDeatilListViewController.m in Sources */,
 				E7BBF3B51CCBCE88008F9A74 /* FactoryTableViewCell.m in Sources */,
 				E7244A301CCCADB000EE72F5 /* NewsView.m in Sources */,
+				E782A2331CDCE36700E2F537 /* StartView.m in Sources */,
 				E7BBF3B81CCBCE88008F9A74 /* LoginViewController.m in Sources */,
+				E782A2561CDCE38200E2F537 /* SelectColorViewController.m in Sources */,
 				1A36B7011CDB9CCC00047948 /* TwoItemView.m in Sources */,
 				1A36B68A1CDB9C9B00047948 /* UIButton+FiniishClick.m in Sources */,
 				E7BBF3C41CCBCE88008F9A74 /* AlterUserNameCell.m in Sources */,
@@ -1178,25 +1333,32 @@
 				1A36B6F31CDB9CCC00047948 /* RecommendCollectionReusableView.m in Sources */,
 				1A36B74C1CDB9CF700047948 /* AddTimeDetailViewController.m in Sources */,
 				1A36B7061CDB9CCC00047948 /* WriteCommentView.m in Sources */,
+				E782A2151CDCE1B100E2F537 /* ChangeColorManager.m in Sources */,
 				E7BBF3C51CCBCE88008F9A74 /* AlterUserSignCell.m in Sources */,
 				1A36B6FC1CDB9CCC00047948 /* SearchButtonView.m in Sources */,
 				E7244A2A1CCCAD7900EE72F5 /* LoginView.m in Sources */,
 				E7BBF3BE1CCBCE88008F9A74 /* NewsViewController.m in Sources */,
 				1A36B7041CDB9CCC00047948 /* UserMessageHeaderView.m in Sources */,
 				E7BBF3B31CCBCE88008F9A74 /* BaseViewController.m in Sources */,
+				E782A2391CDCE36700E2F537 /* TimerListItemModelCell.m in Sources */,
 				1A36B6FE1CDB9CCC00047948 /* TodayDoneCell.m in Sources */,
 				1A36B7211CDB9CE600047948 /* AddTimeListModel.m in Sources */,
 				E7BBF3C91CCBCE88008F9A74 /* FMDBManager.m in Sources */,
+				E782A2571CDCE38200E2F537 /* StepDetailViewController.m in Sources */,
+				E782A2551CDCE38200E2F537 /* AlterTitleViewController.m in Sources */,
+				E782A2351CDCE36700E2F537 /* TimerDetailItemOtherCell.m in Sources */,
 				1A36B7551CDB9CF700047948 /* RecommendViewController.m in Sources */,
 				E7F13AED1CCDFB7400B0312D /* NSString+GetToken.m in Sources */,
 				E7244A361CCCADD500EE72F5 /* TrainModel.m in Sources */,
 				1A36B7251CDB9CE600047948 /* RecommendListModel.m in Sources */,
 				1A36B6871CDB9C9B00047948 /* NetWorkRequestManager.m in Sources */,
+				E782A22E1CDCE36700E2F537 /* ColorItemCell.m in Sources */,
 				1A36B6EC1CDB9CCC00047948 /* FirstTopicHeaderView.m in Sources */,
 				1A36B6E11CDB9CCC00047948 /* addTimeView.m in Sources */,
 				1A36B7201CDB9CE600047948 /* AddPersonModel.m in Sources */,
 				1A36B6DF1CDB9CCC00047948 /* AddTimeNoImageModelCell.m in Sources */,
 				1A36B72B1CDB9CE600047948 /* UserModel.m in Sources */,
+				E782A2441CDCE37600E2F537 /* TimerDetailItemDB.m in Sources */,
 				1A36B6E21CDB9CCC00047948 /* AttentionListHeaderView.m in Sources */,
 				E7BBF3C71CCBCE88008F9A74 /* PersonCenterHeaderView.m in Sources */,
 				1A36B6FB1CDB9CCC00047948 /* RecommendView.m in Sources */,
@@ -1208,7 +1370,9 @@
 				E7244A391CCCADE400EE72F5 /* TrainView.m in Sources */,
 				E7F13AFB1CCE509E00B0312D /* MyNewsModel.m in Sources */,
 				E772B19E1CC7BE7000C2BB5F /* main.m in Sources */,
+				E782A2301CDCE36700E2F537 /* ManagerView.m in Sources */,
 				1A36B7701CDB9E9600047948 /* KeyBoardView.m in Sources */,
+				E782A2581CDCE38200E2F537 /* StepNameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
