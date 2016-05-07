@@ -24,6 +24,9 @@
                                         <constraint firstAttribute="width" secondItem="VgG-Is-efU" secondAttribute="height" multiplier="1:1" id="j5Z-ze-3kE"/>
                                     </constraints>
                                     <state key="normal" backgroundImage="copy"/>
+                                    <connections>
+                                        <action selector="copy:" destination="iN0-l3-epB" eventType="touchUpInside" id="fKH-vN-ykU"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVD-9x-4yB">
                                     <rect key="frame" x="253" y="5" width="29" height="29"/>
@@ -31,6 +34,9 @@
                                         <constraint firstAttribute="width" secondItem="aVD-9x-4yB" secondAttribute="height" multiplier="1:1" id="HeV-ts-zql"/>
                                     </constraints>
                                     <state key="normal" backgroundImage="down"/>
+                                    <connections>
+                                        <action selector="down:" destination="iN0-l3-epB" eventType="touchUpInside" id="k3N-el-SjS"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFQ-L5-gTs">
                                     <rect key="frame" x="115" y="5" width="29" height="29"/>
@@ -38,6 +44,9 @@
                                         <constraint firstAttribute="width" secondItem="oFQ-L5-gTs" secondAttribute="height" multiplier="1:1" id="5Qj-Oa-Ekk"/>
                                     </constraints>
                                     <state key="normal" backgroundImage="sub"/>
+                                    <connections>
+                                        <action selector="sub:" destination="iN0-l3-epB" eventType="touchUpInside" id="LLS-P8-z9h"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYi-Yp-GKP">
                                     <rect key="frame" x="46" y="5" width="29" height="29"/>
@@ -45,6 +54,9 @@
                                         <constraint firstAttribute="width" secondItem="AYi-Yp-GKP" secondAttribute="height" multiplier="1:1" id="qRA-1I-JJE"/>
                                     </constraints>
                                     <state key="normal" backgroundImage="add"/>
+                                    <connections>
+                                        <action selector="add:" destination="iN0-l3-epB" eventType="touchUpInside" id="6HB-C1-TCf"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B89-79-N9x">
                                     <rect key="frame" x="322" y="5" width="29" height="29"/>
@@ -52,6 +64,9 @@
                                         <constraint firstAttribute="width" secondItem="B89-79-N9x" secondAttribute="height" multiplier="1:1" id="PGt-sz-PIc"/>
                                     </constraints>
                                     <state key="normal" backgroundImage="up"/>
+                                    <connections>
+                                        <action selector="up:" destination="iN0-l3-epB" eventType="touchUpInside" id="eNI-uL-hbU"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -80,7 +95,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="F4t-TV-ZRt" firstAttribute="leading" secondItem="NNe-aP-7ub" secondAttribute="leading" constant="1" id="5wV-hx-xXD"/>
                         <constraint firstAttribute="trailing" secondItem="F4t-TV-ZRt" secondAttribute="trailing" constant="1" id="C4h-s0-w5f"/>

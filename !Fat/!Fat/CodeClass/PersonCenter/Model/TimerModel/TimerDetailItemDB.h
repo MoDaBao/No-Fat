@@ -18,9 +18,11 @@
 //  插入数据
 - (void)insertTimerDetailItemModel:(TimerDetailItemModel *)model;
 //  删除数据
+- (void)deleteWithTitle:(NSString *)title ID:(NSNumber *)ID;
+//  删除数据
 - (void)deleteWithTitle:(NSString *)title;
 //  更新数据
-- (void)updateWithTitle:(NSString *)title model:(TimerDetailItemModel *)model;
+- (void)updateWithTitle:(NSString *)title model:(TimerDetailItemModel *)model ID:(NSNumber *)ID;
 //  查找指定数据
 - (TimerDetailItemModel *)selectDataWithTitle:(NSString *)tilte;
 

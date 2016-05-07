@@ -102,7 +102,6 @@
 		E772B19E1CC7BE7000C2BB5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E772B19D1CC7BE7000C2BB5F /* main.m */; };
 		E772B1A11CC7BE7000C2BB5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E772B1A01CC7BE7000C2BB5F /* AppDelegate.m */; };
 		E772B1A31CC7BE7000C2BB5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E772B1A21CC7BE7000C2BB5F /* Assets.xcassets */; };
-		E772B1A61CC7BE7000C2BB5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E772B1A41CC7BE7000C2BB5F /* LaunchScreen.storyboard */; };
 		E772B1B11CC7BE7000C2BB5F /* _FatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E772B1B01CC7BE7000C2BB5F /* _FatTests.m */; };
 		E772B1BC1CC7BE7000C2BB5F /* _FatUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E772B1BB1CC7BE7000C2BB5F /* _FatUITests.m */; };
 		E782A2151CDCE1B100E2F537 /* ChangeColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A20F1CDCE1B100E2F537 /* ChangeColorManager.m */; };
@@ -110,8 +109,6 @@
 		E782A2171CDCE1B100E2F537 /* UIView+ChangeFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A2131CDCE1B100E2F537 /* UIView+ChangeFrame.m */; };
 		E782A22E1CDCE36700E2F537 /* ColorItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A21B1CDCE36700E2F537 /* ColorItemCell.m */; };
 		E782A22F1CDCE36700E2F537 /* ColorItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E782A21C1CDCE36700E2F537 /* ColorItemCell.xib */; };
-		E782A2301CDCE36700E2F537 /* ManagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A21E1CDCE36700E2F537 /* ManagerView.m */; };
-		E782A2311CDCE36700E2F537 /* ManagerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E782A21F1CDCE36700E2F537 /* ManagerView.xib */; };
 		E782A2331CDCE36700E2F537 /* StartView.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A2231CDCE36700E2F537 /* StartView.m */; };
 		E782A2341CDCE36700E2F537 /* StartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E782A2241CDCE36700E2F537 /* StartView.xib */; };
 		E782A2351CDCE36700E2F537 /* TimerDetailItemOtherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A2261CDCE36700E2F537 /* TimerDetailItemOtherCell.m */; };
@@ -156,6 +153,10 @@
 		E7BBF3C81CCBCE88008F9A74 /* TrainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3A31CCBCE88008F9A74 /* TrainTableViewController.m */; };
 		E7BBF3C91CCBCE88008F9A74 /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3AA1CCBCE88008F9A74 /* FMDBManager.m */; };
 		E7BBF3CA1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3AD1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.m */; };
+		E7E5AA5F1CDDE123002E0769 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E5AA5D1CDDE123002E0769 /* LaunchScreen.storyboard */; };
+		E7E5AA621CDDE76D002E0769 /* TimeringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E5AA611CDDE76D002E0769 /* TimeringViewController.m */; };
+		E7E5AA661CDDE81A002E0769 /* ManagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E5AA641CDDE81A002E0769 /* ManagerView.m */; };
+		E7E5AA671CDDE81A002E0769 /* ManagerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E5AA651CDDE81A002E0769 /* ManagerView.xib */; };
 		E7F13AEA1CCDF86F00B0312D /* CustomPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F13AE91CCDF86F00B0312D /* CustomPickerView.m */; };
 		E7F13AED1CCDFB7400B0312D /* NSString+GetToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F13AEC1CCDFB7400B0312D /* NSString+GetToken.m */; };
 		E7F13AF01CCE1F5E00B0312D /* MyNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F13AEF1CCE1F5E00B0312D /* MyNewsCell.m */; };
@@ -344,7 +345,6 @@
 		E772B19F1CC7BE7000C2BB5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E772B1A01CC7BE7000C2BB5F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E772B1A21CC7BE7000C2BB5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E772B1A51CC7BE7000C2BB5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E772B1A71CC7BE7000C2BB5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E772B1AC1CC7BE7000C2BB5F /* !FatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "!FatTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E772B1B01CC7BE7000C2BB5F /* _FatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _FatTests.m; sourceTree = "<group>"; };
@@ -362,9 +362,6 @@
 		E782A21A1CDCE36700E2F537 /* ColorItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorItemCell.h; sourceTree = "<group>"; };
 		E782A21B1CDCE36700E2F537 /* ColorItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorItemCell.m; sourceTree = "<group>"; };
 		E782A21C1CDCE36700E2F537 /* ColorItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorItemCell.xib; sourceTree = "<group>"; };
-		E782A21D1CDCE36700E2F537 /* ManagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerView.h; sourceTree = "<group>"; };
-		E782A21E1CDCE36700E2F537 /* ManagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerView.m; sourceTree = "<group>"; };
-		E782A21F1CDCE36700E2F537 /* ManagerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManagerView.xib; sourceTree = "<group>"; };
 		E782A2221CDCE36700E2F537 /* StartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartView.h; sourceTree = "<group>"; };
 		E782A2231CDCE36700E2F537 /* StartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartView.m; sourceTree = "<group>"; };
 		E782A2241CDCE36700E2F537 /* StartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartView.xib; sourceTree = "<group>"; };
@@ -450,6 +447,12 @@
 		E7BBF3AC1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHeightAndWidth.h"; sourceTree = "<group>"; };
 		E7BBF3AD1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+LabelHeightAndWidth.m"; sourceTree = "<group>"; };
 		E7BBF3AE1CCBCE88008F9A74 /* URLHeaderDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLHeaderDefine.h; sourceTree = "<group>"; };
+		E7E5AA5E1CDDE123002E0769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E7E5AA601CDDE76D002E0769 /* TimeringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeringViewController.h; sourceTree = "<group>"; };
+		E7E5AA611CDDE76D002E0769 /* TimeringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeringViewController.m; sourceTree = "<group>"; };
+		E7E5AA631CDDE81A002E0769 /* ManagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerView.h; sourceTree = "<group>"; };
+		E7E5AA641CDDE81A002E0769 /* ManagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerView.m; sourceTree = "<group>"; };
+		E7E5AA651CDDE81A002E0769 /* ManagerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManagerView.xib; sourceTree = "<group>"; };
 		E7F13AE81CCDF86F00B0312D /* CustomPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPickerView.h; sourceTree = "<group>"; };
 		E7F13AE91CCDF86F00B0312D /* CustomPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPickerView.m; sourceTree = "<group>"; };
 		E7F13AEB1CCDFB7400B0312D /* NSString+GetToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GetToken.h"; sourceTree = "<group>"; };
@@ -535,7 +538,7 @@
 				E7BBF3A61CCBCE88008F9A74 /* Documents */,
 				E7BBF3A71CCBCE88008F9A74 /* Tools */,
 				E772B1A21CC7BE7000C2BB5F /* Assets.xcassets */,
-				E772B1A41CC7BE7000C2BB5F /* LaunchScreen.storyboard */,
+				E7E5AA5D1CDDE123002E0769 /* LaunchScreen.storyboard */,
 				E772B1A71CC7BE7000C2BB5F /* Info.plist */,
 				E772B19C1CC7BE7000C2BB5F /* Supporting Files */,
 			);
@@ -574,9 +577,6 @@
 				E782A21A1CDCE36700E2F537 /* ColorItemCell.h */,
 				E782A21B1CDCE36700E2F537 /* ColorItemCell.m */,
 				E782A21C1CDCE36700E2F537 /* ColorItemCell.xib */,
-				E782A21D1CDCE36700E2F537 /* ManagerView.h */,
-				E782A21E1CDCE36700E2F537 /* ManagerView.m */,
-				E782A21F1CDCE36700E2F537 /* ManagerView.xib */,
 				E782A2221CDCE36700E2F537 /* StartView.h */,
 				E782A2231CDCE36700E2F537 /* StartView.m */,
 				E782A2241CDCE36700E2F537 /* StartView.xib */,
@@ -589,6 +589,9 @@
 				E782A22B1CDCE36700E2F537 /* TimerListItemModelCell.h */,
 				E782A22C1CDCE36700E2F537 /* TimerListItemModelCell.m */,
 				E782A22D1CDCE36700E2F537 /* TimerListItemModelCell.xib */,
+				E7E5AA631CDDE81A002E0769 /* ManagerView.h */,
+				E7E5AA641CDDE81A002E0769 /* ManagerView.m */,
+				E7E5AA651CDDE81A002E0769 /* ManagerView.xib */,
 			);
 			path = TimerView;
 			sourceTree = "<group>";
@@ -623,6 +626,8 @@
 				E782A2521CDCE38200E2F537 /* TimerItemManagerViewController.m */,
 				E782A2531CDCE38200E2F537 /* TimerViewController.h */,
 				E782A2541CDCE38200E2F537 /* TimerViewController.m */,
+				E7E5AA601CDDE76D002E0769 /* TimeringViewController.h */,
+				E7E5AA611CDDE76D002E0769 /* TimeringViewController.m */,
 			);
 			path = TimerVC;
 			sourceTree = "<group>";
@@ -1160,7 +1165,7 @@
 				1A36B6E31CDB9CCC00047948 /* AttentionListHeaderView.xib in Resources */,
 				1A36B7071CDB9CCC00047948 /* WriteCommentView.xib in Resources */,
 				E782A2361CDCE36700E2F537 /* TimerDetailItemOtherCell.xib in Resources */,
-				E772B1A61CC7BE7000C2BB5F /* LaunchScreen.storyboard in Resources */,
+				E7E5AA5F1CDDE123002E0769 /* LaunchScreen.storyboard in Resources */,
 				1A36B6ED1CDB9CCC00047948 /* FirstTopicHeaderView.xib in Resources */,
 				1A36B6F61CDB9CCC00047948 /* RecommendDetailHeadView.xib in Resources */,
 				E782A2341CDCE36700E2F537 /* StartView.xib in Resources */,
@@ -1175,9 +1180,9 @@
 				E782A22F1CDCE36700E2F537 /* ColorItemCell.xib in Resources */,
 				1A36B6EF1CDB9CCC00047948 /* LifeItemView.xib in Resources */,
 				1A36B6EA1CDB9CCC00047948 /* CommentView.xib in Resources */,
-				E782A2311CDCE36700E2F537 /* ManagerView.xib in Resources */,
 				E7BBF3BB1CCBCE88008F9A74 /* RegistViewController.xib in Resources */,
 				1A36B7051CDB9CCC00047948 /* UserMessageHeaderView.xib in Resources */,
+				E7E5AA671CDDE81A002E0769 /* ManagerView.xib in Resources */,
 				1A36B6FA1CDB9CCC00047948 /* RecommendListModelCell.xib in Resources */,
 				E782A23A1CDCE36700E2F537 /* TimerListItemModelCell.xib in Resources */,
 				1A36B6E01CDB9CCC00047948 /* AddTimeNoImageModelCell.xib in Resources */,
@@ -1357,10 +1362,12 @@
 				1A36B6E11CDB9CCC00047948 /* addTimeView.m in Sources */,
 				1A36B7201CDB9CE600047948 /* AddPersonModel.m in Sources */,
 				1A36B6DF1CDB9CCC00047948 /* AddTimeNoImageModelCell.m in Sources */,
+				E7E5AA621CDDE76D002E0769 /* TimeringViewController.m in Sources */,
 				1A36B72B1CDB9CE600047948 /* UserModel.m in Sources */,
 				E782A2441CDCE37600E2F537 /* TimerDetailItemDB.m in Sources */,
 				1A36B6E21CDB9CCC00047948 /* AttentionListHeaderView.m in Sources */,
 				E7BBF3C71CCBCE88008F9A74 /* PersonCenterHeaderView.m in Sources */,
+				E7E5AA661CDDE81A002E0769 /* ManagerView.m in Sources */,
 				1A36B6FB1CDB9CCC00047948 /* RecommendView.m in Sources */,
 				1A36B7221CDB9CE600047948 /* AttentionListModel.m in Sources */,
 				1A36B6FF1CDB9CCC00047948 /* TrainItemView.m in Sources */,
@@ -1370,7 +1377,6 @@
 				E7244A391CCCADE400EE72F5 /* TrainView.m in Sources */,
 				E7F13AFB1CCE509E00B0312D /* MyNewsModel.m in Sources */,
 				E772B19E1CC7BE7000C2BB5F /* main.m in Sources */,
-				E782A2301CDCE36700E2F537 /* ManagerView.m in Sources */,
 				1A36B7701CDB9E9600047948 /* KeyBoardView.m in Sources */,
 				E782A2581CDCE38200E2F537 /* StepNameViewController.m in Sources */,
 			);
@@ -1408,10 +1414,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E772B1A41CC7BE7000C2BB5F /* LaunchScreen.storyboard */ = {
+		E7E5AA5D1CDDE123002E0769 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E772B1A51CC7BE7000C2BB5F /* Base */,
+				E7E5AA5E1CDDE123002E0769 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1506,6 +1512,7 @@
 			baseConfigurationReference = 06D75FF1B76F6BD11161A7A6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "!Fat/Tools/PrefixHeader.pch";
 				INFOPLIST_FILE = "!Fat/Info.plist";
@@ -1521,6 +1528,7 @@
 			baseConfigurationReference = 923F4DA709979618D7E94F7E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "!Fat/Tools/PrefixHeader.pch";
 				INFOPLIST_FILE = "!Fat/Info.plist";

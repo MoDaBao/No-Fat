@@ -36,6 +36,8 @@
 
 @property (nonatomic, strong) StartView *startView;
 
+@property (nonatomic, assign) BOOL isDelete;
+
 
 @end
 
@@ -44,13 +46,29 @@
 
 #pragma mark -----lazyload-----
 
+- (TimerDetailItemModel *)oldModel {
+    if (!_oldModel) {
+        self.oldModel = [[TimerDetailItemModel alloc] init];
+        if (!_isNew) {
+            _oldModel.title = self.selectModel.title;
+            _oldModel.titleicon = self.selectModel.titleicon;
+            _oldModel.titlecolor = self.selectModel.titlecolor;
+            _oldModel.countdown = self.selectModel.countdown;
+            _oldModel.loopcount = self.selectModel.loopcount;
+            _oldModel.step = self.selectModel.step;
+            _oldModel.ID = self.selectModel.ID;
+        }
+    }
+    return _oldModel;
+}
+
 - (TimerDetailItemModel *)selectModel {
     if (!_selectModel) {
         TimerDetailItemDB *db = [[TimerDetailItemDB alloc] init];
         [db createTable];
         _selectModel = [db selectDataWithTitle:self.headTitle];
-//        NSString *documentPatn = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-//        NSLog(@"%@",documentPatn);
+        //        NSString *documentPatn = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        //        NSLog(@"%@",documentPatn);
     }
     return _selectModel;
 }
@@ -76,9 +94,9 @@
             self.itemArray = [NSMutableArray array];
             self.itemArray = [[self.orginModel.step componentsSeparatedByString:@"/"] mutableCopy];
         } else {
-//            TimerDetailItemDB *db = [[TimerDetailItemDB alloc] init];
-//            [db createTable];
-//            self.selectModel = [db selectDataWithTitle:self.title];
+            //            TimerDetailItemDB *db = [[TimerDetailItemDB alloc] init];
+            //            [db createTable];
+            //            self.selectModel = [db selectDataWithTitle:self.title];
             self.itemArray = [NSMutableArray array];
             self.itemArray = [[self.selectModel.step componentsSeparatedByString:@"/"] mutableCopy];
             
@@ -91,11 +109,11 @@
 #pragma mark -----加载视图-----
 
 - (void)createTableView {
-//    if (_isNew) {
-//        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavigationHeight, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
-//    } else {
-//        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavigationHeight, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
-//    }
+    //    if (_isNew) {
+    //        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavigationHeight, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
+    //    } else {
+    //        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavigationHeight, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
+    //    }
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavigationHeight, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -162,13 +180,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:1.0];
+    
     [self createButton];
     [self createTableView];
+    
+    self.isDelete = YES;
     
     if (_isNew) {
         self.managerView = [[[NSBundle mainBundle] loadNibNamed:@"ManagerView" owner:nil options:nil] lastObject];
         self.managerView.frame = CGRectMake(0, kNavigationHeight, kScreenWidth, 40);
+        [self achiveBtnBlock];
         [self.view addSubview:self.managerView];
         self.tableView.y = kNavigationHeight + self.managerView.height;
         self.tableView.height = self.tableView.height - self.managerView.height;
@@ -178,6 +199,37 @@
         [self createStartView];
     }
     
+}
+
+- (void)achiveBtnBlock {
+    __block TimerItemManagerViewController *timerManagerVC = self;
+    self.managerView.addClick = ^{
+        NSLog(@"add");
+        _isDelete = NO;
+        [timerManagerVC.tableView reloadData];
+        // 添加单元格
+        //        [timerManagerVC.tableView beginUpdates];
+        //        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:timerManagerVC.itemArray.count + 2 inSection:0];
+        //        [timerManagerVC.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        //
+        //        [timerManagerVC.tableView endUpdates];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:timerManagerVC.itemArray.count + 1 inSection:0];
+        [timerManagerVC tableView:timerManagerVC.tableView commitEditingStyle:UITableViewCellEditingStyleInsert forRowAtIndexPath:indexPath];
+        _isDelete = YES;
+        [timerManagerVC.tableView reloadData];
+    };
+    self.managerView.subClick = ^{
+        NSLog(@"sub");
+    };
+    self.managerView.copyClick = ^{
+        NSLog(@"copy");
+    };
+    self.managerView.downClick = ^{
+        NSLog(@"down");
+    };
+    self.managerView.upClick = ^{
+        NSLog(@"up");
+    };
 }
 
 - (void)createStartView {
@@ -200,25 +252,25 @@
     if (_isNew) {
         [db insertTimerDetailItemModel:self.orginModel];
         [self.navigationController popViewControllerAnimated:YES];
-     } else {
-//         if (self.oldModel) {
-        [db updateWithTitle:self.oldModel.title model:self.selectModel];
-//             NSLog(@"更新");
-//         } else {
-//             [db updateWithTitle:self.selectModel.title model:self.selectModel];
-         //         }
-         self.tableView.height += self.managerView.height;
-         [UIView animateWithDuration:.2 animations:^{
-             self.managerView.y = 0;
-             self.tableView.y -= self.managerView.height;
-         }];
-         [self.managerView removeFromSuperview];
-         self.managerView = nil;
-         self.navigationItem.rightBarButtonItem = self.managerItem;
-         self.isManager = YES;
-         [self.tableView reloadData];
-         
-     }
+    } else {
+        //         if (self.oldModel) {
+        [db updateWithTitle:self.oldModel.title model:self.selectModel ID:self.selectModel.ID];
+        //             NSLog(@"更新");
+        //         } else {
+        //             [db updateWithTitle:self.selectModel.title model:self.selectModel];
+        //         }
+        self.tableView.height += self.managerView.height;
+        [UIView animateWithDuration:.2 animations:^{
+            self.managerView.y = 0;
+            self.tableView.y -= self.managerView.height;
+        }];
+        [self.managerView removeFromSuperview];
+        self.managerView = nil;
+        self.navigationItem.rightBarButtonItem = self.managerItem;
+        self.isManager = YES;
+        [self.tableView reloadData];
+        
+    }
     
     
 }
@@ -226,6 +278,7 @@
 - (void)manager {
     self.managerView = [[[NSBundle mainBundle] loadNibNamed:@"ManagerView" owner:nil options:nil] lastObject];
     self.managerView.frame = CGRectMake(0, 0, kScreenWidth, 40);
+    [self achiveBtnBlock];
     [self.view addSubview:self.managerView];
     self.tableView.height = self.tableView.height - self.managerView.height;
     
@@ -266,7 +319,6 @@
         }
         NSString *string = self.itemArray[indexPath.row - 2];// 获取步骤字符串
         NSArray *array = [string componentsSeparatedByString:@"&"];// 通过&符号分割字符串
-//        [self assignmentWithImageView:cell.icon color:[array firstObject]];// 设置步骤颜色
         [ChangeColorManager changColorWithImageView:cell.icon color:[array firstObject]];// 设置步骤颜色
         cell.stepName.text = array[1];// 设置步骤名称
         cell.time.text = [array lastObject];
@@ -279,7 +331,8 @@
                     self.itemArray[indexPath.row] = step;
                     [self.tableView reloadData];
                 } else {
-                    self.selectModel.step = step;
+                    NSString *stepsting = [self.itemArray componentsJoinedByString:@"/"];
+                    self.selectModel.step = stepsting;
                     [self.tableView reloadData];
                 }
             };
@@ -290,11 +343,11 @@
         if (_isManager) {
             CGRect newframe = cell.time.frame;
             newframe.origin.x = kScreenWidth - (cell.time.frame.size.width + 10);
-//            cell.time.x = kScreenWidth - (cell.time.width + 10);
+            //            cell.time.x = kScreenWidth - (cell.time.width + 10);
             cell.time.frame = newframe;
             cell.alterBtn.hidden = YES;
         } else {
-//            cell.time.x = kScreenWidth - (cell.time.width + 20 + cell.alterBtn.width);
+            //            cell.time.x = kScreenWidth - (cell.time.width + 20 + cell.alterBtn.width);
             CGRect newframe = cell.time.frame;
             newframe.origin.x = kScreenWidth - (cell.time.frame.size.width + 20 + cell.alterBtn.frame.size.width);
             cell.time.frame = newframe;
@@ -322,20 +375,6 @@
     
 }
 
-// 给颜色赋值
-//- (void)assignmentWithImageView:(UIImageView *)imageView color:(NSString *)color {
-//    if ([color isEqualToString:@"kPink"]) {
-//        imageView.backgroundColor = kPink;
-//    } else if ([color isEqualToString:@"kGray"]) {
-//        imageView.backgroundColor = kGray;
-//    } else if ([color isEqualToString:@"kGreen"]) {
-//        imageView.backgroundColor = kGreen;
-//    } else if ([color isEqualToString:@"kBlue"]) {
-//        imageView.backgroundColor = kBlue;
-//    }
-//
-//}
-
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     if (_isManager) {
         return NO;
@@ -346,23 +385,41 @@
         return NO;
     }
 }
+//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return _isDelete ? UITableViewCellEditingStyleDelete : UITableViewCellEditingStyleInsert;
+//}
 
 //  左滑进入编辑模式
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     // 表视图开始更新
     [tableView beginUpdates];
-    // 删除单元格
-    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    
-    // 删除数组中与该单元格绑定的数据,此步骤应该在最后一步做
-    [self.itemArray removeObjectAtIndex:indexPath.row - 2];
-    NSString *string = [self.itemArray componentsJoinedByString:@"/"];
-    // 修改模型的值
-    if (_isNew) {
-        self.orginModel.step = string;
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // 删除单元格
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        // 删除数组中与该单元格绑定的数据,此步骤应该在最后一步做
+        [self.itemArray removeObjectAtIndex:indexPath.row - 2];
+        NSString *string = [self.itemArray componentsJoinedByString:@"/"];
+        // 修改模型的值
+        if (_isNew) {
+            self.orginModel.step = string;
+        } else {
+            self.selectModel.step = string;
+        }
     } else {
-        self.selectModel.step = string;
+        NSIndexPath *index = [NSIndexPath indexPathForRow:self.itemArray.count + 2 inSection:0];
+        [tableView insertRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationTop];
+        NSString *str = _itemArray[indexPath.row - 2];
+        [_itemArray addObject:str];
+        NSString *string = [self.itemArray componentsJoinedByString:@"/"];
+        // 修改模型的值
+        if (_isNew) {
+            self.orginModel.step = string;
+        } else {
+            self.selectModel.step = string;
+        }
     }
+    
     
     // 表视图结束更新
     [tableView endUpdates];
@@ -375,7 +432,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (!_isManager) {
-        if (indexPath.row == 0) {
+        if (indexPath.row == 0) {// 修改标题
             AlterTitleViewController *alterTitleVC = [[AlterTitleViewController alloc] init];
             if (_isNew) {
                 alterTitleVC.detailItemModel = self.orginModel;
@@ -386,9 +443,6 @@
             } else {
                 alterTitleVC.detailItemModel = self.selectModel;
                 alterTitleVC.passValue = ^(NSString *title) {
-                    if (!self.oldModel) {
-                        self.oldModel = [[TimerDetailItemModel alloc] init];
-                    }
                     self.oldModel.title = self.selectModel.title;
                     self.selectModel.title = title;
                     [self.tableView reloadData];
@@ -436,13 +490,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

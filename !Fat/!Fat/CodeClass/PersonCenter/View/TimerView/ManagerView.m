@@ -17,24 +17,24 @@
     // Drawing code
 }
 */
-//- (IBAction)add:(id)sender {
-//    
-//}
-//
-//- (IBAction)sub:(id)sender {
-//    
-//}
-//
-//- (IBAction)copy:(id)sender {
-//    
-//}
-//
-//- (IBAction)down:(id)sender {
-//    
-//}
-//
-//- (IBAction)up:(id)sender {
-//    
-//}
+- (IBAction)add:(id)sender {
+    self.addClick();
+}
+
+- (IBAction)sub:(id)sender {
+    self.subClick();
+}
+
+- (IBAction)copy:(id)sender {
+    self.copyClick();
+}
+
+- (IBAction)down:(id)sender {
+    self.downClick();
+}
+
+- (IBAction)up:(id)sender {
+    self.upClick();
+}
 
 @end

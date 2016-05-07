@@ -14,7 +14,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _dataBase = [FMDBManager shareInstanceWithDBName:DATABASENAME].dataBase;
+        _dataBase = [FMDBManager shareInstanceWithDBName:TIMERDATABASENAME].dataBase;
     }
     return self;
 }
@@ -29,7 +29,7 @@
         NSLog(@"数据表已存在");
     } else {
         // 创建表
-        NSString *createSql = [NSString stringWithFormat:@"create table %@(title text primary key, titlecolor text, titleicon, countdown int, loopcount int, step text)",TIMERDETAILITEMTABLE];
+        NSString *createSql = [NSString stringWithFormat:@"create table %@(title text, titlecolor text, titleicon, countdown int, loopcount int, step text, ID INTEGER PRIMARY KEY)",TIMERDETAILITEMTABLE];
         if ([_dataBase executeUpdate:createSql]) {
             NSLog(@"数据表创建成功");
         } else {
@@ -55,8 +55,8 @@
     }
 }
 //  删除数据
-- (void)deleteWithTitle:(NSString *)title {
-    NSString *deleteSql = [NSString stringWithFormat:@"delete from %@ where title = '%@'",TIMERDETAILITEMTABLE, title];
+- (void)deleteWithTitle:(NSString *)title ID:(NSNumber *)ID {
+    NSString *deleteSql = [NSString stringWithFormat:@"delete from %@ where title = '%@' and ID = %@",TIMERDETAILITEMTABLE, title, ID];
     if ([_dataBase executeUpdate:deleteSql]) {
         NSLog(@"删除成功");
         
@@ -65,8 +65,8 @@
     }
 }
 //  更新数据
-- (void)updateWithTitle:(NSString *)title model:(TimerDetailItemModel *)model {
-    NSString *updateSql = [NSString stringWithFormat:@"update %@ set title = ?, titlecolor = ?, titleicon = ?, countdown = ?, loopcount = ?, step = ? where title = '%@'",TIMERDETAILITEMTABLE, title];
+- (void)updateWithTitle:(NSString *)title model:(TimerDetailItemModel *)model ID:(NSNumber *)ID {
+    NSString *updateSql = [NSString stringWithFormat:@"update %@ set title = ?, titlecolor = ?, titleicon = ?, countdown = ?, loopcount = ?, step = ? where title = '%@' and ID = %@",TIMERDETAILITEMTABLE, title, ID];
     if ([_dataBase executeUpdate:updateSql,model.title, model.titlecolor, model.titleicon, model.countdown, model.loopcount, model.step]) {
         NSLog(@"更新数据成功");
         TimerListItemModel *listItem = [[TimerListItemModel alloc] init];
@@ -86,19 +86,31 @@
     NSString *selectSql = [NSString stringWithFormat:@"select * from %@ where title = '%@'",TIMERDETAILITEMTABLE, tilte];
     FMResultSet *set = [_dataBase executeQuery:selectSql];
     NSMutableArray *mArr = [NSMutableArray array];
-//    while ([set next]) {
+    //    while ([set next]) {
     [set next];
     TimerDetailItemModel *model = [[TimerDetailItemModel alloc] init];
     model.title = [set stringForColumn:@"title"];
     model.titlecolor = [set stringForColumn:@"titlecolor"];
     model.titleicon = [set stringForColumn:@"titleicon"];
-//    int countdown = [set intForColumn:@"countdown"];
+    //    int countdown = [set intForColumn:@"countdown"];
     model.countdown = [NSNumber numberWithInt:[set intForColumn:@"countdown"]];
     model.loopcount = [NSNumber numberWithInt:[set intForColumn:@"loopcount"]];
     model.step = [set stringForColumn:@"step"];
+    model.ID = [NSNumber numberWithInt:[set intForColumn:@"ID"]];
     [mArr addObject:model];
-//    }
+    //    }
     return model;
+}
+
+//  删除数据
+- (void)deleteWithTitle:(NSString *)title {
+    NSString *deleteSql = [NSString stringWithFormat:@"delete from %@ where title = '%@'",TIMERDETAILITEMTABLE, title];
+    if ([_dataBase executeUpdate:deleteSql]) {
+        NSLog(@"删除成功");
+        
+    } else {
+        NSLog(@"删除失败");
+    }
 }
 
 @end

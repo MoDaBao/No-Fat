@@ -16,5 +16,5 @@
 @property (nonatomic, strong) NSNumber *countdown;// 倒计时
 @property (nonatomic, strong) NSNumber *loopcount;// 循环次数
 @property (nonatomic, copy) NSString *step;// 步骤
-
+@property (nonatomic, strong) NSNumber *ID;
 @end
