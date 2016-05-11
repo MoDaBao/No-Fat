@@ -39,6 +39,7 @@
 #define TIMERLISTITEMTABLE @"timeritemtable"// 表名
 
 #define RECOMMENDLISTTABLE @"praisetable"//点赞表名
+#define PROGRAMLISTTABLE @"ProgramListTable"// 我的训练数据表
 
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width //屏幕宽
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height //屏幕高

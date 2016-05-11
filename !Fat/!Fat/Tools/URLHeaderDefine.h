@@ -30,5 +30,10 @@
 #define ZUIXINLISTMORE_URL @"http://api.fit-time.cn/ftsns/loadMoreUserFeed?lon=121.288366&lat=31.128092&page_size=20&ver=2.5.2.1&client=android&adcode=310117&last_id=3548487&device_id=868698026359747"//最新刷新
 #define TIAJIAGUANZHU @"http://api.fit-time.cn/ftuser/loadRecommendUsers?"//添加关注数据
 
+//  训练模块
+#define PROGRAMSLIST_URL @"http://api.fit-time.cn/ftvideo/getPrograms"
+//#define PROGRAMSLIST_URL @"http://api.fit-time.cn/ftvideo/getPrograms?lon=121.28853&lat=31.127989&ver=2.5.2.1&fee=1&client=android&token=QXmRVqdwy6yCg1N1kWLJ3jo8Bo7VBlLfUW71BT7ugcdsrFTIr%2BerBw%3D%3D&adcode=310117&brand=OPPO&device_id=868698026034506&model=OPPO+R7&channel=QQ"  训练计划
+#define SINGLELIST_URL  @"http://api.fit-time.cn/ftvideo/getAllVideos"//    单次训练
+
 
 #endif /* URLHeaderDefine_h */

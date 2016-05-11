@@ -1,13 +1,15 @@
 //
 //  TrainTableViewController.h
-//  No!Fat
+//  NoFat
 //
-//  Created by 莫大宝 on 16/4/19.
-//  Copyright © 2016年 dabao. All rights reserved.
+//  Created by lanou on 16/4/19.
+//  Copyright © 2016年 lanou3g.com. All rights reserved.
 //
 
-#import "BaseTableViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface TrainTableViewController : BaseTableViewController
+@interface TrainTableViewController : BaseViewController
+
+- (void)refreshView;
 
 @end

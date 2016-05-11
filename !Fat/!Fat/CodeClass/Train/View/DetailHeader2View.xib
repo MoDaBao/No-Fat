@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DetailHeader2View">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="319"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rna-bQ-8qT">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="319"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="进度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWk-MP-meB">
+                    <rect key="frame" x="40" y="282" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1Y-YL-m3j">
+                    <rect key="frame" x="174" y="282" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下载" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rI-Y9-o1N">
+                    <rect key="frame" x="282" y="282" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WI0-zc-qb3">
+                    <rect key="frame" x="315" y="279" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="GBn-A2-pPb"/>
+                        <constraint firstAttribute="height" constant="20" id="bUV-IB-hzT"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="download.png"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEv-wx-fgf">
+                    <rect key="frame" x="306" y="88" width="49" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBX-xk-sFB">
+                    <rect key="frame" x="313" y="122" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aef-B2-jzf">
+                    <rect key="frame" x="275" y="153" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="sqJ-lc-IhW"/>
+                        <constraint firstAttribute="height" constant="50" id="thE-ZX-1Ty"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="play.png"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="HEv-wx-fgf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="88" id="0Tl-e3-Od7"/>
+                <constraint firstItem="Aef-B2-jzf" firstAttribute="top" secondItem="wBX-xk-sFB" secondAttribute="bottom" constant="10" id="8Hy-sG-0j5"/>
+                <constraint firstItem="rna-bQ-8qT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="D5I-sc-yoA"/>
+                <constraint firstAttribute="bottom" secondItem="d1Y-YL-m3j" secondAttribute="bottom" constant="20" id="DlK-Ur-IWT"/>
+                <constraint firstAttribute="bottom" secondItem="rna-bQ-8qT" secondAttribute="bottom" id="EbW-Uy-3Wc"/>
+                <constraint firstAttribute="bottom" secondItem="rna-bQ-8qT" secondAttribute="bottom" id="Imy-bv-rPL"/>
+                <constraint firstAttribute="trailing" secondItem="Aef-B2-jzf" secondAttribute="trailing" constant="50" id="JBd-QU-eBJ"/>
+                <constraint firstItem="6rI-Y9-o1N" firstAttribute="bottom" secondItem="WI0-zc-qb3" secondAttribute="bottom" id="JGa-fe-LKU"/>
+                <constraint firstAttribute="trailing" secondItem="rna-bQ-8qT" secondAttribute="trailing" id="Jd4-tN-Wnh"/>
+                <constraint firstAttribute="trailing" secondItem="rna-bQ-8qT" secondAttribute="trailing" id="QlH-s0-HQD"/>
+                <constraint firstItem="d1Y-YL-m3j" firstAttribute="centerX" secondItem="rna-bQ-8qT" secondAttribute="centerX" id="SvD-yV-J4j"/>
+                <constraint firstItem="SWk-MP-meB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="TJC-fx-TGF"/>
+                <constraint firstAttribute="trailing" secondItem="WI0-zc-qb3" secondAttribute="trailing" constant="40" id="TXR-xb-m6a"/>
+                <constraint firstItem="WI0-zc-qb3" firstAttribute="leading" secondItem="6rI-Y9-o1N" secondAttribute="trailing" constant="5" id="U6E-w1-L1Y"/>
+                <constraint firstAttribute="trailing" secondItem="HEv-wx-fgf" secondAttribute="trailing" constant="20" id="Vwt-Fd-Nxz"/>
+                <constraint firstAttribute="bottom" secondItem="WI0-zc-qb3" secondAttribute="bottom" constant="20" id="ZOj-P8-iuK"/>
+                <constraint firstAttribute="trailing" secondItem="wBX-xk-sFB" secondAttribute="trailing" constant="20" id="c3o-f6-2N9"/>
+                <constraint firstItem="rna-bQ-8qT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fvK-D0-AiX"/>
+                <constraint firstItem="rna-bQ-8qT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="iEL-Sc-5pq"/>
+                <constraint firstAttribute="bottom" secondItem="SWk-MP-meB" secondAttribute="bottom" constant="20" id="pL8-Bg-3LP"/>
+                <constraint firstItem="rna-bQ-8qT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="scK-mO-N2R"/>
+                <constraint firstItem="wBX-xk-sFB" firstAttribute="top" secondItem="HEv-wx-fgf" secondAttribute="bottom" constant="10" id="wPz-aM-Kwn"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="downBt" destination="WI0-zc-qb3" id="Vuf-QH-gad"/>
+                <outlet property="photoImg" destination="rna-bQ-8qT" id="3TH-D9-Gfq"/>
+                <outlet property="playBt" destination="Aef-B2-jzf" id="56Y-kS-8Se"/>
+                <outlet property="prograssLabel" destination="SWk-MP-meB" id="JXy-Mi-Ufb"/>
+                <outlet property="subTitleLabel" destination="wBX-xk-sFB" id="xK4-HI-z0C"/>
+                <outlet property="timeLabel" destination="d1Y-YL-m3j" id="oiW-aB-gZA"/>
+                <outlet property="titleLabel" destination="HEv-wx-fgf" id="Y89-pC-ecb"/>
+            </connections>
+            <point key="canvasLocation" x="314.5" y="293.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="download.png" width="20" height="20"/>
+        <image name="play.png" width="40" height="40"/>
+    </resources>
+</document>

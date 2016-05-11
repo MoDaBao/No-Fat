@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="AYU-iI-egS" customClass="DetailHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVQ-oR-jxK">
+                    <rect key="frame" x="160" y="240" width="200" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="Isj-AR-mMG"/>
+                        <constraint firstAttribute="height" constant="20" id="cqc-Ic-CIa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="难度" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afr-26-x7U">
+                    <rect key="frame" x="266" y="210" width="28" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9CR-2p-RTv">
+                    <rect key="frame" x="294" y="210" width="30" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="duh-6b-yp4"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmo-G1-gOe">
+                    <rect key="frame" x="324" y="210" width="36" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="x4t-GW-V66"/>
+                        <constraint firstAttribute="width" constant="36" id="xiy-FA-5I2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chS-k5-lQR">
+                    <rect key="frame" x="297" y="171" width="63" height="29"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="bmo-G1-gOe" secondAttribute="trailing" constant="15" id="567-ve-Jut"/>
+                <constraint firstItem="9CR-2p-RTv" firstAttribute="height" secondItem="bmo-G1-gOe" secondAttribute="height" id="FkR-tL-oRG"/>
+                <constraint firstAttribute="trailing" secondItem="dVQ-oR-jxK" secondAttribute="trailing" constant="15" id="GID-6K-lsQ"/>
+                <constraint firstItem="bmo-G1-gOe" firstAttribute="leading" secondItem="9CR-2p-RTv" secondAttribute="trailing" id="Gnu-Bb-m2Q"/>
+                <constraint firstAttribute="trailing" secondItem="chS-k5-lQR" secondAttribute="trailing" constant="15" id="HlJ-Su-rzw"/>
+                <constraint firstItem="9CR-2p-RTv" firstAttribute="centerY" secondItem="bmo-G1-gOe" secondAttribute="centerY" id="Pl1-DI-1Iz"/>
+                <constraint firstItem="afr-26-x7U" firstAttribute="bottom" secondItem="9CR-2p-RTv" secondAttribute="bottom" id="bkP-Ba-c90"/>
+                <constraint firstItem="dVQ-oR-jxK" firstAttribute="top" secondItem="bmo-G1-gOe" secondAttribute="bottom" constant="10" id="ecu-We-hjc"/>
+                <constraint firstItem="bmo-G1-gOe" firstAttribute="top" secondItem="chS-k5-lQR" secondAttribute="bottom" constant="10" id="lC0-c7-Qbt"/>
+                <constraint firstItem="9CR-2p-RTv" firstAttribute="leading" secondItem="afr-26-x7U" secondAttribute="trailing" id="nrM-fL-VsF"/>
+                <constraint firstItem="afr-26-x7U" firstAttribute="height" secondItem="9CR-2p-RTv" secondAttribute="height" id="rc2-G0-Nnc"/>
+                <constraint firstAttribute="bottom" secondItem="dVQ-oR-jxK" secondAttribute="bottom" constant="20" id="xJv-KY-BlQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="difficultyImg" destination="9CR-2p-RTv" id="jhN-he-1Vh"/>
+                <outlet property="instrumentLabel" destination="bmo-G1-gOe" id="0wz-Wi-hAN"/>
+                <outlet property="statsLabel" destination="dVQ-oR-jxK" id="pXn-xd-Evj"/>
+                <outlet property="titleLabel" destination="chS-k5-lQR" id="8Qy-Hg-rXJ"/>
+            </connections>
+            <point key="canvasLocation" x="337.5" y="254"/>
+        </view>
+    </objects>
+</document>

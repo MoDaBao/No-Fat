@@ -93,11 +93,40 @@
 		1A36B7681CDB9D0C00047948 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A36B75D1CDB9D0C00047948 /* BaseView.m */; };
 		1A36B7701CDB9E9600047948 /* KeyBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A36B76F1CDB9E9600047948 /* KeyBoardView.m */; };
 		5C3CC9B04BFC3EC4DD82A3D7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F372205CB983B7FB3FD821A /* libPods.a */; };
+		79F7B3F61CE359E7007D5D3B /* AddTrainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B3E71CE359E7007D5D3B /* AddTrainViewController.m */; };
+		79F7B3F71CE359E7007D5D3B /* AddTrainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F7B3E81CE359E7007D5D3B /* AddTrainViewController.xib */; };
+		79F7B3F81CE359E7007D5D3B /* DetailProgram2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B3EA1CE359E7007D5D3B /* DetailProgram2ViewController.m */; };
+		79F7B3F91CE359E7007D5D3B /* DetailProgram2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F7B3EB1CE359E7007D5D3B /* DetailProgram2ViewController.xib */; };
+		79F7B3FA1CE359E7007D5D3B /* DetailProgramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B3ED1CE359E7007D5D3B /* DetailProgramViewController.m */; };
+		79F7B3FB1CE359E7007D5D3B /* DetailProgramViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F7B3EE1CE359E7007D5D3B /* DetailProgramViewController.xib */; };
+		79F7B3FC1CE359E7007D5D3B /* TrainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B3F01CE359E7007D5D3B /* TrainTableViewController.m */; };
+		79F7B3FD1CE359E7007D5D3B /* PlayVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B3F21CE359E7007D5D3B /* PlayVideoViewController.m */; };
+		79F7B3FE1CE359E7007D5D3B /* PlayVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F7B3F31CE359E7007D5D3B /* PlayVideoViewController.xib */; };
+		79F7B3FF1CE359E7007D5D3B /* PlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B3F51CE359E7007D5D3B /* PlayVC.m */; };
+		79F7B40E1CE35A24007D5D3B /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B4011CE35A24007D5D3B /* NSTimer+Addition.m */; };
+		79F7B40F1CE35A24007D5D3B /* DescModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B4031CE35A24007D5D3B /* DescModel.m */; };
+		79F7B4101CE35A24007D5D3B /* ProgramDailyListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B4051CE35A24007D5D3B /* ProgramDailyListModel.m */; };
+		79F7B4111CE35A24007D5D3B /* ProgramModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B4071CE35A24007D5D3B /* ProgramModel.m */; };
+		79F7B4121CE35A24007D5D3B /* ProgramStatsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B4091CE35A24007D5D3B /* ProgramStatsModel.m */; };
+		79F7B4131CE35A24007D5D3B /* UserTrainDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B40B1CE35A24007D5D3B /* UserTrainDB.m */; };
+		79F7B4141CE35A24007D5D3B /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B40D1CE35A24007D5D3B /* VideoModel.m */; };
+		79F7B4271CE35A49007D5D3B /* DetailHeader2View.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B4161CE35A49007D5D3B /* DetailHeader2View.m */; };
+		79F7B4281CE35A49007D5D3B /* DetailHeader2View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F7B4171CE35A49007D5D3B /* DetailHeader2View.xib */; };
+		79F7B4291CE35A49007D5D3B /* DetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B4191CE35A49007D5D3B /* DetailHeaderView.m */; };
+		79F7B42A1CE35A49007D5D3B /* DetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F7B41A1CE35A49007D5D3B /* DetailHeaderView.xib */; };
+		79F7B42B1CE35A49007D5D3B /* ProgramDailyListModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B41C1CE35A49007D5D3B /* ProgramDailyListModelCell.m */; };
+		79F7B42C1CE35A49007D5D3B /* ProgramDailyListModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F7B41D1CE35A49007D5D3B /* ProgramDailyListModelCell.xib */; };
+		79F7B42D1CE35A49007D5D3B /* ProgramModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B41F1CE35A49007D5D3B /* ProgramModelCell.m */; };
+		79F7B42E1CE35A49007D5D3B /* ProgramModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F7B4201CE35A49007D5D3B /* ProgramModelCell.xib */; };
+		79F7B42F1CE35A49007D5D3B /* VideoModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B4221CE35A49007D5D3B /* VideoModelCell.m */; };
+		79F7B4301CE35A49007D5D3B /* VideoModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F7B4231CE35A49007D5D3B /* VideoModelCell.xib */; };
+		79F7B4311CE35A49007D5D3B /* PlayerClearView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B4251CE35A49007D5D3B /* PlayerClearView.m */; };
+		79F7B4321CE35A49007D5D3B /* PlayerClearView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F7B4261CE35A49007D5D3B /* PlayerClearView.xib */; };
+		79F7B4351CE35AF8007D5D3B /* PlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B4341CE35AF8007D5D3B /* PlayManager.m */; };
+		79F7B4381CE35B1E007D5D3B /* UIButton+FinishClick.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7B4371CE35B1E007D5D3B /* UIButton+FinishClick.m */; };
 		E7244A2A1CCCAD7900EE72F5 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7244A291CCCAD7900EE72F5 /* LoginView.m */; };
 		E7244A2D1CCCAD9B00EE72F5 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7244A2C1CCCAD9B00EE72F5 /* NewsModel.m */; };
 		E7244A301CCCADB000EE72F5 /* NewsView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7244A2F1CCCADB000EE72F5 /* NewsView.m */; };
-		E7244A361CCCADD500EE72F5 /* TrainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7244A351CCCADD500EE72F5 /* TrainModel.m */; };
-		E7244A391CCCADE400EE72F5 /* TrainView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7244A381CCCADE400EE72F5 /* TrainView.m */; };
 		E7244A3B1CCCAE1C00EE72F5 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = E7244A3A1CCCAE1C00EE72F5 /* cancel.png */; };
 		E772B19E1CC7BE7000C2BB5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E772B19D1CC7BE7000C2BB5F /* main.m */; };
 		E772B1A11CC7BE7000C2BB5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E772B1A01CC7BE7000C2BB5F /* AppDelegate.m */; };
@@ -150,7 +179,6 @@
 		E7BBF3C51CCBCE88008F9A74 /* AlterUserSignCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF39B1CCBCE88008F9A74 /* AlterUserSignCell.m */; };
 		E7BBF3C61CCBCE88008F9A74 /* MenuItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF39D1CCBCE88008F9A74 /* MenuItemCell.m */; };
 		E7BBF3C71CCBCE88008F9A74 /* PersonCenterHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF39F1CCBCE88008F9A74 /* PersonCenterHeaderView.m */; };
-		E7BBF3C81CCBCE88008F9A74 /* TrainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3A31CCBCE88008F9A74 /* TrainTableViewController.m */; };
 		E7BBF3C91CCBCE88008F9A74 /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3AA1CCBCE88008F9A74 /* FMDBManager.m */; };
 		E7BBF3CA1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3AD1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.m */; };
 		E7E5AA5F1CDDE123002E0769 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E5AA5D1CDDE123002E0769 /* LaunchScreen.storyboard */; };
@@ -328,6 +356,58 @@
 		1A36B76E1CDB9E9600047948 /* KeyBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyBoardView.h; sourceTree = "<group>"; };
 		1A36B76F1CDB9E9600047948 /* KeyBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyBoardView.m; sourceTree = "<group>"; };
 		3F372205CB983B7FB3FD821A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		79F7B3E61CE359E7007D5D3B /* AddTrainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTrainViewController.h; sourceTree = "<group>"; };
+		79F7B3E71CE359E7007D5D3B /* AddTrainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTrainViewController.m; sourceTree = "<group>"; };
+		79F7B3E81CE359E7007D5D3B /* AddTrainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTrainViewController.xib; sourceTree = "<group>"; };
+		79F7B3E91CE359E7007D5D3B /* DetailProgram2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailProgram2ViewController.h; sourceTree = "<group>"; };
+		79F7B3EA1CE359E7007D5D3B /* DetailProgram2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailProgram2ViewController.m; sourceTree = "<group>"; };
+		79F7B3EB1CE359E7007D5D3B /* DetailProgram2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailProgram2ViewController.xib; sourceTree = "<group>"; };
+		79F7B3EC1CE359E7007D5D3B /* DetailProgramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailProgramViewController.h; sourceTree = "<group>"; };
+		79F7B3ED1CE359E7007D5D3B /* DetailProgramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailProgramViewController.m; sourceTree = "<group>"; };
+		79F7B3EE1CE359E7007D5D3B /* DetailProgramViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailProgramViewController.xib; sourceTree = "<group>"; };
+		79F7B3EF1CE359E7007D5D3B /* TrainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainTableViewController.h; sourceTree = "<group>"; };
+		79F7B3F01CE359E7007D5D3B /* TrainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainTableViewController.m; sourceTree = "<group>"; };
+		79F7B3F11CE359E7007D5D3B /* PlayVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayVideoViewController.h; sourceTree = "<group>"; };
+		79F7B3F21CE359E7007D5D3B /* PlayVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayVideoViewController.m; sourceTree = "<group>"; };
+		79F7B3F31CE359E7007D5D3B /* PlayVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayVideoViewController.xib; sourceTree = "<group>"; };
+		79F7B3F41CE359E7007D5D3B /* PlayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayVC.h; sourceTree = "<group>"; };
+		79F7B3F51CE359E7007D5D3B /* PlayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayVC.m; sourceTree = "<group>"; };
+		79F7B4001CE35A24007D5D3B /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
+		79F7B4011CE35A24007D5D3B /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
+		79F7B4021CE35A24007D5D3B /* DescModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescModel.h; sourceTree = "<group>"; };
+		79F7B4031CE35A24007D5D3B /* DescModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescModel.m; sourceTree = "<group>"; };
+		79F7B4041CE35A24007D5D3B /* ProgramDailyListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramDailyListModel.h; sourceTree = "<group>"; };
+		79F7B4051CE35A24007D5D3B /* ProgramDailyListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramDailyListModel.m; sourceTree = "<group>"; };
+		79F7B4061CE35A24007D5D3B /* ProgramModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramModel.h; sourceTree = "<group>"; };
+		79F7B4071CE35A24007D5D3B /* ProgramModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramModel.m; sourceTree = "<group>"; };
+		79F7B4081CE35A24007D5D3B /* ProgramStatsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramStatsModel.h; sourceTree = "<group>"; };
+		79F7B4091CE35A24007D5D3B /* ProgramStatsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramStatsModel.m; sourceTree = "<group>"; };
+		79F7B40A1CE35A24007D5D3B /* UserTrainDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTrainDB.h; sourceTree = "<group>"; };
+		79F7B40B1CE35A24007D5D3B /* UserTrainDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTrainDB.m; sourceTree = "<group>"; };
+		79F7B40C1CE35A24007D5D3B /* VideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoModel.h; sourceTree = "<group>"; };
+		79F7B40D1CE35A24007D5D3B /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
+		79F7B4151CE35A49007D5D3B /* DetailHeader2View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailHeader2View.h; sourceTree = "<group>"; };
+		79F7B4161CE35A49007D5D3B /* DetailHeader2View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailHeader2View.m; sourceTree = "<group>"; };
+		79F7B4171CE35A49007D5D3B /* DetailHeader2View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailHeader2View.xib; sourceTree = "<group>"; };
+		79F7B4181CE35A49007D5D3B /* DetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailHeaderView.h; sourceTree = "<group>"; };
+		79F7B4191CE35A49007D5D3B /* DetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailHeaderView.m; sourceTree = "<group>"; };
+		79F7B41A1CE35A49007D5D3B /* DetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailHeaderView.xib; sourceTree = "<group>"; };
+		79F7B41B1CE35A49007D5D3B /* ProgramDailyListModelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramDailyListModelCell.h; sourceTree = "<group>"; };
+		79F7B41C1CE35A49007D5D3B /* ProgramDailyListModelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramDailyListModelCell.m; sourceTree = "<group>"; };
+		79F7B41D1CE35A49007D5D3B /* ProgramDailyListModelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgramDailyListModelCell.xib; sourceTree = "<group>"; };
+		79F7B41E1CE35A49007D5D3B /* ProgramModelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramModelCell.h; sourceTree = "<group>"; };
+		79F7B41F1CE35A49007D5D3B /* ProgramModelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramModelCell.m; sourceTree = "<group>"; };
+		79F7B4201CE35A49007D5D3B /* ProgramModelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgramModelCell.xib; sourceTree = "<group>"; };
+		79F7B4211CE35A49007D5D3B /* VideoModelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoModelCell.h; sourceTree = "<group>"; };
+		79F7B4221CE35A49007D5D3B /* VideoModelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoModelCell.m; sourceTree = "<group>"; };
+		79F7B4231CE35A49007D5D3B /* VideoModelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoModelCell.xib; sourceTree = "<group>"; };
+		79F7B4241CE35A49007D5D3B /* PlayerClearView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerClearView.h; sourceTree = "<group>"; };
+		79F7B4251CE35A49007D5D3B /* PlayerClearView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerClearView.m; sourceTree = "<group>"; };
+		79F7B4261CE35A49007D5D3B /* PlayerClearView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerClearView.xib; sourceTree = "<group>"; };
+		79F7B4331CE35AF8007D5D3B /* PlayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayManager.h; sourceTree = "<group>"; };
+		79F7B4341CE35AF8007D5D3B /* PlayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayManager.m; sourceTree = "<group>"; };
+		79F7B4361CE35B1E007D5D3B /* UIButton+FinishClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+FinishClick.h"; sourceTree = "<group>"; };
+		79F7B4371CE35B1E007D5D3B /* UIButton+FinishClick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FinishClick.m"; sourceTree = "<group>"; };
 		923F4DA709979618D7E94F7E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E7244A281CCCAD7900EE72F5 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
 		E7244A291CCCAD7900EE72F5 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
@@ -335,10 +415,6 @@
 		E7244A2C1CCCAD9B00EE72F5 /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
 		E7244A2E1CCCADB000EE72F5 /* NewsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsView.h; sourceTree = "<group>"; };
 		E7244A2F1CCCADB000EE72F5 /* NewsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsView.m; sourceTree = "<group>"; };
-		E7244A341CCCADD500EE72F5 /* TrainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainModel.h; sourceTree = "<group>"; };
-		E7244A351CCCADD500EE72F5 /* TrainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainModel.m; sourceTree = "<group>"; };
-		E7244A371CCCADE400EE72F5 /* TrainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainView.h; sourceTree = "<group>"; };
-		E7244A381CCCADE400EE72F5 /* TrainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainView.m; sourceTree = "<group>"; };
 		E7244A3A1CCCAE1C00EE72F5 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		E772B1991CC7BE7000C2BB5F /* !Fat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "!Fat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E772B19D1CC7BE7000C2BB5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -438,8 +514,6 @@
 		E7BBF39D1CCBCE88008F9A74 /* MenuItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItemCell.m; sourceTree = "<group>"; };
 		E7BBF39E1CCBCE88008F9A74 /* PersonCenterHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonCenterHeaderView.h; sourceTree = "<group>"; };
 		E7BBF39F1CCBCE88008F9A74 /* PersonCenterHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonCenterHeaderView.m; sourceTree = "<group>"; };
-		E7BBF3A21CCBCE88008F9A74 /* TrainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainTableViewController.h; sourceTree = "<group>"; };
-		E7BBF3A31CCBCE88008F9A74 /* TrainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainTableViewController.m; sourceTree = "<group>"; };
 		E7BBF3A81CCBCE88008F9A74 /* ConstantHeaderDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantHeaderDefine.h; sourceTree = "<group>"; };
 		E7BBF3A91CCBCE88008F9A74 /* FMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBManager.h; sourceTree = "<group>"; };
 		E7BBF3AA1CCBCE88008F9A74 /* FMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBManager.m; sourceTree = "<group>"; };
@@ -982,8 +1056,22 @@
 		E7BBF3A11CCBCE88008F9A74 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E7BBF3A21CCBCE88008F9A74 /* TrainTableViewController.h */,
-				E7BBF3A31CCBCE88008F9A74 /* TrainTableViewController.m */,
+				79F7B3E61CE359E7007D5D3B /* AddTrainViewController.h */,
+				79F7B3E71CE359E7007D5D3B /* AddTrainViewController.m */,
+				79F7B3E81CE359E7007D5D3B /* AddTrainViewController.xib */,
+				79F7B3E91CE359E7007D5D3B /* DetailProgram2ViewController.h */,
+				79F7B3EA1CE359E7007D5D3B /* DetailProgram2ViewController.m */,
+				79F7B3EB1CE359E7007D5D3B /* DetailProgram2ViewController.xib */,
+				79F7B3EC1CE359E7007D5D3B /* DetailProgramViewController.h */,
+				79F7B3ED1CE359E7007D5D3B /* DetailProgramViewController.m */,
+				79F7B3EE1CE359E7007D5D3B /* DetailProgramViewController.xib */,
+				79F7B3EF1CE359E7007D5D3B /* TrainTableViewController.h */,
+				79F7B3F01CE359E7007D5D3B /* TrainTableViewController.m */,
+				79F7B3F11CE359E7007D5D3B /* PlayVideoViewController.h */,
+				79F7B3F21CE359E7007D5D3B /* PlayVideoViewController.m */,
+				79F7B3F31CE359E7007D5D3B /* PlayVideoViewController.xib */,
+				79F7B3F41CE359E7007D5D3B /* PlayVC.h */,
+				79F7B3F51CE359E7007D5D3B /* PlayVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -991,8 +1079,20 @@
 		E7BBF3A41CCBCE88008F9A74 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E7244A341CCCADD500EE72F5 /* TrainModel.h */,
-				E7244A351CCCADD500EE72F5 /* TrainModel.m */,
+				79F7B4001CE35A24007D5D3B /* NSTimer+Addition.h */,
+				79F7B4011CE35A24007D5D3B /* NSTimer+Addition.m */,
+				79F7B4021CE35A24007D5D3B /* DescModel.h */,
+				79F7B4031CE35A24007D5D3B /* DescModel.m */,
+				79F7B4041CE35A24007D5D3B /* ProgramDailyListModel.h */,
+				79F7B4051CE35A24007D5D3B /* ProgramDailyListModel.m */,
+				79F7B4061CE35A24007D5D3B /* ProgramModel.h */,
+				79F7B4071CE35A24007D5D3B /* ProgramModel.m */,
+				79F7B4081CE35A24007D5D3B /* ProgramStatsModel.h */,
+				79F7B4091CE35A24007D5D3B /* ProgramStatsModel.m */,
+				79F7B40A1CE35A24007D5D3B /* UserTrainDB.h */,
+				79F7B40B1CE35A24007D5D3B /* UserTrainDB.m */,
+				79F7B40C1CE35A24007D5D3B /* VideoModel.h */,
+				79F7B40D1CE35A24007D5D3B /* VideoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1000,8 +1100,24 @@
 		E7BBF3A51CCBCE88008F9A74 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E7244A371CCCADE400EE72F5 /* TrainView.h */,
-				E7244A381CCCADE400EE72F5 /* TrainView.m */,
+				79F7B4151CE35A49007D5D3B /* DetailHeader2View.h */,
+				79F7B4161CE35A49007D5D3B /* DetailHeader2View.m */,
+				79F7B4171CE35A49007D5D3B /* DetailHeader2View.xib */,
+				79F7B4181CE35A49007D5D3B /* DetailHeaderView.h */,
+				79F7B4191CE35A49007D5D3B /* DetailHeaderView.m */,
+				79F7B41A1CE35A49007D5D3B /* DetailHeaderView.xib */,
+				79F7B41B1CE35A49007D5D3B /* ProgramDailyListModelCell.h */,
+				79F7B41C1CE35A49007D5D3B /* ProgramDailyListModelCell.m */,
+				79F7B41D1CE35A49007D5D3B /* ProgramDailyListModelCell.xib */,
+				79F7B41E1CE35A49007D5D3B /* ProgramModelCell.h */,
+				79F7B41F1CE35A49007D5D3B /* ProgramModelCell.m */,
+				79F7B4201CE35A49007D5D3B /* ProgramModelCell.xib */,
+				79F7B4211CE35A49007D5D3B /* VideoModelCell.h */,
+				79F7B4221CE35A49007D5D3B /* VideoModelCell.m */,
+				79F7B4231CE35A49007D5D3B /* VideoModelCell.xib */,
+				79F7B4241CE35A49007D5D3B /* PlayerClearView.h */,
+				79F7B4251CE35A49007D5D3B /* PlayerClearView.m */,
+				79F7B4261CE35A49007D5D3B /* PlayerClearView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1043,6 +1159,10 @@
 				E782A2111CDCE1B100E2F537 /* MOCustomDatePickerView.m */,
 				E782A2121CDCE1B100E2F537 /* UIView+ChangeFrame.h */,
 				E782A2131CDCE1B100E2F537 /* UIView+ChangeFrame.m */,
+				79F7B4331CE35AF8007D5D3B /* PlayManager.h */,
+				79F7B4341CE35AF8007D5D3B /* PlayManager.m */,
+				79F7B4361CE35B1E007D5D3B /* UIButton+FinishClick.h */,
+				79F7B4371CE35B1E007D5D3B /* UIButton+FinishClick.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1156,16 +1276,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79F7B3F71CE359E7007D5D3B /* AddTrainViewController.xib in Resources */,
 				1A36B6DC1CDB9CCC00047948 /* AddtimeDetailHeaderView.xib in Resources */,
 				1A36B6E51CDB9CCC00047948 /* AttentionListModelCell.xib in Resources */,
+				79F7B3FB1CE359E7007D5D3B /* DetailProgramViewController.xib in Resources */,
 				1A36B74D1CDB9CF700047948 /* AddTimeDetailViewController.xib in Resources */,
 				1A36B6E81CDB9CCC00047948 /* ButtonView.xib in Resources */,
+				79F7B42A1CE35A49007D5D3B /* DetailHeaderView.xib in Resources */,
+				79F7B4321CE35A49007D5D3B /* PlayerClearView.xib in Resources */,
+				79F7B4301CE35A49007D5D3B /* VideoModelCell.xib in Resources */,
 				E772B1A31CC7BE7000C2BB5F /* Assets.xcassets in Resources */,
 				1A36B7001CDB9CCC00047948 /* TrainItemView.xib in Resources */,
 				1A36B6E31CDB9CCC00047948 /* AttentionListHeaderView.xib in Resources */,
 				1A36B7071CDB9CCC00047948 /* WriteCommentView.xib in Resources */,
 				E782A2361CDCE36700E2F537 /* TimerDetailItemOtherCell.xib in Resources */,
+				79F7B4281CE35A49007D5D3B /* DetailHeader2View.xib in Resources */,
 				E7E5AA5F1CDDE123002E0769 /* LaunchScreen.storyboard in Resources */,
+				79F7B42C1CE35A49007D5D3B /* ProgramDailyListModelCell.xib in Resources */,
 				1A36B6ED1CDB9CCC00047948 /* FirstTopicHeaderView.xib in Resources */,
 				1A36B6F61CDB9CCC00047948 /* RecommendDetailHeadView.xib in Resources */,
 				E782A2341CDCE36700E2F537 /* StartView.xib in Resources */,
@@ -1181,16 +1308,19 @@
 				1A36B6EF1CDB9CCC00047948 /* LifeItemView.xib in Resources */,
 				1A36B6EA1CDB9CCC00047948 /* CommentView.xib in Resources */,
 				E7BBF3BB1CCBCE88008F9A74 /* RegistViewController.xib in Resources */,
+				79F7B3F91CE359E7007D5D3B /* DetailProgram2ViewController.xib in Resources */,
 				1A36B7051CDB9CCC00047948 /* UserMessageHeaderView.xib in Resources */,
 				E7E5AA671CDDE81A002E0769 /* ManagerView.xib in Resources */,
 				1A36B6FA1CDB9CCC00047948 /* RecommendListModelCell.xib in Resources */,
 				E782A23A1CDCE36700E2F537 /* TimerListItemModelCell.xib in Resources */,
+				79F7B3FE1CE359E7007D5D3B /* PlayVideoViewController.xib in Resources */,
 				1A36B6E01CDB9CCC00047948 /* AddTimeNoImageModelCell.xib in Resources */,
 				E7244A3B1CCCAE1C00EE72F5 /* cancel.png in Resources */,
 				1A36B6F81CDB9CCC00047948 /* RecommendDetailModelCell.xib in Resources */,
 				1A36B6DE1CDB9CCC00047948 /* AddTimeListModelCell.xib in Resources */,
 				E7BBF3B91CCBCE88008F9A74 /* LoginViewController.xib in Resources */,
 				E782A2381CDCE36700E2F537 /* TimerDetailItemStepCell.xib in Resources */,
+				79F7B42E1CE35A49007D5D3B /* ProgramModelCell.xib in Resources */,
 				1A36B75B1CDB9CF700047948 /* UserMessageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1265,8 +1395,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A36B6D81CDB9CCC00047948 /* AddNewsView.m in Sources */,
+				79F7B3FA1CE359E7007D5D3B /* DetailProgramViewController.m in Sources */,
+				79F7B4121CE35A24007D5D3B /* ProgramStatsModel.m in Sources */,
 				E7BBF3BA1CCBCE88008F9A74 /* RegistViewController.m in Sources */,
 				1A36B6F51CDB9CCC00047948 /* RecommendDetailHeadView.m in Sources */,
+				79F7B4141CE35A24007D5D3B /* VideoModel.m in Sources */,
 				E782A2451CDCE37600E2F537 /* TimerDetailItemModel.m in Sources */,
 				1A36B6D91CDB9CCC00047948 /* AddPersonModelCell.m in Sources */,
 				E7BBF3C31CCBCE88008F9A74 /* PersonInfoViewController.m in Sources */,
@@ -1274,20 +1407,27 @@
 				1A36B6F01CDB9CCC00047948 /* MyActivityIndicatorView.m in Sources */,
 				1A36B6881CDB9C9B00047948 /* UIImage+ImageEffects.m in Sources */,
 				E7BBF3C11CCBCE88008F9A74 /* MyNewsViewController.m in Sources */,
+				79F7B42F1CE35A49007D5D3B /* VideoModelCell.m in Sources */,
 				1A36B6E41CDB9CCC00047948 /* AttentionListModelCell.m in Sources */,
+				79F7B42B1CE35A49007D5D3B /* ProgramDailyListModelCell.m in Sources */,
 				1A36B7241CDB9CE600047948 /* RecommendListDB.m in Sources */,
+				79F7B42D1CE35A49007D5D3B /* ProgramModelCell.m in Sources */,
 				1A36B7281CDB9CE600047948 /* TopicModel.m in Sources */,
 				E7BBF3C21CCBCE88008F9A74 /* PersonCenterViewController.m in Sources */,
 				1A36B6F71CDB9CCC00047948 /* RecommendDetailModelCell.m in Sources */,
 				1A36B7231CDB9CE600047948 /* RecommendDetailModel.m in Sources */,
 				1A36B75A1CDB9CF700047948 /* UserMessageViewController.m in Sources */,
+				79F7B3FF1CE359E7007D5D3B /* PlayVC.m in Sources */,
 				1A36B74A1CDB9CF700047948 /* AddPersonViewController.m in Sources */,
 				E7BBF3C01CCBCE88008F9A74 /* AlterUserSignViewController.m in Sources */,
 				E7BBF3C61CCBCE88008F9A74 /* MenuItemCell.m in Sources */,
 				E7BBF3B71CCBCE88008F9A74 /* SelectionViewController.m in Sources */,
+				79F7B40F1CE35A24007D5D3B /* DescModel.m in Sources */,
 				1A36B72A1CDB9CE600047948 /* UserMessageModel.m in Sources */,
+				79F7B3F61CE359E7007D5D3B /* AddTrainViewController.m in Sources */,
 				1A36B6DD1CDB9CCC00047948 /* AddTimeListModelCell.m in Sources */,
 				1A36B6EE1CDB9CCC00047948 /* LifeItemView.m in Sources */,
+				79F7B4291CE35A49007D5D3B /* DetailHeaderView.m in Sources */,
 				E782A2591CDCE38200E2F537 /* TimerItemManagerViewController.m in Sources */,
 				E782A2471CDCE37600E2F537 /* TimerListItemModel.m in Sources */,
 				1A36B7561CDB9CF700047948 /* SearchViewController.m in Sources */,
@@ -1315,9 +1455,11 @@
 				1A36B7531CDB9CF700047948 /* NewViewController.m in Sources */,
 				E7BBF3B01CCBCE88008F9A74 /* BaseModel.m in Sources */,
 				E7BBF3B21CCBCE88008F9A74 /* BaseTableViewController.m in Sources */,
+				79F7B4131CE35A24007D5D3B /* UserTrainDB.m in Sources */,
 				1A36B7581CDB9CF700047948 /* ShareLifeViewController.m in Sources */,
 				1A36B7521CDB9CF700047948 /* FirstTopicViewController.m in Sources */,
 				E7BBF3B41CCBCE88008F9A74 /* FactoryCollectionViewCell.m in Sources */,
+				79F7B4101CE35A24007D5D3B /* ProgramDailyListModel.m in Sources */,
 				1A36B6E71CDB9CCC00047948 /* ButtonView.m in Sources */,
 				E782A2371CDCE36700E2F537 /* TimerDetailItemStepCell.m in Sources */,
 				1A36B7261CDB9CE600047948 /* TodayDoneDB.m in Sources */,
@@ -1331,14 +1473,18 @@
 				1A36B7011CDB9CCC00047948 /* TwoItemView.m in Sources */,
 				1A36B68A1CDB9C9B00047948 /* UIButton+FiniishClick.m in Sources */,
 				E7BBF3C41CCBCE88008F9A74 /* AlterUserNameCell.m in Sources */,
-				E7BBF3C81CCBCE88008F9A74 /* TrainTableViewController.m in Sources */,
 				1A36B74F1CDB9CF700047948 /* AttentionDetailViewController.m in Sources */,
 				1A36B6F11CDB9CCC00047948 /* MyCollectionReusableView.m in Sources */,
 				E7F13AF01CCE1F5E00B0312D /* MyNewsCell.m in Sources */,
 				1A36B6F31CDB9CCC00047948 /* RecommendCollectionReusableView.m in Sources */,
 				1A36B74C1CDB9CF700047948 /* AddTimeDetailViewController.m in Sources */,
 				1A36B7061CDB9CCC00047948 /* WriteCommentView.m in Sources */,
+				79F7B3FD1CE359E7007D5D3B /* PlayVideoViewController.m in Sources */,
+				79F7B4311CE35A49007D5D3B /* PlayerClearView.m in Sources */,
 				E782A2151CDCE1B100E2F537 /* ChangeColorManager.m in Sources */,
+				79F7B40E1CE35A24007D5D3B /* NSTimer+Addition.m in Sources */,
+				79F7B4111CE35A24007D5D3B /* ProgramModel.m in Sources */,
+				79F7B4271CE35A49007D5D3B /* DetailHeader2View.m in Sources */,
 				E7BBF3C51CCBCE88008F9A74 /* AlterUserSignCell.m in Sources */,
 				1A36B6FC1CDB9CCC00047948 /* SearchButtonView.m in Sources */,
 				E7244A2A1CCCAD7900EE72F5 /* LoginView.m in Sources */,
@@ -1353,10 +1499,12 @@
 				E782A2551CDCE38200E2F537 /* AlterTitleViewController.m in Sources */,
 				E782A2351CDCE36700E2F537 /* TimerDetailItemOtherCell.m in Sources */,
 				1A36B7551CDB9CF700047948 /* RecommendViewController.m in Sources */,
+				79F7B4381CE35B1E007D5D3B /* UIButton+FinishClick.m in Sources */,
 				E7F13AED1CCDFB7400B0312D /* NSString+GetToken.m in Sources */,
-				E7244A361CCCADD500EE72F5 /* TrainModel.m in Sources */,
 				1A36B7251CDB9CE600047948 /* RecommendListModel.m in Sources */,
 				1A36B6871CDB9C9B00047948 /* NetWorkRequestManager.m in Sources */,
+				79F7B3FC1CE359E7007D5D3B /* TrainTableViewController.m in Sources */,
+				79F7B3F81CE359E7007D5D3B /* DetailProgram2ViewController.m in Sources */,
 				E782A22E1CDCE36700E2F537 /* ColorItemCell.m in Sources */,
 				1A36B6EC1CDB9CCC00047948 /* FirstTopicHeaderView.m in Sources */,
 				1A36B6E11CDB9CCC00047948 /* addTimeView.m in Sources */,
@@ -1374,9 +1522,9 @@
 				1A36B7591CDB9CF700047948 /* TodayDoneViewController.m in Sources */,
 				E7BBF3CA1CCBCE88008F9A74 /* UILabel+LabelHeightAndWidth.m in Sources */,
 				1A36B74E1CDB9CF700047948 /* AddTrainDescViewController.m in Sources */,
-				E7244A391CCCADE400EE72F5 /* TrainView.m in Sources */,
 				E7F13AFB1CCE509E00B0312D /* MyNewsModel.m in Sources */,
 				E772B19E1CC7BE7000C2BB5F /* main.m in Sources */,
+				79F7B4351CE35AF8007D5D3B /* PlayManager.m in Sources */,
 				1A36B7701CDB9E9600047948 /* KeyBoardView.m in Sources */,
 				E782A2581CDCE38200E2F537 /* StepNameViewController.m in Sources */,
 			);
