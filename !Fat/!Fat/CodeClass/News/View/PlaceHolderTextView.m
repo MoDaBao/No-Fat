@@ -52,7 +52,6 @@
         [self addSubview:publicView];
         
         
-        
         CGFloat imageWidth = 20;
         CGFloat imageHeight = imageWidth;
         CGFloat imageX = 10;

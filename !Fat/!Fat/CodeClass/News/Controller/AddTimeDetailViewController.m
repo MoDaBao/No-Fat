@@ -11,11 +11,13 @@
 #import "RecommendDetailModelCell.h"
 #import "RecommendDetailModel.h"
 #import "CommentView.h"
+#import "AddtimeDetailNoImageHeaderView.h"
 
 @interface AddTimeDetailViewController ()<UITableViewDataSource, UITableViewDelegate,CommentViewDelegate, KeyBoardViewDelegate>
 
 
 @property (nonatomic, strong)AddtimeDetailHeaderView *addtimeDetailHeaderView;
+@property (nonatomic, strong)AddtimeDetailNoImageHeaderView *addtimeDetailNoImageHeaderView;
 @property (nonatomic, strong) NSMutableArray *listArr;
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -53,7 +55,7 @@
     [super viewDidLoad];
     self.navigationItem.title = @"动态详情";
     
-    UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"back2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     self.navigationItem.leftBarButtonItem = left;
     
     //键盘将要显示的方法
@@ -73,7 +75,7 @@
     
     [self requsetData];
     [self createTableView];
-    [self createHeaderView];
+    [self selectHeaderView];
     [self createCommentView];
     // Do any additional setup after loading the view from its nib.
 }
@@ -84,13 +86,6 @@
 }
 
 
-- (CGFloat)textHeight
-{
-    CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 20, MAXFLOAT);
-    CGFloat textH = [_model.content boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]} context:nil].size.height;
-    //计算
-    return CGRectGetMinY(_addtimeDetailHeaderView.contentLabel.frame)+ CGRectGetMaxY(_addtimeDetailHeaderView.contentImageView.frame) + textH;
-}
 
 #pragma mark ----底部评论的那个------
 - (void)createCommentView {
@@ -187,6 +182,18 @@
     }
 }
 
+// 选择创建哪个头视图
+- (void)selectHeaderView {
+    
+    if (_model.image) {
+        [self createHeaderView];
+    }else {
+        [self createNoImageHeaderView];
+    }
+}
+
+
+
 
 
 #pragma merk---创建头视图------
@@ -216,17 +223,39 @@
                 NSString *imageName = [arr lastObject];
                 NSString *image = [NSString stringWithFormat:@"http://ft-user.fit-time.cn/%@@!small2", imageName];
                 
+                [_addtimeDetailHeaderView.headImageView sd_setImageWithURL:[NSURL URLWithString:image]];
+                
                 //给头像加手势
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
                 _addtimeDetailHeaderView.headImageView.userInteractionEnabled = YES;
                 [_addtimeDetailHeaderView.headImageView addGestureRecognizer:tap];
-                
-                [_addtimeDetailHeaderView.headImageView sd_setImageWithURL:[NSURL URLWithString:image]];
+              
 
 
             }
             _addtimeDetailHeaderView.contentLabel.text = _model.content;
-            _addtimeDetailHeaderView.timeLabel.text = [NSString stringWithFormat:@"%@", _model.createTime];
+            NSNumber *createTime = _model.createTime;
+            NSDate *date = [NSDate date];
+            NSInteger time = [date timeIntervalSince1970];
+            NSInteger space = time - createTime.integerValue / 1000;
+            NSInteger spacetime = space / (60 * 60);
+            if (spacetime < 24 & spacetime > 0) {
+                _addtimeDetailHeaderView.timeLabel.text = [NSString stringWithFormat:@"%ld小时前",spacetime];
+            } else if (spacetime < 1) {
+                _addtimeDetailHeaderView.timeLabel.text = [NSString stringWithFormat:@"%ld分钟前",space / 60];
+            } else {
+                //        double time = [[dic.allValues firstObject] doubleValue] / 1000;
+                //        CGFloat year = time /
+                NSDate *date = [NSDate dateWithTimeIntervalSince1970:createTime.integerValue / 1000];
+                //将一个日期对象转化为字符串对象
+                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                //设置日期与字符串互转的格式
+                [formatter setDateFormat:@"yyyy-MM-dd"];
+                //将日期转化为字符串
+                NSString *dateStr = [formatter stringFromDate:date];
+                _addtimeDetailHeaderView.timeLabel.text = dateStr;
+            }
+
             _addtimeDetailHeaderView.nameLabel.text = model.username;
             
         });
@@ -244,6 +273,99 @@
     
     self.tableView.tableHeaderView = _addtimeDetailHeaderView;
 }
+
+
+
+- (CGFloat)textHeight
+{
+    if (_model.image) {
+        CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 20, MAXFLOAT);
+        CGFloat textH = [_model.content boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]} context:nil].size.height;
+        //计算
+        return CGRectGetMinY(_addtimeDetailHeaderView.contentLabel.frame)+ CGRectGetMaxY(_addtimeDetailHeaderView.contentImageView.frame) + textH;
+    }else {
+        CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 20, MAXFLOAT);
+        CGFloat textH = [_model.content boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]} context:nil].size.height;
+        //计算
+        return CGRectGetMinY(_addtimeDetailNoImageHeaderView.contentLabel.frame)+ CGRectGetMaxY(_addtimeDetailNoImageHeaderView.progromBT.frame) + textH;
+
+    }
+    
+}
+
+#pragma merk---创建头视图------
+- (void)createNoImageHeaderView {
+    
+    _addtimeDetailNoImageHeaderView = [[[NSBundle mainBundle] loadNibNamed:@"AddtimeDetailNoImageHeaderView" owner:nil options:nil] lastObject];
+    _addtimeDetailNoImageHeaderView.frame = CGRectMake(0, 0, ScreenWidth, self.textHeight);
+    
+    [NetWorkRequestManager requestWithType:GET url:[NSString stringWithFormat:@"http://api.fit-time.cn/ftuser/getUserByIds?id=%@",_model.userId] dic:@{} finish:^(NSData *data) {
+        
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        //        NSLog(@"%@", dic);
+        NSArray *arr = dic[@"users"];
+        NSDictionary *headDic = [arr lastObject];
+        UserModel *model = [[UserModel alloc] init];
+        [model setValuesForKeysWithDictionary:headDic];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ([model.avatar hasPrefix:@"http"]) {
+                [_addtimeDetailNoImageHeaderView.headerImageView sd_setImageWithURL:[NSURL URLWithString:model.avatar]];
+            }else if ([model.avatar isEqualToString:@""]) {
+                _addtimeDetailNoImageHeaderView.headerImageView.image = [UIImage imageNamed:@"111.jpeg"];
+                
+            }else {
+                
+                NSArray *arr = [model.avatar componentsSeparatedByString:@"/"];
+                NSString *imageName = [arr lastObject];
+                NSString *image = [NSString stringWithFormat:@"http://ft-user.fit-time.cn/%@@!small2", imageName];
+                [_addtimeDetailNoImageHeaderView
+                 .headerImageView sd_setImageWithURL:[NSURL URLWithString:image]];
+                //给头像加手势
+                UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+                _addtimeDetailNoImageHeaderView.headerImageView.userInteractionEnabled = YES;
+                [_addtimeDetailNoImageHeaderView.headerImageView addGestureRecognizer:tap];
+                
+               
+                
+            }
+            _addtimeDetailNoImageHeaderView.contentLabel.text = _model.content;
+            
+            NSNumber *createTime = _model.createTime;
+            NSDate *date = [NSDate date];
+            NSInteger time = [date timeIntervalSince1970];
+            NSInteger space = time - createTime.integerValue / 1000;
+            NSInteger spacetime = space / (60 * 60);
+            if (spacetime < 24 & spacetime > 0) {
+                _addtimeDetailNoImageHeaderView.timeLabel.text = [NSString stringWithFormat:@"%ld小时前",spacetime];
+            } else if (spacetime < 1) {
+                _addtimeDetailNoImageHeaderView.timeLabel.text = [NSString stringWithFormat:@"%ld分钟前",space / 60];
+            } else {
+                //        double time = [[dic.allValues firstObject] doubleValue] / 1000;
+                //        CGFloat year = time /
+                NSDate *date = [NSDate dateWithTimeIntervalSince1970:createTime.integerValue / 1000];
+                //将一个日期对象转化为字符串对象
+                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                //设置日期与字符串互转的格式
+                [formatter setDateFormat:@"yyyy-MM-dd"];
+                //将日期转化为字符串
+                NSString *dateStr = [formatter stringFromDate:date];
+                _addtimeDetailNoImageHeaderView.timeLabel.text = dateStr;
+            }
+            _addtimeDetailNoImageHeaderView.nameLabel.text = model.username;
+            
+        });
+    } error:^(NSError *error) {
+        
+    }];
+    
+   
+    self.tableView.tableHeaderView = _addtimeDetailNoImageHeaderView;
+}
+
+
+
+
 
 // 给头像加手势  跳转到个人信息
 - (void)tap:(UIGestureRecognizer *)tap {

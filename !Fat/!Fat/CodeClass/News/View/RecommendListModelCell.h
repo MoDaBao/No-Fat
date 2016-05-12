@@ -18,4 +18,5 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *commentBT;
 @property (weak, nonatomic) IBOutlet UIButton *praiseBT;
+
 @end

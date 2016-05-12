@@ -23,8 +23,11 @@
     
     [self.image sd_setImageWithURL:[NSURL URLWithString:image]];
     
+    self.contentLabel.text = model.content;
     //字体变颜色
-    self.contentLabel.attributedText = [NSString changeColorWithContent:model.content];
+//    self.contentLabel.attributedText = [NSString changeColorWithContent:model.content];
+    
+    
     
     self.commentCountLabel.text = [NSString stringWithFormat:@"%@", model.commentCount];
     self.pariseCountLabel.text = [NSString stringWithFormat:@"%@", model.praiseCount];

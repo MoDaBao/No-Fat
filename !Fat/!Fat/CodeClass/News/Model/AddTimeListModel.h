@@ -19,7 +19,11 @@
 @property (nonatomic, strong) NSNumber *praiseCount;//点赞次数
 @property (nonatomic, strong) NSNumber *createTime;//时间
 @property (nonatomic, strong) NSNumber *videoId;
-//@property (nonatomic, strong) NSNumber *videoId;
+
+@property (nonatomic, copy) NSString *trainingType;// "快走",
+@property (nonatomic, copy) NSString *trainingVolume;
+@property (nonatomic, strong) NSNumber *priv;//是否公开
+@property (nonatomic, assign) BOOL praised;//是否点赞
 
 @property (nonatomic, strong) NSNumber *ID;
 @property (nonatomic, assign) CGFloat textHeight;

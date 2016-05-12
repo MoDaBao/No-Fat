@@ -13,5 +13,6 @@
 @property (nonatomic, assign) BOOL isTrain;// 是否是训练打卡
 @property (nonatomic, copy) NSString *trainName;// 训练名称
 @property (nonatomic, copy) NSString *trainDesc;// 训练描述
+@property (nonatomic, assign) NSNumber *priv;//是否加密
 
 @end

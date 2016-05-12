@@ -57,7 +57,7 @@
     
     self.navigationItem.title = @"动态详情";
     
-    UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"back2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     self.navigationItem.leftBarButtonItem = left;
     
     
@@ -165,7 +165,29 @@
             }
            //  赋值
             _recommendDetailHeadView.contentLabel.text = _model.content;
-            _recommendDetailHeadView.timeLabel.text = [NSString stringWithFormat:@"%@", _model.createTime];
+            
+            //时间赋值
+            NSNumber *createTime = _model.createTime;
+            NSDate *date = [NSDate date];
+            NSInteger time = [date timeIntervalSince1970];
+            NSInteger space = time - createTime.integerValue / 1000;
+            NSInteger spacetime = space / (60 * 60);
+            if (spacetime < 24 & spacetime > 0) {
+                _recommendDetailHeadView.timeLabel.text = [NSString stringWithFormat:@"%ld小时前",spacetime];
+            } else if (spacetime < 1) {
+                _recommendDetailHeadView.timeLabel.text = [NSString stringWithFormat:@"%ld分钟前",space / 60];
+            } else {
+                //        double time = [[dic.allValues firstObject] doubleValue] / 1000;
+                //        CGFloat year = time /
+                NSDate *date = [NSDate dateWithTimeIntervalSince1970:createTime.integerValue / 1000];
+                //将一个日期对象转化为字符串对象
+                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                //设置日期与字符串互转的格式
+                [formatter setDateFormat:@"yyyy-MM-dd"];
+                //将日期转化为字符串
+                NSString *dateStr = [formatter stringFromDate:date];
+                _recommendDetailHeadView.timeLabel.text = dateStr;
+            }
             _recommendDetailHeadView.nameLabel.text = model.username;
             
             //给头像加手势

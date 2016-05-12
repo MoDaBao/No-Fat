@@ -49,8 +49,6 @@
     ;
     UIBarButtonItem *publishItem = [[UIBarButtonItem alloc] initWithCustomView:publishBtn];
     self.navigationItem.rightBarButtonItem = publishItem;
-    
-    
     [self createTextView];
     
     
@@ -75,10 +73,92 @@
     
 }
 
-//  发表动态
+//  发表打卡动态
 - (void)publishNews {
-//    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    NSLog(@"动态");
+    if (_isTrain == NO) {//如果是分享生活
+        if (!self.placeTextView.isPublic) {//如果是加密的
+            //给token加码
+            NSString *token = [[[UserInfoManager shareInstance] getUserToken] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet letterCharacterSet]];
+            
+            NSString *str = [@"http://api.fit-time.cn/ftsns/dakaShareLife" stringByAppendingString:[NSString stringWithFormat:@"?token=%@",token]];
+            
+            AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+            [session POST:str parameters:@{@"content":_placeTextView.textView.text,@"priv":@(1)} progress:^(NSProgress * _Nonnull uploadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                NSLog(@"responseObject%@", responseObject);
+                NSNumber *status = responseObject[@"status"];
+                if ([status intValue]) {
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                }
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                NSLog(@"message%@", error);
+            }];
+
+        }else {//公开的
+            //给token加码
+            NSString *token = [[[UserInfoManager shareInstance] getUserToken] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet letterCharacterSet]];
+            
+            NSString *str = [@"http://api.fit-time.cn/ftsns/dakaShareLife" stringByAppendingString:[NSString stringWithFormat:@"?token=%@",token]];
+            
+            AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+            [session POST:str parameters:@{@"content":_placeTextView.textView.text} progress:^(NSProgress * _Nonnull uploadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                NSLog(@"responseObject%@", responseObject);
+                NSNumber *status = responseObject[@"status"];
+                if ([status intValue]) {
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                }
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                NSLog(@"message%@", error);
+            }];
+            
+
+        }
+        
+    }else {//如果是打卡的
     
+    if (!self.placeTextView.isPublic) {//如果是加密的
+    //给token加码
+    NSString *token = [[[UserInfoManager shareInstance] getUserToken] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet letterCharacterSet]];
+    
+    NSString *str = [@"http://api.fit-time.cn/ftsns/dakaCustomTraining" stringByAppendingString:[NSString stringWithFormat:@"?token=%@",token]];
+    
+    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    [session POST:str parameters:@{@"training_volume":_trainDesc, @"training_type":_trainName, @"content":_placeTextView.textView.text,@"priv":@(1)} progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"responseObject%@", responseObject);
+        NSNumber *status = responseObject[@"status"];
+        if ([status intValue]) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"message%@", error);
+    }];
+    }else {//公开的
+        //给token加码
+        NSString *token = [[[UserInfoManager shareInstance] getUserToken] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet letterCharacterSet]];
+        
+        NSString *str = [@"http://api.fit-time.cn/ftsns/dakaCustomTraining" stringByAppendingString:[NSString stringWithFormat:@"?token=%@",token]];
+        
+        AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+        [session POST:str parameters:@{@"training_volume":_trainDesc, @"training_type":_trainName, @"content":_placeTextView.textView.text} progress:^(NSProgress * _Nonnull uploadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@"responseObject%@", responseObject);
+            NSNumber *status = responseObject[@"status"];
+            if ([status intValue]) {
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSLog(@"message%@", error);
+        }];
+
+    }
+}
 }
 
 - (void)didReceiveMemoryWarning {

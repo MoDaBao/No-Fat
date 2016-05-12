@@ -44,22 +44,29 @@
     return self;
 }
 
+// 请求最新的动态的数据
+
 - (void)requestData {
     [NetWorkRequestManager requestWithType:GET url:ZUIXINLIST_URL dic:@{} finish:^(NSData *data) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
         NSLog(@"dic%@", dic);
         
+        [self.dataList removeAllObjects];
+       
         NSArray *arr = dic[@"feeds"];
         for (NSDictionary *dataDic in arr) {
             AddTimeListModel *model = [[AddTimeListModel alloc] init];
             [model setValuesForKeysWithDictionary:dataDic];
-            [self.dataList addObject:model];
+//            if ([model.priv isEqualToNumber:@(0)]) {
+                [self.dataList addObject:model];
+//            }
         }
         
         //        NSLog(@"datalist%@",arr );
         dispatch_async(dispatch_get_main_queue(), ^{
             [self createTableView];
             [self.tableView reloadData];
+            [self.tableView.mj_header endRefreshing];
             // 动画结束
             [_myActivityIndicatorView stopAnimating];
         });
@@ -69,11 +76,23 @@
     }];
 }
 
-- (void)requestDataMore {
-    [NetWorkRequestManager requestWithType:GET url:ZUIXINLISTMORE_URL dic:@{} finish:^(NSData *data) {
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
-        NSLog(@"dic%@", dic);
+
+//上拉刷新
+- (void)requestMoreData {
+    
+    AddTimeListModel *model =self.dataList[self.dataList.count - 1];
+    
+    //给token加码
+    NSString *token = [[[UserInfoManager shareInstance] getUserToken] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet letterCharacterSet]];
+    
+    NSString *str = [@"http://api.fit-time.cn/ftsns/loadMoreUserFeed" stringByAppendingString:[NSString stringWithFormat:@"?token=%@&last_id=%@&page_size=20",token, model.ID]];
+    
+    
+    [NetWorkRequestManager requestWithType:GET url:str dic:@{} finish:^(NSData *data) {
         
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        
+        NSLog(@"dic%@", dic);
         NSArray *arr = dic[@"feeds"];
         for (NSDictionary *dataDic in arr) {
             AddTimeListModel *model = [[AddTimeListModel alloc] init];
@@ -83,22 +102,25 @@
         
         //        NSLog(@"datalist%@",arr );
         dispatch_async(dispatch_get_main_queue(), ^{
-           
-            [self.tableView reloadData];
             [self.tableView.mj_footer endRefreshing];
-            [self.tableView.mj_header endRefreshing];
-
+            
+            [self.tableView reloadData];
+            // 动画结束
+            [_myActivityIndicatorView stopAnimating];
         });
         
     } error:^(NSError *error) {
+        
+        NSLog(@"error%@", error);
         
     }];
 }
 
 
+
 - (void)createTableView {
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0 , self.frame.size.width , self.frame.size.height ) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0 , ScreenWidth , ScreenHeight - 164 ) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
@@ -109,11 +131,11 @@
     
     
     
-//    //下拉刷新
-//    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(requestDataMore)];
-//    
-//    //上拉刷新
-//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestData)];
+    //下拉刷新
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(requestMoreData)];
+    
+    //上拉刷新
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestData)];
 
 }
 
@@ -124,12 +146,55 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     AddTimeListModel *model = self.dataList[indexPath.row];
-
-    if (model.image.length > 0) {
-       AddTimeListModelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddTimeListModelCell"];
+    
+    if (model.image) {
+        AddTimeListModelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddTimeListModelCell"];
         if (!cell) {
-            cell = [[NSBundle mainBundle]loadNibNamed:@"AddTimeListModelCell" owner:nil   options:nil].lastObject;
+            cell = [[NSBundle mainBundle]loadNibNamed:@"AddTimeListModelCell" owner:nil  options:nil].lastObject;
         }
+
+    [NetWorkRequestManager requestWithType:GET url:[NSString stringWithFormat:@"http://api.fit-time.cn/ftuser/getUserByIds?id=%@",model.userId] dic:@{} finish:^(NSData *data) {
+        
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+                    //        NSLog(@"%@", dic);
+    NSArray *arr = dic[@"users"];
+    NSDictionary *headDic = [arr lastObject];
+    UserModel *model = [[UserModel alloc] init];
+    [model setValuesForKeysWithDictionary:headDic];
+        
+    dispatch_async(dispatch_get_main_queue(), ^{
+    if ([model.avatar hasPrefix:@"http"]) {
+    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:model.avatar]];
+     }else {
+        NSArray *arr = [model.avatar componentsSeparatedByString:@"/"];
+        NSString *imageName = [arr lastObject];
+        NSString *image = [NSString stringWithFormat:@"http://ft-user.fit-time.cn/%@@!small2", imageName];
+        [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:image]];
+        }
+        cell.nameLabel.text = model.username;
+                        
+        });
+        } error:^(NSError *error) {
+                    
+        }];
+
+    [cell setDataWithModel:model];
+        self.cellHeightBlock = ^{
+            return cell.cellHeight;
+        };
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell.commentBT addTarget:self action:@selector(commentUser:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.attentionBT addTarget:self action:@selector(attentionPerson:) forControlEvents:UIControlEventTouchUpInside];
+
+        [cell setDataWithModel:model];
+         return cell;
+    }else {
+//
+        AddTimeNoImageModelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddTimeNoImageModelCell"];
+        if (!cell) {
+            cell = [[NSBundle mainBundle]loadNibNamed:@"AddTimeNoImageModelCell" owner:nil  options:nil].lastObject;
+        }
+        
         [NetWorkRequestManager requestWithType:GET url:[NSString stringWithFormat:@"http://api.fit-time.cn/ftuser/getUserByIds?id=%@",model.userId] dic:@{} finish:^(NSData *data) {
             
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
@@ -139,24 +204,24 @@
             UserModel *model = [[UserModel alloc] init];
             [model setValuesForKeysWithDictionary:headDic];
             
+            
+            
             dispatch_async(dispatch_get_main_queue(), ^{
                 if ([model.avatar hasPrefix:@"http"]) {
                     [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:model.avatar]];
                 }else {
-                    
                     NSArray *arr = [model.avatar componentsSeparatedByString:@"/"];
                     NSString *imageName = [arr lastObject];
                     NSString *image = [NSString stringWithFormat:@"http://ft-user.fit-time.cn/%@@!small2", imageName];
                     [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:image]];
                 }
-                
                 cell.nameLabel.text = model.username;
                 
             });
         } error:^(NSError *error) {
             
         }];
-
+        
         [cell setDataWithModel:model];
         self.cellHeightBlock = ^{
             return cell.cellHeight;
@@ -164,34 +229,14 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         [cell.commentBT addTarget:self action:@selector(commentUser:) forControlEvents:UIControlEventTouchUpInside];
         [cell.attentionBT addTarget:self action:@selector(attentionPerson:) forControlEvents:UIControlEventTouchUpInside];
-        return cell;
         
-        }else {
-            AddTimeNoImageModelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddTimeNoImageModelCell"];
-            if (!cell) {
-                 cell = [[NSBundle mainBundle]loadNibNamed:@"AddTimeNoImageModelCell" owner:nil  options:nil].lastObject;
-            }
-          [cell setDataWithModel:model];
-            self.cellHeightBlock = ^{
-                return cell.cellHeight;
-            };
-            
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-              [cell.commentBT addTarget:self action:@selector(commentUser:) forControlEvents:UIControlEventTouchUpInside];
-           return cell;
+        [cell setDataWithModel:model];
+        return cell;
 
+ }
 }
-    
-  
-    
-    
-    //测试
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuse"];
-//    if (!cell) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuse"];
-//    }
-//    cell.textLabel.text = [NSString stringWithFormat:@"1111%ld", indexPath.row];
-}
+
+
 
 //评论按钮的方法
 - (void)commentUser:(UIButton *)sender {
@@ -232,6 +277,7 @@
     }else {
         return 0.f;
     }
+    return 0;
     
 }
 

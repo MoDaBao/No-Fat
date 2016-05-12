@@ -55,7 +55,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1NK-Iz-Umc">
-                    <rect key="frame" x="70" y="353" width="123" height="31"/>
+                    <rect key="frame" x="70" y="321" width="123" height="31"/>
                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="123" id="7P5-Ic-tn1"/>
@@ -68,14 +68,14 @@
                         <action selector="VidioBT:" destination="iN0-l3-epB" eventType="touchUpInside" id="vxk-5u-VGc"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKW-wj-tmy">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKW-wj-tmy">
                     <rect key="frame" x="70" y="71" width="295" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mB9-SY-XK0">
-                    <rect key="frame" x="70" y="133" width="230" height="200"/>
+                    <rect key="frame" x="70" y="106.5" width="208" height="200"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="rKd-0N-30H"/>
                     </constraints>
@@ -84,20 +84,20 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="ZKW-wj-tmy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="70" id="2Sb-63-m1o"/>
+                <constraint firstItem="mB9-SY-XK0" firstAttribute="top" secondItem="ZKW-wj-tmy" secondAttribute="bottom" constant="15" id="9km-d2-nMh"/>
                 <constraint firstItem="dTm-Jk-f55" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="D51-Jo-GC2"/>
                 <constraint firstItem="aW8-sX-Aas" firstAttribute="leading" secondItem="a1h-gI-6Yw" secondAttribute="trailing" constant="10" id="Daa-2G-EHM"/>
                 <constraint firstAttribute="trailing" secondItem="c1l-1u-Tdp" secondAttribute="trailing" constant="40" id="Df8-n5-doB"/>
                 <constraint firstItem="c1l-1u-Tdp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="GfO-Bn-tX9"/>
                 <constraint firstItem="a1h-gI-6Yw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="KHU-jR-hiv"/>
                 <constraint firstItem="1NK-Iz-Umc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="70" id="MtK-Iv-zPH"/>
-                <constraint firstItem="1NK-Iz-Umc" firstAttribute="top" secondItem="mB9-SY-XK0" secondAttribute="bottom" constant="20" id="Vj8-Yh-DYJ"/>
                 <constraint firstItem="dTm-Jk-f55" firstAttribute="leading" secondItem="a1h-gI-6Yw" secondAttribute="trailing" constant="10" id="XMQ-dX-oXR"/>
                 <constraint firstAttribute="trailing" secondItem="ZKW-wj-tmy" secondAttribute="trailing" constant="5" id="bUW-ti-AQJ"/>
                 <constraint firstItem="aW8-sX-Aas" firstAttribute="top" secondItem="dTm-Jk-f55" secondAttribute="bottom" constant="10" id="cIz-My-S76"/>
-                <constraint firstAttribute="bottom" secondItem="1NK-Iz-Umc" secondAttribute="bottom" constant="15" id="h97-Fd-y95"/>
-                <constraint firstAttribute="trailing" secondItem="mB9-SY-XK0" secondAttribute="trailing" constant="70" id="hV4-Pn-Uob"/>
+                <constraint firstAttribute="trailing" secondItem="mB9-SY-XK0" secondAttribute="trailing" constant="92" id="jJJ-HS-hNB"/>
                 <constraint firstItem="a1h-gI-6Yw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="mf9-p7-LVJ"/>
                 <constraint firstItem="mB9-SY-XK0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="70" id="pk7-CB-VZ4"/>
+                <constraint firstItem="1NK-Iz-Umc" firstAttribute="top" secondItem="mB9-SY-XK0" secondAttribute="bottom" constant="15" id="qzy-vD-zKy"/>
                 <constraint firstItem="ZKW-wj-tmy" firstAttribute="top" secondItem="aW8-sX-Aas" secondAttribute="bottom" constant="10" id="spG-ib-Kbd"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

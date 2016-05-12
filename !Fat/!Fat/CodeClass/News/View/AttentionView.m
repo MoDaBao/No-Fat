@@ -64,6 +64,7 @@
 
 //        NSLog(@"datalist%@",arr );
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView.mj_header endRefreshing];
              [self createTableView];
              [self.tableView reloadData];
             // 动画结束
@@ -77,11 +78,48 @@
     }];
 }
 
+- (void)requestMoreData {
+    
+        AttentionListModel *model =self.dataList[self.dataList.count - 1];
+        
+        //给token加码
+        NSString *token = [[[UserInfoManager shareInstance] getUserToken] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet letterCharacterSet]];
+        
+        NSString *str = [@"http://api.fit-time.cn/ftsns/loadMoreFollowFeed" stringByAppendingString:[NSString stringWithFormat:@"?token=%@&last_id=%@&page_size=20",token, model.ID]];
+   
+    
+    [NetWorkRequestManager requestWithType:GET url:str dic:@{} finish:^(NSData *data) {
+        
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        
+                NSLog(@"dic%@", dic);
+        NSArray *arr = dic[@"feeds"];
+        for (NSDictionary *dataDic in arr) {
+            AttentionListModel *model = [[AttentionListModel alloc] init];
+            [model setValuesForKeysWithDictionary:dataDic];
+            [self.dataList addObject:model];
+        }
+       
+        //        NSLog(@"datalist%@",arr );
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView.mj_footer endRefreshing];
+
+            [self.tableView reloadData];
+            // 动画结束
+            [_myActivityIndicatorView stopAnimating];
+        });
+        
+    } error:^(NSError *error) {
+        
+        NSLog(@"error%@", error);
+        
+    }];
+  }
 
 
 - (void)createTableView {
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0 , self.frame.size.width , self.frame.size.height ) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0 , self.frame.size.width , ScreenHeight - 114 ) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
@@ -90,6 +128,12 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"AttentionListModelCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"ppp"];
    
+    
+    //上拉刷新
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(requestMoreData)];
+    
+    //下拉刷新
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestData)];
     //加载xib
      _attentionListHeaderView = [[[NSBundle mainBundle] loadNibNamed:@"AttentionListHeaderView" owner:nil options:nil] lastObject];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];

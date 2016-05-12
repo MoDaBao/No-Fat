@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *praiseBT;
 @property (weak, nonatomic) IBOutlet UIButton *shareBT;
 @property (weak, nonatomic) IBOutlet UIButton *attentionBT;//关注按钮
+@property (weak, nonatomic) IBOutlet UIButton *trainingTextBT;
 
 @property (nonatomic ,assign) CGFloat cellHeight;//计算高度的属性
 @property (nonatomic, assign) CGFloat textHeight;//属性 接受model的字符串的高度的属性

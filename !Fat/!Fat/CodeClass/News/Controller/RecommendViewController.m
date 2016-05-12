@@ -28,7 +28,7 @@
 @property (nonatomic,assign) CGRect originalText;
 @property (nonatomic, assign) CGFloat keyBoardHeight;
 @property (nonatomic) NSInteger start;
-@property (nonatomic, assign) BOOL isPraise;//是否点赞
+@property (nonatomic, assign) NSInteger isPraise;//是否点赞
 
 @property (nonatomic, strong) AddNewsView *addview;
 
@@ -94,6 +94,7 @@
     [super viewDidLoad];
     
     self.addview.hidden = YES;
+  
 
     //判断是否收藏，改变UI
 //    if (![[UserInfoManager shareInstance].getUserID isEqualToString:@""]) {
@@ -111,17 +112,19 @@
 //            }
 //        }
 //    }
-
-    if (_isPraise == 0){
-        [self.commentView.praiseBT setBackgroundImage:[UIImage imageNamed:@"yidianzan"] forState:UIControlStateNormal];
-    }
+    
+    self.isPraise = 1;
+   
+//    if (_isPraise == 1){
+//        [self.commentView.praiseBT setBackgroundImage:[UIImage imageNamed:@"yidianzan"] forState:UIControlStateNormal];
+//    }
   
     
     self.view.backgroundColor  = [UIColor whiteColor];
     self.navigationItem.title = @"动态详情";
     
     //导航栏的的返回按钮
-    UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"back2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     self.navigationItem.leftBarButtonItem = left;
     // Do any additional setup after loading the view.
 
@@ -232,7 +235,7 @@
         NSLog(@"%@", dic);
         dispatch_async(dispatch_get_main_queue(), ^{
             if ([status intValue] == 1) {
-                _isPraise = 0;
+//                _isPraise = 1;
 //                if (self.commentView.praiseBT) {
 //                    [self.commentView.praiseBT setBackgroundImage:[UIImage imageNamed:@"yidianzan"] forState:UIControlStateNormal];
 //                }
@@ -262,7 +265,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if ([status intValue] == 1) {
                 
-                _isPraise = 1;
+//                _isPraise = 1;
 //                if (self.commentView.praiseBT) {
 //                    [self.commentView.praiseBT setBackgroundImage:[UIImage imageNamed:@"dianzan"] forState:UIControlStateNormal];
 //                }
@@ -291,15 +294,24 @@
                 [self.view addSubview:self.keyView];
     }else if (sender == _commentView.praiseBT) {
         
-        [self requestPraise];
-        
-        if (_isPraise == 0) {
+        self.isPraise = !self.isPraise;
+        if (!_isPraise) {
+              [self requestPraise];
             [self.commentView.praiseBT setBackgroundImage:[UIImage imageNamed:@"yidianzan"] forState:UIControlStateNormal];
-            _isPraise = 1;
-        }else if (_isPraise == 1){
-            [self.commentView.praiseBT setBackgroundImage:[UIImage imageNamed:@"dianzan"] forState:UIControlStateNormal];
-            _isPraise = 0;
+        }else {
+            [self requestCancelPraise];
+           [self.commentView.praiseBT setBackgroundImage:[UIImage imageNamed:@"dianzan"] forState:UIControlStateNormal];
         }
+        
+//        [self requestPraise];
+//
+//        if (_isPraise == 0) {
+//            [self.commentView.praiseBT setBackgroundImage:[UIImage imageNamed:@"yidianzan"] forState:UIControlStateNormal];
+//            _isPraise = 1;
+//        }else if (_isPraise == 1){
+//            [self.commentView.praiseBT setBackgroundImage:[UIImage imageNamed:@"dianzan"] forState:UIControlStateNormal];
+//            _isPraise = 0;
+//        }
         //如果用户已经登录 那就直接收藏  不然就登录
 //        if (![[UserInfoManager shareInstance].getUserID isEqualToString:@""]) {
 //            RecommendListDB *recommendDB = [[RecommendListDB alloc] init];
@@ -333,6 +345,8 @@
     }
 }
 
+
+
 #pragma merk---创建头视图------
 - (void)createHeaderView {
     
@@ -364,7 +378,33 @@
             _recommendDetailHeadView.contentLabel.attributedText = [NSString changeColorWithContent:_model.content];
             
 //            _recommendDetailHeadView.contentLabel.text = _model.content;
-            _recommendDetailHeadView.timeLabel.text = [NSString stringWithFormat:@"%@", _model.createTime];
+//            _recommendDetailHeadView.timeLabel.text = [NSString stringWithFormat:@"%@", _model.createTime];
+            
+            //
+            NSNumber *createTime = _model.createTime;
+            NSDate *date = [NSDate date];
+            NSInteger time = [date timeIntervalSince1970];
+            NSInteger space = time - createTime.integerValue / 1000;
+            NSInteger spacetime = space / (60 * 60);
+            if (spacetime < 24 & spacetime > 0) {
+                _recommendDetailHeadView.timeLabel.text = [NSString stringWithFormat:@"%ld小时前",spacetime];
+            } else if (spacetime < 1) {
+                _recommendDetailHeadView.timeLabel.text = [NSString stringWithFormat:@"%ld分钟前",space / 60];
+            } else {
+                //        double time = [[dic.allValues firstObject] doubleValue] / 1000;
+                //        CGFloat year = time /
+                NSDate *date = [NSDate dateWithTimeIntervalSince1970:createTime.integerValue / 1000];
+                //将一个日期对象转化为字符串对象
+                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                //设置日期与字符串互转的格式
+                [formatter setDateFormat:@"yyyy-MM-dd"];
+                //将日期转化为字符串
+                NSString *dateStr = [formatter stringFromDate:date];
+                _recommendDetailHeadView.timeLabel.text = dateStr;
+            }
+
+//          NSString *str = [self changedTimeWithSting:_model.createTime];
+//           _recommendDetailHeadView.timeLabel.text=str;
             _recommendDetailHeadView.nameLabel.text = model.username;
             
         });
@@ -387,7 +427,33 @@
     
     self.tableView.tableHeaderView = _recommendDetailHeadView;
 }
+//
+//- (NSString *)changedTimeWithSting:(NSNumber *)createTime {
+////    NSNumber *createTime = _model.createTime;
+//    NSDate *date = [NSDate date];
+//    NSInteger time = [date timeIntervalSince1970];
+//    NSInteger space = time - createTime.integerValue / 1000;
+//    NSInteger spacetime = space / (60 * 60);
+//    if (spacetime < 24 & spacetime > 0) {
+//        _recommendDetailHeadView.timeLabel.text = [NSString stringWithFormat:@"%ld小时前",spacetime];
+//    } else if (spacetime < 1) {
+//        _recommendDetailHeadView.timeLabel.text = [NSString stringWithFormat:@"%ld分钟前",space / 60];
+//    } else {
+//        //        double time = [[dic.allValues firstObject] doubleValue] / 1000;
+//        //        CGFloat year = time /
+//        NSDate *date = [NSDate dateWithTimeIntervalSince1970:createTime.integerValue / 1000];
+//        //将一个日期对象转化为字符串对象
+//        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//        //设置日期与字符串互转的格式
+//        [formatter setDateFormat:@"yyyy-MM-dd"];
+//        //将日期转化为字符串
+//        NSString *dateStr = [formatter stringFromDate:date];
+//        return dateStr;
+//  }
+//    return nil;
+//}
 
+// 点击头像的方法
 - (void)tap:(UIGestureRecognizer *)tap {
     
     UserMessageViewController *userVC = [[UserMessageViewController alloc] init];
@@ -492,7 +558,7 @@
     return cell;
 }
 
-- (void)tap1:(UIGestureRecognizer *)tap1{
+/*- (void)tap1:(UIGestureRecognizer *)tap1{
     
     
 //    UIView *v = [image superview];//获取父类view
@@ -514,7 +580,7 @@
  
     
 
-}
+}*/
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 //    AttentionDetailViewController *attentionVC = [[AttentionDetailViewController alloc] init];

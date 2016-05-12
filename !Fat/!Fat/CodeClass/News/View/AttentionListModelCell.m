@@ -31,18 +31,28 @@
     self.userName.text = model.userModel.username;
     
     
-//    self.timeLabel.text = [NSString stringWithFormat:@"%@",model.createTime];
-//    NSString *time = [NSString stringWithFormat:@"%@",model.createTime];
-//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//    [formatter setDateStyle:NSDateFormatterMediumStyle];
-//    [formatter setTimeStyle:NSDateFormatterShortStyle];
-//    [formatter setDateFormat:@"YYYY-MM-dd HH:mm"];
-//    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:(NSTimeInterval)[time intValue]];
-//    NSString*confromTimespStr = [formatter stringFromDate:confromTimesp];             
-//
-//    NSDate *date = [formatter dateFromString:time]
+    NSNumber *createTime = model.createTime;
+    NSDate *date = [NSDate date];
+    NSInteger time = [date timeIntervalSince1970];
+    NSInteger space = time - createTime.integerValue / 1000;
+    NSInteger spacetime = space / (60 * 60);
+    if (spacetime < 24 & spacetime > 0) {
+        self.timeLabel.text = [NSString stringWithFormat:@"%ld小时前",spacetime];
+    } else if (spacetime < 1) {
+        self.timeLabel.text = [NSString stringWithFormat:@"%ld分钟前",space / 60];
+    } else {
+        //        double time = [[dic.allValues firstObject] doubleValue] / 1000;
+        //        CGFloat year = time /
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:createTime.integerValue / 1000];
+        //将一个日期对象转化为字符串对象
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        //设置日期与字符串互转的格式
+        [formatter setDateFormat:@"yyyy-MM-dd"];
+        //将日期转化为字符串
+        NSString *dateStr = [formatter stringFromDate:date];
+        self.timeLabel.text = dateStr;
+    }
     
-    self.timeLabel.text = [self timeFormatted:(int)model.createTime];
 
     self.contrentLabel.text = model.content;
     self.praiseCountLabel.text = [NSString stringWithFormat:@"%@", model.praiseCount];
@@ -53,16 +63,6 @@
     
 }
 
-- (NSString *)timeFormatted:(int)totalSeconds
-{
-    
-    int totalSeconds1 = totalSeconds / 1000;
-    int seconds = totalSeconds1 % 60;
-    int minutes = (totalSeconds1 / 60) % 60;
-    int hours = totalSeconds1 / 3600;
-    
-    return [NSString stringWithFormat:@"%02d:%02d:%02d",hours, minutes, seconds];
-}
 
 - (CGFloat)cellHeight
 {

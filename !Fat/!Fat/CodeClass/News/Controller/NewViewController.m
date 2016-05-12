@@ -95,13 +95,11 @@
     } completion:^(BOOL finished) {
         [self.twoItemView removeFromSuperview];
     }];
-    
-    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"No!Fat动态";
+    self.navigationItem.title = @"!Fat动态";
     [self createButton];
    _recommendView = [[RecommendView alloc] initWithFrame:CGRectMake(0,114, self.view.frame.size.width, self.view.frame.size.height )];
     [self.view addSubview:_recommendView];
@@ -112,9 +110,6 @@
     
     self.recommendView.parent = self;
 
-   
-    
-    
        // Do any additional setup after loading the view from its nib.
 }
 - (void)search {
@@ -134,26 +129,10 @@
 
 #pragma mark------页面上面的按钮-------
 - (void)createButton {
-    
-    //垃圾写法
-//    UIView *buttonView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 40)];
-//    self.buttonView = [[[NSBundle mainBundle] loadNibNamed:@"ButtonView" owner:nil options:nil] lastObject];
-//    buttonView.backgroundColor = [UIColor blueColor];
-//    self.buttonView.backgroundColor = [UIColor redColor];
-//    _buttonView.frame = buttonView.bounds;
-    
-//    [_buttonView.recommendBT addTarget:self action:@selector(recommend:) forControlEvents:UIControlEventTouchUpInside];
-//    [_buttonView.attentionBT addTarget:self action:@selector(attention:) forControlEvents:UIControlEventTouchUpInside];
-//    [_buttonView.nearBT addTarget:self action:@selector(new:) forControlEvents:UIControlEventTouchUpInside];
-//    [_buttonView.nearBT addTarget:self action:@selector(nearby:) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    [buttonView addSubview:_buttonView];
-//    [self.view addSubview:buttonView];
-    
-    
+
     ButtonView *buttonView =[ButtonView buttonView];
     buttonView.delegete = self;
-//    buttonView.backgroundColor = [UIColor redColor];
+    //    buttonView.backgroundColor = [UIColor redColor];
     buttonView.frame = CGRectMake(0, 80, self.view.frame.size.width, 21);
     [self.view addSubview:buttonView];
     self.buttonView = buttonView;
@@ -171,19 +150,19 @@
         NSLog(@"推荐按钮");
        
 //        [self.buttonView.tuijian setBackgroundColor:[UIColor grayColor]];
-        
-       _recommendView = [[RecommendView alloc] initWithFrame:CGRectMake(0,114, self.view.frame.size.width, self.view.frame.size.height - 114)];
+      
+    
         //删除子视图
         for (UIView *view in self.view.subviews) {
-            if (view == self.addtimeView ||self.attentionView) {
+            if (view == self.recommendView || self.addtimeView ||self.attentionView) {
                 [view removeFromSuperview];
-            }else {
-                return;
+           
             }
-            [self.view addSubview:_buttonView];
-            [self.view addSubview:_recommendView];
+            _recommendView = [[RecommendView alloc] initWithFrame:CGRectMake(0,114, self.view.frame.size.width, self.view.frame.size.height - 114)];
+           
         }
-        
+        [self.view addSubview:_buttonView];
+        [self.view addSubview:_recommendView];
          self.recommendView.parent = self;
         
     }else if (sender == self.buttonView.guanzhu)

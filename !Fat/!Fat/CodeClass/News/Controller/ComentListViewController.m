@@ -231,7 +231,17 @@
     
     RecommendDetailModel *model = self.listArr[indexPath.row];
     
+    
     RecommendDetailModelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecommendDetailModelCell" forIndexPath:indexPath];
+    
+    //实现跳转的block
+    cell.tapBlock = ^ {
+        UserMessageViewController *userVC = [[UserMessageViewController alloc] init];
+        userVC.userId = model.userId;
+        NSLog(@"%@", userVC.userId);
+        [self.navigationController pushViewController:userVC animated:YES];
+    };
+    
     [cell setDataWithModel:model];
     
     [NetWorkRequestManager requestWithType:GET url:[NSString stringWithFormat:@"http://api.fit-time.cn/ftuser/getUserByIds?id=%@",model.userId] dic:@{} finish:^(NSData *data) {
@@ -254,10 +264,14 @@
                 [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:image]];
             }
             
-            UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap1:)];
-            cell.headImageView.userInteractionEnabled = YES;
-            [cell.headImageView addGestureRecognizer:tap1];
             
+          
+            
+            
+//            UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap1:)];
+//            cell.headImageView.userInteractionEnabled = YES;
+//            [cell.headImageView addGestureRecognizer:tap1];
+//            
             cell.userNameLabel.text = model.username;
             
         });
@@ -271,14 +285,14 @@
     return cell;
 }
 
-- (void)tap1:(UIGestureRecognizer *)tap1 {
-    
-    UserMessageViewController *userVC = [[UserMessageViewController alloc] init];
-    userVC.userId = _detailModel.ID;
-    [self.navigationController pushViewController:userVC animated:YES];
-    
-    
-}
+//- (void)tap1:(UIGestureRecognizer *)tap1 {
+//    
+//    UserMessageViewController *userVC = [[UserMessageViewController alloc] init];
+//    userVC.userId = _detailModel.ID;
+//    [self.navigationController pushViewController:userVC animated:YES];
+//    
+//    
+//}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //    AttentionDetailViewController *attentionVC = [[AttentionDetailViewController alloc] init];

@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *commentBT;
 @property (weak, nonatomic) IBOutlet UIButton *shareBT;
 @property (weak, nonatomic) IBOutlet UIButton *praiseBT;
+@property (weak, nonatomic) IBOutlet UIButton *trainingText;
 
 @property (weak, nonatomic) IBOutlet UIButton *attentionBT;//关注按钮
 

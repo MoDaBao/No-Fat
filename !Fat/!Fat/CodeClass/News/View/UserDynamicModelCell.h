@@ -10,7 +10,12 @@
 
 @interface UserDynamicModelCell : BaseTableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
+//@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
+//@property (weak, nonatomic) IBOutlet UIImageView *headerImage1;
+//@property (weak, nonatomic) IBOutlet UIImageView *headerImage2;
+//@property (weak, nonatomic) IBOutlet UIImageView *haaderImage3;
+
+//@property (nonatomic, weak) UIImageView *headerImageView;
 
 
 @end

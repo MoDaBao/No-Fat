@@ -12,6 +12,9 @@
 #import "FirstTopicViewController.h"
 #import "RecommendListModelCell.h"
 #import "MyActivityIndicatorView.h"
+#import "TwoItemView.h"
+#import "TodayDoneViewController.h"
+#import "ShareLifeViewController.h"
 
 
 
@@ -30,10 +33,75 @@
 @property (nonatomic, assign) CGFloat keyBoardHeight;
 @property (nonatomic, strong)MyActivityIndicatorView *myActivityIndicatorView;
 
-
+@property (nonatomic, assign) NSInteger start;
+@property (nonatomic, assign) NSInteger limit;
+@property (nonatomic, assign) NSInteger count;
+@property (nonatomic, strong) AddNewsView *addNewsView;
+@property (nonatomic, strong) TwoItemView *twoItemView;
 @end
 
 @implementation RecommendView
+
+//- (void)viewWillAppear:(BOOL)animated {
+//    [self viewWillAppear:animated];
+//    if (!self.addNewsView) {
+//        CGFloat margin = 20;
+//        CGFloat addViewWidth = 50;
+//        CGFloat addViewHeight = addViewWidth;
+//        CGFloat addViewX = kScreenWidth - addViewWidth - margin;
+//        CGFloat addViewY = kScreenHeight - kTabBarHeight - margin - addViewHeight;
+//        self.addNewsView = [[AddNewsView alloc] initWithFrame:CGRectMake(addViewX, addViewY, addViewWidth, addViewHeight)];
+//        [self.addNewsView.addBtn addTarget:self action:@selector(add) forControlEvents:UIControlEventTouchUpInside];
+//        [_parent.navigationController.view addSubview:self.addNewsView];
+//    }
+//    
+//}
+//
+//- (void)add {
+//    NSLog(@"2333");
+//    
+//    //    [UIView animateWithDuration:.2 animations:^{
+//    ////        self.backgroundColor = [UIColor colorWithRed:0.55 green:0.48 blue:0.12 alpha:1.00];
+//    //    } completion:^(BOOL finished) {
+//    //
+//    //    }];
+//    
+//    self.twoItemView = [[TwoItemView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+//    [self.twoItemView.trainView.trainBtn addTarget:self action:@selector(train) forControlEvents:UIControlEventTouchUpInside];
+//    [self.twoItemView.lifeView.lifeBtn addTarget:self action:@selector(life) forControlEvents:UIControlEventTouchUpInside];
+//    self.twoItemView.alpha = .0;
+//    [self.view addSubview:self.twoItemView];
+//    
+//    [UIView animateWithDuration:.3 animations:^{
+//        self.twoItemView.alpha = 1.0;
+//    }];
+//    
+//    
+//}
+//
+//- (void)train {
+//    NSLog(@"23333");
+//    TodayDoneViewController *todayVC = [[TodayDoneViewController alloc] init];
+//    [UIView animateWithDuration:.3 animations:^{
+//        [_parent.navigationController pushViewController:todayVC animated:YES];
+//        self.twoItemView.alpha = .0;
+//    } completion:^(BOOL finished) {
+//        [self.twoItemView removeFromSuperview];
+//    }];
+//}
+//
+//- (void)life {
+//    NSLog(@"6666");
+//    ShareLifeViewController *shareVC = [[ShareLifeViewController alloc] init];
+//    //    shareVC.isTrain = YES;
+//    shareVC.isTrain = NO;
+//    [UIView animateWithDuration:.3 animations:^{
+//        [_parent.navigationController pushViewController:shareVC animated:YES];
+//        self.twoItemView.alpha = .0;
+//    } completion:^(BOOL finished) {
+//        [self.twoItemView removeFromSuperview];
+//    }];
+//}
 
 //懒加载
 - (NSMutableArray *)dataArr {
@@ -90,12 +158,21 @@
 
 //下拉刷新更多
 - (void)requestDataMore {
-    [NetWorkRequestManager requestWithType:GET url:TUIJIANLISTMORE_URL dic:@{} finish:^(NSData *data) {
+    
+//    for (int i = 0; i < self.dataArr.count; i ++) {
+     RecommendListModel *model = self.dataArr[self.dataArr.count- 1];
+    
+    //给token加码
+    NSString *token = [[[UserInfoManager shareInstance] getUserToken] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet letterCharacterSet]];
+    
+    NSString *str = [@"http://api.fit-time.cn/ftsns/loadMoreUserFeed" stringByAppendingString:[NSString stringWithFormat:@"?token=%@&last_id=%@&page_size=20",token, model.ID]];
+
+    [NetWorkRequestManager requestWithType:GET url:str dic:@{} finish:^(NSData *data) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves | NSJSONReadingMutableContainers error:nil];
 //                NSLog(@"%@", dic);
         
         NSArray *arr = dic[@"feeds"];
-        //        NSLog(@"datadic%@", arr);
+                NSLog(@"datadic%@", arr);
         
         for (NSDictionary *dataDic in arr) {
             RecommendListModel *model = [[RecommendListModel alloc] init];
@@ -103,11 +180,9 @@
             [self.dataArr addObject:model];
             //             NSLog(@"%@", dataDic);
         }
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
             [self.collectionView.mj_footer endRefreshing];
-            [self.collectionView.mj_header endRefreshing];
         });
         
         //         NSLog(@"dataArr%@", _dataArr);
@@ -115,7 +190,7 @@
         NSLog(@"error%@", error);
     }];
 };
-
+//}
 
 
 #pragma mark -----推荐页面-----
@@ -130,7 +205,7 @@
     //item的大小
     layout.itemSize = CGSizeMake(ScreenWidth / 2 - 15, ScreenWidth / 2 + 70);
     
-    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) collectionViewLayout:layout];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - 114) collectionViewLayout:layout];
     
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
@@ -280,8 +355,13 @@
     
     RecommendListModel *model = self.dataArr[indexPath.row];
     RecommendListModelCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reuse" forIndexPath:indexPath];
+    
+    if (model.praised == true) {
+        [cell.praiseBT setBackgroundImage:[UIImage imageNamed:@"yidianzan"] forState:UIControlStateNormal];
+    }
     [cell setDataWithModel:model];
     [cell.commentBT addTarget:self action:@selector(commentUser:) forControlEvents:UIControlEventTouchUpInside];
+   
     return cell;
     
     //测试

@@ -16,7 +16,7 @@
 @property (nonatomic, strong) NSNumber *commentCount;//评论次数
 @property (nonatomic, strong) NSNumber *praiseCount;//点赞次数
 @property (nonatomic, strong) NSNumber *createTime;
-
+@property (nonatomic, assign) BOOL praised;
 @property (nonatomic, strong) NSNumber *ID;
 
 @end
