@@ -14,5 +14,7 @@
 + (void)changColorWithImageView:(UIImageView *)imageView color:(NSString *)color;
 //
 + (NSString *)changColorNameWithColor:(NSString *)color;
+/**  通过颜色字符串获取颜色对象*/
++ (UIColor *)getColorWithColorString:(NSString *)colorString;
 
 @end

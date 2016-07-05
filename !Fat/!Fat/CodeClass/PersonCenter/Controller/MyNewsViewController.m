@@ -33,7 +33,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.showsVerticalScrollIndicator = NO;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.tableView];
     
 }
@@ -85,6 +85,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+    self.tabBarController.tabBar.hidden = YES;
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 20)];
     label.text = @"我的动态";
     self.navigationItem.titleView = label;
@@ -117,6 +118,7 @@
 }
 
 - (void)back {
+    self.tabBarController.tabBar.hidden = NO;
     [self.navigationController popViewControllerAnimated:YES];
 }
 

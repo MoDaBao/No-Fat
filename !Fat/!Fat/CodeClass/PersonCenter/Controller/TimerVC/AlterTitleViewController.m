@@ -17,6 +17,8 @@
 @property (nonatomic, strong) NSMutableArray *iconArray;
 @property (nonatomic, strong) NSMutableArray *colorArray;
 @property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, copy) NSString *icon;
+@property (nonatomic, copy) NSString *color;
 
 @end
 
@@ -24,7 +26,7 @@
 
 - (NSMutableArray *)iconArray {
     if (!_iconArray) {
-//        _iconArray = @{@"跑步":@"runGray", @"上下蹲":@"squatGray", @"体操":@"gymGray"};
+        //        _iconArray = @{@"跑步":@"runGray", @"上下蹲":@"squatGray", @"体操":@"gymGray"};
         self.iconArray = [NSMutableArray array];
         [_iconArray addObject:@{@"跑步":@"runGray"}];
         [_iconArray addObject:@{@"上下蹲":@"squatGray"}];
@@ -35,7 +37,7 @@
 
 - (NSMutableArray *)colorArray {
     if (!_colorArray) {
-//        _colorArray = @{@"粉色":@"kPink", @"灰色":@"kGray", @"绿色":@"kGreen", @"蓝色":@"kBlue"};
+        //        _colorArray = @{@"粉色":@"kPink", @"灰色":@"kGray", @"绿色":@"kGreen", @"蓝色":@"kBlue"};
         self.colorArray = [NSMutableArray array];
         [_colorArray addObject:@{@"粉色":@"kPink"}];
         [_colorArray addObject:@{@"灰色":@"kGray"}];
@@ -97,6 +99,9 @@
     self.imagePickerView.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.imagePickerView];
+    
+    self.icon = self.detailItemModel.titleicon;
+    self.color = self.detailItemModel.titlecolor;
 }
 
 // 创建按钮
@@ -112,7 +117,7 @@
 }
 
 - (void)back {
-    self.passValue(self.textField.text);
+    self.passValue(self.textField.text, self.color, self.icon);
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -149,7 +154,7 @@
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
     UIView *returnView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth * 0.5, 20)];
-//    returnView.backgroundColor = [UIColor orangeColor];
+    //    returnView.backgroundColor = [UIColor orangeColor];
     CGFloat width = 25;
     CGFloat height = width;
     CGFloat margin = 10;
@@ -162,7 +167,7 @@
     if (component == 0) {
         imageView.image = [UIImage imageNamed:dic.allValues[0]];
     } else {
-//        [self assignmentWithImageView:imageView color:dic.allValues[0]];
+        //        [self assignmentWithImageView:imageView color:dic.allValues[0]];
         [ChangeColorManager changColorWithImageView:imageView color:dic.allValues[0]];
     }
     [returnView addSubview:imageView];
@@ -178,6 +183,19 @@
     
 }
 
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    if (component) {
+        self.color = [self.colorArray[row] allValues].firstObject;
+        [ChangeColorManager changColorWithImageView:self.iconImageView color:self.color];
+    } else {
+        NSString *icon = [[self.iconArray[row] allValues].firstObject componentsSeparatedByString:@"G"].firstObject;
+        self.icon = [NSString stringWithFormat:@"%@White",icon];
+        self.iconImageView.image = [UIImage imageNamed:self.icon];
+    }
+    
+    NSLog(@"选择了一行");
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -186,13 +204,13 @@
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

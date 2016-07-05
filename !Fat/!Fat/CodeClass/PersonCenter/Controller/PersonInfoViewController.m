@@ -132,6 +132,8 @@
     self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
 //    }];
     
+    self.tabBarController.tabBar.hidden = YES;
+    
 //    [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:1.0];
 //    self.navigationItem.title = @"个人资料";
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 20)];
@@ -152,6 +154,7 @@
 }
 
 - (void)back {
+    self.tabBarController.tabBar.hidden = NO;
     [self.navigationController popViewControllerAnimated:YES];
 }
 

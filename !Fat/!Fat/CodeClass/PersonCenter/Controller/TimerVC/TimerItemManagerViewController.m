@@ -15,6 +15,7 @@
 #import "StepDetailViewController.h"
 #import "ManagerView.h"
 #import "StartView.h"
+#import "TimeringViewController.h"
 
 @interface TimerItemManagerViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -236,6 +237,14 @@
     self.startView = [[[NSBundle mainBundle] loadNibNamed:@"StartView" owner:nil options:nil] lastObject];
     CGFloat height = 80 / 667.0 * kScreenHeight;
     self.startView.frame = CGRectMake(0, kScreenHeight - height, kScreenWidth, height);
+    self.tableView.height -= self.startView.height;
+    __block TimerItemManagerViewController *managerVC = self;
+    self.startView.start = ^ {
+        NSLog(@"开始计时");
+        TimeringViewController *timeringVC = [[TimeringViewController alloc] init];
+        timeringVC.detailModel = managerVC.selectModel;
+        [managerVC.navigationController pushViewController:timeringVC animated:YES];
+    };
     [self.view addSubview:self.startView];
 }
 
@@ -328,7 +337,7 @@
                 self.itemArray[indexPath.row - 2] = step;
                 if (_isNew) {
                     self.orginModel.step = step;
-                    self.itemArray[indexPath.row] = step;
+                    self.itemArray[indexPath.row - 2] = step;
                     [self.tableView reloadData];
                 } else {
                     NSString *stepsting = [self.itemArray componentsJoinedByString:@"/"];
@@ -436,15 +445,19 @@
             AlterTitleViewController *alterTitleVC = [[AlterTitleViewController alloc] init];
             if (_isNew) {
                 alterTitleVC.detailItemModel = self.orginModel;
-                alterTitleVC.passValue = ^(NSString *title) {
+                alterTitleVC.passValue = ^(NSString *title, NSString *color, NSString *icon) {
                     self.orginModel.title = title;
+                    self.orginModel.titleicon = icon;
+                    self.orginModel.titlecolor = color;
                     [self.tableView reloadData];
                 };
             } else {
                 alterTitleVC.detailItemModel = self.selectModel;
-                alterTitleVC.passValue = ^(NSString *title) {
+                alterTitleVC.passValue = ^(NSString *title, NSString *color, NSString *icon) {
                     self.oldModel.title = self.selectModel.title;
                     self.selectModel.title = title;
+                    self.selectModel.titleicon = icon;
+                    self.selectModel.titlecolor = color;
                     [self.tableView reloadData];
                 };
             }

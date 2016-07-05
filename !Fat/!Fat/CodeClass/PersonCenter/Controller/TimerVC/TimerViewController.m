@@ -47,6 +47,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tabBarController.tabBar.hidden = YES;
     self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
     self.navigationItem.title = @"计时器";
     self.view.backgroundColor = [UIColor whiteColor];
@@ -80,6 +81,7 @@
 }
 
 - (void)back {
+    self.tabBarController.tabBar.hidden = NO;
     [self.navigationController popViewControllerAnimated:YES];
 }
 

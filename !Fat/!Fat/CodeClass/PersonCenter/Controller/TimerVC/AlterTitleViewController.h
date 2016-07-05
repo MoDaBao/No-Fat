@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 #import "TimerDetailItemModel.h"
 
-typedef void(^PassValue)(NSString *);
+typedef void(^PassValue)(NSString *, NSString *, NSString *);
 @interface AlterTitleViewController : BaseViewController
 
 @property (nonatomic, strong) TimerDetailItemModel *detailItemModel;

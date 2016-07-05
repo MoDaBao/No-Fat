@@ -56,9 +56,10 @@
         self.newsImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.usernameLabel.frame.origin.x, self.contentLabel.frame.origin.y + margin + self.contentLabel.frame.size.height, imageWidth, imageWidth)];
         [self.contentView addSubview:self.newsImageView];
         
+        //自定义分割线
         UIView *line = [[UIView alloc] initWithFrame:CGRectMake(margin, self.frame.size.height - 1, kScreenWidth - margin * 2, 1)];
         line.backgroundColor = [UIColor lightGrayColor];
-        [self.contentView addSubview:line];
+//        [self.contentView addSubview:line];
         
     }
     return self;

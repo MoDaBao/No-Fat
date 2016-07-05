@@ -161,6 +161,7 @@
 		E782A2581CDCE38200E2F537 /* StepNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A2501CDCE38200E2F537 /* StepNameViewController.m */; };
 		E782A2591CDCE38200E2F537 /* TimerItemManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A2521CDCE38200E2F537 /* TimerItemManagerViewController.m */; };
 		E782A25A1CDCE38200E2F537 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E782A2541CDCE38200E2F537 /* TimerViewController.m */; };
+		E7A16E8F1D0C7D2500465402 /* MOTimerProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A16E8E1D0C7D2500465402 /* MOTimerProgressView.m */; };
 		E7BBF3AF1CCBCE88008F9A74 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3601CCBCE88008F9A74 /* BaseCollectionViewCell.m */; };
 		E7BBF3B01CCBCE88008F9A74 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3621CCBCE88008F9A74 /* BaseModel.m */; };
 		E7BBF3B11CCBCE88008F9A74 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BBF3641CCBCE88008F9A74 /* BaseTableViewCell.m */; };
@@ -483,6 +484,8 @@
 		E782A2521CDCE38200E2F537 /* TimerItemManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerItemManagerViewController.m; sourceTree = "<group>"; };
 		E782A2531CDCE38200E2F537 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
 		E782A2541CDCE38200E2F537 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
+		E7A16E8D1D0C7D2500465402 /* MOTimerProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOTimerProgressView.h; sourceTree = "<group>"; };
+		E7A16E8E1D0C7D2500465402 /* MOTimerProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOTimerProgressView.m; sourceTree = "<group>"; };
 		E7BBF35F1CCBCE88008F9A74 /* BaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewCell.h; sourceTree = "<group>"; };
 		E7BBF3601CCBCE88008F9A74 /* BaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewCell.m; sourceTree = "<group>"; };
 		E7BBF3611CCBCE88008F9A74 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
@@ -677,6 +680,8 @@
 				E7E5AA631CDDE81A002E0769 /* ManagerView.h */,
 				E7E5AA641CDDE81A002E0769 /* ManagerView.m */,
 				E7E5AA651CDDE81A002E0769 /* ManagerView.xib */,
+				E7A16E8D1D0C7D2500465402 /* MOTimerProgressView.h */,
+				E7A16E8E1D0C7D2500465402 /* MOTimerProgressView.m */,
 			);
 			path = TimerView;
 			sourceTree = "<group>";
@@ -1454,6 +1459,7 @@
 				E782A2591CDCE38200E2F537 /* TimerItemManagerViewController.m in Sources */,
 				E782A2471CDCE37600E2F537 /* TimerListItemModel.m in Sources */,
 				E782A25A1CDCE38200E2F537 /* TimerViewController.m in Sources */,
+				E7A16E8F1D0C7D2500465402 /* MOTimerProgressView.m in Sources */,
 				E7BBF3BF1CCBCE88008F9A74 /* AlterUserNameViewController.m in Sources */,
 				E7BBF3B11CCBCE88008F9A74 /* BaseTableViewCell.m in Sources */,
 				1A36B6861CDB9C9B00047948 /* NSString+ChangeColor.m in Sources */,

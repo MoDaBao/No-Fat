@@ -36,5 +36,18 @@
     return nil;
 }
 
++ (UIColor *)getColorWithColorString:(NSString *)colorString {
+    if ([colorString isEqualToString:@"kPink"]) {
+        return kPink;
+    } else if ([colorString isEqualToString:@"kGray"]) {
+        return kGray;
+    } else if ([colorString isEqualToString:@"kGreen"]) {
+        return kGreen;
+    } else if ([colorString isEqualToString:@"kBlue"]) {
+        return kBlue;
+    }
+    return nil;
+}
+
 
 @end
